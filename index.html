@@ -217,6 +217,31 @@ body {
 .list-section-header span { transition: transform 0.15s; }
 .list-section-content.hidden { display: none; }
 
+/* NESTED SECTION HEADERS (sub-categories indented) */
+.list-section-content .list-section-header {
+  padding-left: 1.6rem;
+  font-size: 0.59rem;
+  background: var(--bg);
+  color: var(--fg-faint);
+  opacity: 0.85;
+}
+.list-section-content .list-section-content .list-section-header {
+  padding-left: 2.3rem;
+  font-size: 0.57rem;
+}
+.list-section-content .list-item {
+  padding-left: 1.6rem;
+}
+.list-section-content .list-section-content .list-item {
+  padding-left: 2.3rem;
+}
+.list-section-content .list-item.active {
+  padding-left: calc(1.6rem - 3px);
+}
+.list-section-content .list-section-content .list-item.active {
+  padding-left: calc(2.3rem - 3px);
+}
+
 /* DETAIL PANE */
 .detail-pane {
   flex: 1;
@@ -817,20 +842,47 @@ function renderList(q) {
            (item.subtitle || '').toLowerCase().includes(lower);
   }
 
-  // Change 7: Codex — four groups in order: Overviews, World Lore, The Planes, GM Toolbox
+  // Codex — Overviews, World Lore (with The Planes nested inside), GM Toolbox
   if (currentTab === 'codex') {
-    const groups = [
-      { key: 'overviews', label: 'Overviews' },
-      { key: 'worldLore', label: 'World Lore' },
-      { key: 'planes',    label: 'The Planes' },
-      { key: 'gmToolbox', label: 'GM Toolbox' },
-    ];
-    groups.forEach(g => {
-      const items = (CODEX[g.key] || [])
-        .map(item => ({ id: item.id || item.title, name: item.title, sub: item.eyebrow || '' }))
-        .filter(matches);
-      if (items.length) makeSectionHeader(g.label, 'codex-' + g.key, items, container);
-    });
+    // Overviews
+    const overviewItems = (CODEX.overviews || [])
+      .map(item => ({ id: item.id || item.title, name: item.title, sub: item.eyebrow || '' }))
+      .filter(matches);
+    if (overviewItems.length) makeSectionHeader('Overviews', 'codex-overviews', overviewItems, container);
+
+    // World Lore as a parent that contains The Planes as a nested child
+    const wlItems = (CODEX.worldLore || [])
+      .map(item => ({ id: item.id || item.title, name: item.title, sub: item.eyebrow || '' }))
+      .filter(matches);
+    const planesItems = (CODEX.planes || [])
+      .map(item => ({ id: item.id || item.title, name: item.title, sub: item.eyebrow || '' }))
+      .filter(matches);
+
+    if (wlItems.length || planesItems.length) {
+      const wlOpen = sectionState['codex-worldLore'] !== false;
+      const wlHeader = document.createElement('div');
+      wlHeader.className = 'list-section-header';
+      wlHeader.innerHTML = `<span>World Lore</span><span>${wlOpen ? '▾' : '▸'}</span>`;
+      const wlContent = document.createElement('div');
+      wlContent.className = 'list-section-content' + (wlOpen ? '' : ' hidden');
+      wlHeader.onclick = () => {
+        const hidden = wlContent.classList.toggle('hidden');
+        wlHeader.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+        sectionState['codex-worldLore'] = !hidden;
+      };
+      container.appendChild(wlHeader);
+      container.appendChild(wlContent);
+      // Flat World Lore items first
+      wlItems.forEach(item => wlContent.appendChild(makeListEl(item)));
+      // The Planes as a nested sub-section
+      if (planesItems.length) makeSectionHeader('The Planes', 'codex-planes', planesItems, wlContent);
+    }
+
+    // GM Toolbox
+    const gmItems = (CODEX.gmToolbox || [])
+      .map(item => ({ id: item.id || item.title, name: item.title, sub: item.eyebrow || '' }))
+      .filter(matches);
+    if (gmItems.length) makeSectionHeader('GM Toolbox', 'codex-gmToolbox', gmItems, container);
     return;
   }
 
@@ -1001,55 +1053,96 @@ function renderList(q) {
     return;
   }
 
-  // Change 2: Loot — two-level grouping: Region > Location
+  // Loot — three-level hierarchy: Plane > Ward/Sublocation > Building > items
   if (currentTab === 'loot') {
-    // Derive region and location from tags
-    const byRegion = {};
-    const regionOrder = [];
+    // Classify each item into plane / ward / building from its tags.
+    // Tags that identify item type (not location) — excluded from location detection:
+    const TYPE_TAGS = new Set(['Book','Weapon','Shield','Magical','Non-Magical','Wondrous Item',
+      'Rare','Uncommon','Common','Very Rare','Legendary','Ammunition','Ioun Stone',
+      'Campaign MacGuffin','+1','+2','+3']);
+
+    // Known ward keywords
+    const WARD_KEYWORDS = ['Ward'];
+    // Known building keywords
+    const BUILDING_KEYWORDS = ['House','Basement','Shop','Crossing','Bag of','Reed'];
+
+    function classifyItem(item) {
+      const tags = item.tags || [];
+      // Plane: check for explicit plane tag, default Sigil
+      const planeTag = tags.find(t =>
+        ['Sigil','Mechanus','Bytopia','Elysium','Outlands','The Planes'].includes(t)
+      ) || 'Sigil';
+
+      // Ward: find a "Ward" tag
+      const wardTag = tags.find(t => WARD_KEYWORDS.some(kw => t.includes(kw))) || null;
+
+      // Building: find a location-like tag, then normalize "Horus House Basement" -> "Horus House"
+      let buildingTag = tags.find(t =>
+        !TYPE_TAGS.has(t) &&
+        !(WARD_KEYWORDS.some(kw => t.includes(kw))) &&
+        (BUILDING_KEYWORDS.some(kw => t.includes(kw)))
+      ) || null;
+      if (buildingTag) buildingTag = buildingTag.replace(' Basement', '').replace(' basement', '');
+
+      // Fallback: first non-type, non-ward, non-plane tag
+      const fallback = tags.find(t =>
+        !TYPE_TAGS.has(t) &&
+        !(WARD_KEYWORDS.some(kw => t.includes(kw))) &&
+        !['Sigil','Mechanus','Bytopia','Elysium','Outlands'].includes(t)
+      ) || 'Unknown';
+
+      return {
+        plane: planeTag,
+        ward: wardTag || 'Hive Ward',
+        building: buildingTag || fallback,
+      };
+    }
+
+    // Build three-level structure: plane > ward > building > [items]
+    const byPlane = {};
+    const planeOrder = [];
 
     items.forEach(item => {
-      const tags = item.tags || [];
-      // Location tag is any tag that contains "House", "Basement", "Shop", or a place name
-      const locationTag = tags.find(t =>
-        t.includes('House') || t.includes('Basement') || t.includes('Shop') ||
-        t.includes('Ward') || t.includes('Crossing')
-      ) || tags.find(t => !['Book','Weapon','Shield','Magical','Non-Magical','Wondrous Item',
-        'Rare','Ammunition','Ioun Stone','Campaign MacGuffin','+1'].includes(t)) || 'Unknown';
-
-      // Region: currently everything is Sigil/Hive Arc; derive from arc tags or default
-      const arcTag = tags.find(t => t.includes('Arc') || t.includes('Hive'));
-      const region = arcTag ? arcTag.replace(' Arc', '').replace('Horus House ', '') : 'Hive Arc';
-
-      if (!byRegion[region]) { byRegion[region] = { locations: {}, locationOrder: [] }; regionOrder.push(region); }
-      const reg = byRegion[region];
-      if (!reg.locations[locationTag]) { reg.locations[locationTag] = []; reg.locationOrder.push(locationTag); }
-      reg.locations[locationTag].push(item);
+      const { plane, ward, building } = classifyItem(item);
+      if (!byPlane[plane]) { byPlane[plane] = { wards: {}, wardOrder: [] }; planeOrder.push(plane); }
+      const planeObj = byPlane[plane];
+      if (!planeObj.wards[ward]) { planeObj.wards[ward] = { buildings: {}, buildingOrder: [] }; planeObj.wardOrder.push(ward); }
+      const wardObj = planeObj.wards[ward];
+      if (!wardObj.buildings[building]) { wardObj.buildings[building] = []; wardObj.buildingOrder.push(building); }
+      wardObj.buildings[building].push(item);
     });
 
-    regionOrder.forEach(region => {
-      const reg = byRegion[region];
-      const allItems = reg.locationOrder.flatMap(l => reg.locations[l]);
+    function makeNestedHeader(label, key, open, parentEl) {
+      const h = document.createElement('div');
+      h.className = 'list-section-header';
+      h.innerHTML = `<span>${label}</span><span>${open ? '▾' : '▸'}</span>`;
+      const c = document.createElement('div');
+      c.className = 'list-section-content' + (open ? '' : ' hidden');
+      h.onclick = () => {
+        const hidden = c.classList.toggle('hidden');
+        h.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+        sectionState[key] = !hidden;
+      };
+      parentEl.appendChild(h);
+      parentEl.appendChild(c);
+      return c;
+    }
 
-      if (reg.locationOrder.length <= 1) {
-        makeSectionHeader(region, 'loot-' + region, allItems, container);
-      } else {
-        const regionOpen = sectionState['loot-r-' + region] !== false;
-        const regionHeader = document.createElement('div');
-        regionHeader.className = 'list-section-header';
-        regionHeader.innerHTML = `<span>${region}</span><span>${regionOpen ? '▾' : '▸'}</span>`;
-        const regionContent = document.createElement('div');
-        regionContent.className = 'list-section-content' + (regionOpen ? '' : ' hidden');
-        regionHeader.onclick = () => {
-          const hidden = regionContent.classList.toggle('hidden');
-          regionHeader.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
-          sectionState['loot-r-' + region] = !hidden;
-        };
-        container.appendChild(regionHeader);
-        container.appendChild(regionContent);
-        reg.locationOrder.forEach(loc =>
-          makeSectionHeader(loc, 'loot-' + region + '-' + loc, reg.locations[loc], regionContent)
-        );
-      }
+    planeOrder.forEach(plane => {
+      const planeObj = byPlane[plane];
+      const planeOpen = sectionState['loot-p-' + plane] !== false;
+      const planeContent = makeNestedHeader(plane, 'loot-p-' + plane, planeOpen, container);
+
+      planeObj.wardOrder.forEach(ward => {
+        const wardObj = planeObj.wards[ward];
+        const wardOpen = sectionState['loot-w-' + plane + ward] !== false;
+        const wardContent = makeNestedHeader(ward, 'loot-w-' + plane + ward, wardOpen, planeContent);
+
+        wardObj.buildingOrder.forEach(building => {
+          const bldItems = wardObj.buildings[building];
+          makeSectionHeader(building, 'loot-b-' + plane + ward + building, bldItems, wardContent);
+        });
+      });
     });
     return;
   }
@@ -1179,12 +1272,17 @@ function renderDetail(item) {
 
     html += `<hr class="detail-divider">`;
 
-    // Body
+    // Body — for quasigods, strip the inline Boon paragraph to avoid duplication
     if (item.body) {
-      html += `<div class="detail-body">${item.body}</div>`;
+      let bodyHtml = item.body;
+      if (item.boon) {
+        // Remove the paragraph that starts with <strong>Boon:</strong>
+        bodyHtml = bodyHtml.replace(/<p[^>]*>\s*<strong>Boon:<\/strong>[\s\S]*?<\/p>/gi, '');
+      }
+      html += `<div class="detail-body">${bodyHtml}</div>`;
     }
 
-    // Change 10: Quasigod boon — one-time use with chip mechanic
+    // Quasigod boon — one-time use with chip mechanic
     if (item.boon) {
       html += `<hr class="detail-divider">`;
       html += `<div class="detail-section-label" style="color:var(--gold)">Boon</div>`;

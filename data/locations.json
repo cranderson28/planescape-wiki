@@ -16,11 +16,11 @@
   {
     "id": "mortuary",
     "name": "The Mortuary",
-    "tags": ["Dustmen HQ", "Lady's Ward"],
+    "tags": ["Dustmen HQ", "Hive Ward"],
     "subtitle": "Dustmen Headquarters, Sigil Corpse Disposal",
     "body": "<p>The Mortuary is Sigil's official body-processing facility. Every corpse in Sigil comes here, by law. The Dustmen maintain it, staff it, and manage the paperwork that follows every death in the city.</p><p>It is large, gray, and smells of preservation chemicals. The staff are professional and slightly offputting. The queue for disposal during high-tension periods can be several days long. The Dustmen do not rush.</p><p>The party's first visit follows the Session One combat at Horus House. Three Rusted Bell bodies, no witnesses except the party. The Dustmen require: cause of death, names if known, and the disposal fee (5 gp per body for standard processing). They do not ask difficult questions. They have seen worse.</p>",
     "stats": [
-      { "label": "Ward", "value": "Lady's Ward" },
+      { "label": "Ward", "value": "Hive Ward" },
       { "label": "Faction", "value": "The Dustmen" },
       { "label": "Services", "value": "Corpse disposal, preservation, records" },
       { "label": "Fee", "value": "5 gp per body (standard)" }
