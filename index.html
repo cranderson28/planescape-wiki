@@ -692,12 +692,13 @@ function switchTab(tab) {
   const codexPane = document.getElementById('codex-pane');
   if (tab === 'codex') {
     listPane.classList.add('hidden');
-    detailPane.classList.remove('visible');
+    detailPane.style.display = 'none';
     detailPane.innerHTML = '<div class="detail-empty">Select an entry to view details</div>';
     codexPane.classList.add('visible');
     renderCodex();
   } else {
     listPane.classList.remove('hidden');
+    detailPane.style.display = '';
     detailPane.innerHTML = '<div class="detail-empty">Select an entry to view details</div>';
     codexPane.classList.remove('visible');
     document.getElementById('search-input').value = '';
