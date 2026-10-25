@@ -427,82 +427,15 @@ body {
   margin-left: 0.5rem;
 }
 
-/* CODEX PANE */
-.codex-pane {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1.75rem 2rem;
-  padding-left: max(2rem, env(safe-area-inset-left, 0px));
-  padding-right: max(2rem, env(safe-area-inset-right, 0px));
-  display: none;
-}
-.codex-pane.visible { display: block; }
-.codex-group { margin-bottom: 2.5rem; }
-.codex-group-label {
-  font-family: var(--font-ui);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  user-select: none;
-}
-.codex-group-label span { font-size: 0.65rem; transition: transform 0.15s; display: inline-block; }
-.codex-group-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.85rem; }
-.codex-group-items.hidden { display: none; }
-.codex-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.1rem;
-}
-.codex-card.transition {
-  background: var(--gold-dim);
-  border-color: var(--gold);
-}
-.codex-card-eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-faint);
-  margin-bottom: 0.25rem;
-}
-.codex-card.transition .codex-card-eyebrow { color: var(--gold); }
-.codex-card-title {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--fg);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-.codex-card.transition .codex-card-title { color: var(--gold); }
-.codex-card-body {
-  font-size: 0.82rem;
-  line-height: 1.65;
-  color: var(--fg-muted);
-}
-.codex-card-body p { margin-bottom: 0.4rem; }
-.codex-card-body p:last-child { margin-bottom: 0; }
-.codex-card-links {
+/* CODEX LINKS in detail */
+.codex-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.4rem;
   margin-top: 0.6rem;
   padding-top: 0.6rem;
   border-top: 1px solid var(--border);
 }
-.codex-card.stub { opacity: 0.55; }
-.codex-card.stub .codex-card-body { font-style: italic; }
 
 /* BACK BUTTON (mobile only) */
 .back-btn {
@@ -599,7 +532,6 @@ body {
   <div class="detail-pane" id="detail-pane">
     <div class="detail-empty">Select an entry to view details</div>
   </div>
-  <div class="codex-pane" id="codex-pane"></div>
 </div>
 
 <script>
@@ -667,7 +599,6 @@ async function loadData() {
     DATA.loot = loot.map(i => normalizeItem(i, 'loot'));
     CODEX = codex;
     renderList('');
-    if (currentTab === 'codex') renderCodex();
   } catch (err) {
     document.getElementById('list-items').innerHTML =
       '<div class="loading-state" style="color:var(--accent)">Failed to load data</div>';
@@ -689,26 +620,14 @@ function switchTab(tab) {
   });
   const listPane = document.querySelector('.list-pane');
   const detailPane = document.getElementById('detail-pane');
-  const codexPane = document.getElementById('codex-pane');
-  if (tab === 'codex') {
-    listPane.classList.add('hidden');
-    detailPane.style.display = 'none';
-    detailPane.innerHTML = '<div class="detail-empty">Select an entry to view details</div>';
-    codexPane.classList.add('visible');
-    renderCodex();
-  } else {
-    listPane.classList.remove('hidden');
-    detailPane.style.display = '';
-    detailPane.innerHTML = '<div class="detail-empty">Select an entry to view details</div>';
-    codexPane.classList.remove('visible');
-    document.getElementById('search-input').value = '';
-    renderList('');
-  }
+  listPane.classList.remove('hidden');
+  detailPane.style.display = '';
+  detailPane.innerHTML = '<div class="detail-empty">Select an entry to view details</div>';
+  document.getElementById('search-input').value = '';
+  renderList('');
 }
 
 // ─── CODEX ────────────────────────────────────────────────────────────────────
-
-const codexGroupState = {};
 
 function renderCodexLinks(links) {
   if (!links || !links.length) return '';
@@ -720,55 +639,6 @@ function renderCodexLinks(links) {
   }).join('');
 }
 
-function renderCodexGroup(groupId, label, items, isOverview) {
-  if (!items || !items.length) return '';
-  const open = codexGroupState[groupId] !== false;
-  const chevron = open ? '▾' : '▸';
-  const hiddenClass = open ? '' : ' hidden';
-  const cards = items.map(item => {
-    const isTransition = item.transition === true;
-    const isStub = item.stub === true;
-    const cls = ['codex-card', isTransition ? 'transition' : '', isStub ? 'stub' : ''].filter(Boolean).join(' ');
-    const eyebrow = item.group || item.eyebrow || '';
-    const links = renderCodexLinks(item.links);
-    return `<div class="${cls}">
-      ${eyebrow ? `<div class="codex-card-eyebrow">${eyebrow}</div>` : ''}
-      <div class="codex-card-title">${item.title}</div>
-      <div class="codex-card-body">${item.body || ''}</div>
-      ${links ? `<div class="codex-card-links">${links}</div>` : ''}
-    </div>`;
-  }).join('');
-  return `<div class="codex-group" id="codex-group-${groupId}">
-    <div class="codex-group-label" onclick="toggleCodexGroup('${groupId}')">
-      ${label}<span>${chevron}</span>
-    </div>
-    <div class="codex-group-items${hiddenClass}" id="codex-items-${groupId}">${cards}</div>
-  </div>`;
-}
-
-function toggleCodexGroup(id) {
-  const items = document.getElementById('codex-items-' + id);
-  const label = document.querySelector('#codex-group-' + id + ' .codex-group-label span');
-  if (!items) return;
-  const isHidden = items.classList.toggle('hidden');
-  if (label) label.textContent = isHidden ? '▸' : '▾';
-  codexGroupState[id] = !isHidden;
-}
-
-function renderCodex() {
-  const pane = document.getElementById('codex-pane');
-  let html = '';
-  if (CODEX.overviews && CODEX.overviews.length) {
-    html += renderCodexGroup('overviews', 'Campaign Overview', CODEX.overviews, true);
-  }
-  if (CODEX.worldLore && CODEX.worldLore.length) {
-    html += renderCodexGroup('worldLore', 'World Lore', CODEX.worldLore, false);
-  }
-  if (CODEX.gmToolbox && CODEX.gmToolbox.length) {
-    html += renderCodexGroup('gmToolbox', 'GM Toolbox', CODEX.gmToolbox, false);
-  }
-  pane.innerHTML = html || '<div class="detail-empty">No codex entries yet.</div>';
-}
 
 // ─── LIST ─────────────────────────────────────────────────────────────────────
 
@@ -837,17 +707,16 @@ function renderList(q) {
   }
 
   if (currentTab === 'codex') {
-    const all = getCodexList().filter(matches);
-    all.forEach(item => {
-      const el = document.createElement('div');
-      el.className = 'list-item';
-      el.onclick = () => {
-        // scroll codex to group and highlight is out of scope; just switch to codex tab
-        const pane = document.getElementById('codex-pane');
-        if (pane) pane.scrollTop = 0;
-      };
-      el.innerHTML = `<div class="list-item-name">${item.name}</div><div class="list-item-sub">${item.sub}</div>`;
-      container.appendChild(el);
+    const groups = [
+      { key: 'overviews', label: 'Overview' },
+      { key: 'worldLore', label: 'World Lore' },
+      { key: 'gmToolbox', label: 'GM Toolbox' },
+    ];
+    groups.forEach(g => {
+      const items = (CODEX[g.key] || [])
+        .map(item => ({ id: item.id || item.title, name: item.title, sub: item.group || item.eyebrow || '' }))
+        .filter(matches);
+      if (items.length) makeSectionHeader(g.label, 'codex-' + g.key, items, container);
     });
     return;
   }
@@ -941,7 +810,14 @@ function selectItem(id) {
     }
   });
 
-  const item = (DATA[currentTab] || []).find(i => i.id === id);
+  let item;
+  if (currentTab === 'codex') {
+    const allCodex = [...(CODEX.overviews || []), ...(CODEX.worldLore || []), ...(CODEX.gmToolbox || [])];
+    item = allCodex.find(i => (i.id || i.title) === id);
+    if (item) item = Object.assign({ _isCodex: true }, item);
+  } else {
+    item = (DATA[currentTab] || []).find(i => i.id === id);
+  }
   if (!item) return;
 
   const listPane = document.querySelector('.list-pane');
@@ -967,6 +843,29 @@ function goBack() {
 
 function renderDetail(item) {
   const pane = document.getElementById('detail-pane');
+
+  // Codex items have a different schema: title, body, group, eyebrow, links, transition, stub
+  if (item._isCodex) {
+    const eyebrow = item.eyebrow || item.group || '';
+    const isTransition = item.transition === true;
+    const isStub = item.stub === true;
+    const links = renderCodexLinks(item.links);
+    let html = `
+      <button class="back-btn" onclick="goBack()">Back</button>
+      ${eyebrow ? `<div class="detail-eyebrow">${eyebrow}</div>` : ''}
+      <div class="detail-title">${item.title}</div>
+      <hr class="detail-divider">
+      <div class="detail-body${isStub ? '" style="font-style:italic;opacity:0.7' : ''}">${item.body || ''}</div>
+    `;
+    if (isTransition) {
+      html += `<div class="callout yellow"><div class="callout-label">Arc Transition</div>This entry marks a shift between campaign arcs.</div>`;
+    }
+    if (links) {
+      html += `<div class="codex-links">${links}</div>`;
+    }
+    pane.innerHTML = html;
+    return;
+  }
 
   // Build eyebrow from tags if not set
   const eyebrow = item.eyebrow || (item.tags || []).join('  ·  ');
