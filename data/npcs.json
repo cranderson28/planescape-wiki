@@ -4,40 +4,40 @@
     "name": "Choice",
     "tags": ["Quasigod", "Campaign-Wide"],
     "subtitle": "Quasigod of Decisions",
-    "body": "<p>Choice manifests as a shimmer at crossroads — literal and figurative. The party earns her boon by making a consequential decision without foreknowledge of the outcome. She does not reward right choices. She rewards chosen ones.</p><p><strong>Boon:</strong> Portent die. Once per day, roll a d20 at the start of the session. Before any roll, the player may replace the result with the portent die's value (or force an enemy to use it). The portent die is then spent.</p>",
-    "boon": "Portent die (daily d20 swap)"
+    "body": "<p>Choice manifests as a shimmer at crossroads — literal and figurative. The party earns her boon by making a consequential decision without foreknowledge of the outcome. She does not reward right choices. She rewards chosen ones.</p><p><strong>Boon:</strong> Portent die. Roll a d20 at the start of the session. Before any roll, the player may replace the result with the portent die's value (or force an enemy to use it). The portent die is then spent. Turn in your chip to activate.</p>",
+    "boon": "Portent die (one-time d20 swap — turn in chip)"
   },
   {
     "id": "chance",
     "name": "Chance",
     "tags": ["Quasigod", "Campaign-Wide"],
     "subtitle": "Quasigod of Fortune",
-    "body": "<p>Chance appears as a coin that is always mid-flip. Never heads, never tails. The party earns her boon by taking a meaningful risk with no safety net — no preparation, no guarantee, no fallback plan.</p><p><strong>Boon:</strong> Luck reroll. Once per day, after seeing a d20 roll result (any roll, anyone's), the player may reroll it and take the higher result.</p>",
-    "boon": "Luck reroll (daily)"
+    "body": "<p>Chance appears as a coin that is always mid-flip. Never heads, never tails. The party earns her boon by taking a meaningful risk with no safety net — no preparation, no guarantee, no fallback plan.</p><p><strong>Boon:</strong> Luck reroll. After seeing a d20 roll result (any roll, anyone's), the player may reroll it and take the higher result. Turn in your chip to activate.</p>",
+    "boon": "Luck reroll (one-time — turn in chip)"
   },
   {
     "id": "grace",
     "name": "Grace",
     "tags": ["Quasigod", "Campaign-Wide", "TBD"],
     "subtitle": "Quasigod of Protection",
-    "body": "<p>Grace has not yet appeared. Her domain is the moment between attack and harm — the half-second where catastrophe becomes near-miss.</p><p><strong>Boon:</strong> Once per day, as a reaction when hit by an attack, gain +5 AC against that hit. If the bonus causes the attack to miss, the boon recharges at next dawn.</p>",
-    "boon": "+5 AC reaction (daily)"
+    "body": "<p>Grace has not yet appeared. Her domain is the moment between attack and harm — the half-second where catastrophe becomes near-miss.</p><p><strong>Boon:</strong> As a reaction when hit by an attack, gain +5 AC against that hit. Turn in your chip to activate. One use, gone when spent.</p>",
+    "boon": "+5 AC reaction (one-time — turn in chip)"
   },
   {
     "id": "grit",
     "name": "Grit",
     "tags": ["Quasigod", "Campaign-Wide", "TBD"],
     "subtitle": "Quasigod of Endurance",
-    "body": "<p>Grit has not yet appeared. His domain is the moment a body refuses to fail — the saving throw made on nothing but stubbornness.</p><p><strong>Boon:</strong> Once per day, before rolling a saving throw, add +10 to the result.</p>",
-    "boon": "+10 saving throw (daily)"
+    "body": "<p>Grit has not yet appeared. His domain is the moment a body refuses to fail — the saving throw made on nothing but stubbornness.</p><p><strong>Boon:</strong> Before rolling a saving throw, add +10 to the result. Turn in your chip to activate. One use, gone when spent.</p>",
+    "boon": "+10 saving throw (one-time — turn in chip)"
   },
   {
     "id": "fury",
     "name": "Fury",
     "tags": ["Quasigod", "Campaign-Wide", "TBD"],
     "subtitle": "Quasigod of Violence",
-    "body": "<p>Fury has not yet appeared. His domain is the violence that exceeds intention — hits that land harder than the arm behind them.</p><p><strong>Boon:</strong> Once per day, after landing an attack, deal an additional 1d10 force damage as a secondary strike. No action required.</p>",
-    "boon": "1d10 force second strike (daily)"
+    "body": "<p>Fury has not yet appeared. His domain is the violence that exceeds intention — hits that land harder than the arm behind them.</p><p><strong>Boon:</strong> After landing an attack, deal an additional 1d10 force damage as a secondary strike. No action required. Turn in your chip to activate. One use, gone when spent.</p>",
+    "boon": "1d10 force second strike (one-time — turn in chip)"
   },
   {
     "id": "veshka",

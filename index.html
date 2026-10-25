@@ -331,6 +331,114 @@ body {
 }
 .tag-plain:hover { opacity: 1; }
 
+/* NPC STAT GRID — Claude artifact layout */
+.npc-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.6rem 1.2rem;
+  margin: 0.75rem 0;
+  max-width: 60ch;
+}
+.npc-meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.npc-meta-label {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+.npc-meta-value {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+/* DM NOTE callout */
+.dm-note {
+  background: var(--gold-dim);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+  padding: 0.6rem 0.8rem;
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+.dm-note-label {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+
+/* LOOT — Claude artifact layout */
+.loot-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0.4rem 2rem;
+  margin: 0.75rem 0;
+  max-width: 60ch;
+}
+.loot-meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.loot-meta-label {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+.loot-meta-value {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+.loot-location-block {
+  margin: 0.75rem 0;
+  max-width: 60ch;
+}
+.loot-location-label {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin-bottom: 0.2rem;
+}
+.loot-location-value {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--fg);
+}
+.mechanic-section {
+  margin: 0.9rem 0 0.4rem;
+  max-width: 60ch;
+}
+.mechanic-section-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+
 /* STAT ROWS */
 .stat-row {
   display: flex;
@@ -404,6 +512,16 @@ body {
   min-width: 1.4rem;
   padding-top: 0.15rem;
 }
+.step-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-mid);
+  margin-bottom: 0.2rem;
+}
+.step-content { display: flex; flex-direction: column; gap: 0.15rem; }
 
 /* TENSION METER */
 .tension-bar {
@@ -538,11 +656,10 @@ body {
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 let DATA = { npcs: [], factions: [], locations: [], quests: [], loot: [] };
-let CODEX = { overviews: [], worldLore: [], gmToolbox: [] };
+// Change 7: four groups including planes
+let CODEX = { overviews: [], worldLore: [], planes: [], gmToolbox: [] };
 
 // Normalize JSON data to the shape the rendering functions expect.
-// JSON files use: subtitle, stats[].value, no traits object, callout typed strings.
-// Rendering functions expect: sub, stats[].val, traits object, same callout shape.
 function normalizeItem(item, tab) {
   const n = Object.assign({}, item);
 
@@ -597,7 +714,13 @@ async function loadData() {
     DATA.locations = locations.map(i => normalizeItem(i, 'locations'));
     DATA.quests = quests.map(i => normalizeItem(i, 'quests'));
     DATA.loot = loot.map(i => normalizeItem(i, 'loot'));
-    CODEX = codex;
+    // Change 7: build CODEX with planes group
+    // worldLore items marked _planes: true go into planes group; rest stay in worldLore
+    CODEX.overviews = codex.overviews || [];
+    const wl = codex.worldLore || [];
+    CODEX.planes = wl.filter(i => i._planes === true);
+    CODEX.worldLore = wl.filter(i => !i._planes);
+    CODEX.gmToolbox = codex.gmToolbox || [];
     renderList('');
   } catch (err) {
     document.getElementById('list-items').innerHTML =
@@ -654,9 +777,11 @@ function makeListEl(item) {
   return el;
 }
 
+// Change 1: sectionState defaults to open (true) for all sections
 const sectionState = {};
 
 function makeSectionHeader(label, sectionKey, items, container) {
+  // Change 1: default open — sectionState[key] is true unless explicitly set false
   const open = sectionState[sectionKey] !== false;
   const header = document.createElement('div');
   header.className = 'list-section-header';
@@ -677,21 +802,6 @@ function makeSectionHeader(label, sectionKey, items, container) {
   container.appendChild(content);
 }
 
-function getCodexList() {
-  const result = [];
-  const groups = [
-    { key: 'overviews', label: 'Overview' },
-    { key: 'worldLore', label: 'World Lore' },
-    { key: 'gmToolbox', label: 'GM Toolbox' },
-  ];
-  groups.forEach(g => {
-    (CODEX[g.key] || []).forEach(item => {
-      result.push({ id: item.id || item.title, name: item.title, sub: g.label, _codex: true, _codexGroup: g.key });
-    });
-  });
-  return result;
-}
-
 function renderList(q) {
   const container = document.getElementById('list-items');
   if (!container) return;
@@ -702,19 +812,22 @@ function renderList(q) {
   function matches(item) {
     if (!lower) return true;
     return (item.name || '').toLowerCase().includes(lower) ||
+           (item.title || '').toLowerCase().includes(lower) ||
            (item.sub || '').toLowerCase().includes(lower) ||
            (item.subtitle || '').toLowerCase().includes(lower);
   }
 
+  // Change 7: Codex — four groups in order: Overviews, World Lore, The Planes, GM Toolbox
   if (currentTab === 'codex') {
     const groups = [
-      { key: 'overviews', label: 'Overview' },
+      { key: 'overviews', label: 'Overviews' },
       { key: 'worldLore', label: 'World Lore' },
+      { key: 'planes',    label: 'The Planes' },
       { key: 'gmToolbox', label: 'GM Toolbox' },
     ];
     groups.forEach(g => {
       const items = (CODEX[g.key] || [])
-        .map(item => ({ id: item.id || item.title, name: item.title, sub: item.group || item.eyebrow || '' }))
+        .map(item => ({ id: item.id || item.title, name: item.title, sub: item.eyebrow || '' }))
         .filter(matches);
       if (items.length) makeSectionHeader(g.label, 'codex-' + g.key, items, container);
     });
@@ -723,73 +836,221 @@ function renderList(q) {
 
   const items = (DATA[currentTab] || []).filter(matches);
 
+  // Change 4: Locations — two-level grouping: Region > Ward
   if (currentTab === 'locations') {
-    // Group by Ward tag
-    const byWard = {};
-    const wardOrder = [];
-    items.forEach(item => {
-      const wardTag = (item.tags || []).find(t => t.includes('Ward') || t === 'Lady\'s Ward') || 'Other';
-      if (!byWard[wardTag]) { byWard[wardTag] = []; wardOrder.push(wardTag); }
-      byWard[wardTag].push(item);
+    // Region map: Sigil is the only region currently; all wards fall under it
+    const sigil = items.filter(i => {
+      const tags = i.tags || [];
+      return tags.some(t => t.includes('Ward') || t === 'Sigil');
     });
-    wardOrder.forEach(ward => makeSectionHeader(ward, 'loc-' + ward, byWard[ward], container));
+    const other = items.filter(i => {
+      const tags = i.tags || [];
+      return !tags.some(t => t.includes('Ward') || t === 'Sigil');
+    });
+
+    const renderRegion = (regionLabel, regionItems, regionKey) => {
+      if (!regionItems.length) return;
+      // Sub-group by ward
+      const byWard = {};
+      const wardOrder = [];
+      regionItems.forEach(item => {
+        const wardTag = (item.tags || []).find(t => t.includes('Ward') || t === 'Lady\'s Ward') || 'Sigil';
+        if (!byWard[wardTag]) { byWard[wardTag] = []; wardOrder.push(wardTag); }
+        byWard[wardTag].push(item);
+      });
+      // If only one ward (or no sub-grouping needed), flat under region
+      if (wardOrder.length === 1) {
+        makeSectionHeader(regionLabel, regionKey, regionItems, container);
+      } else {
+        // Create a top-level section header that contains nested ward headers
+        const open = sectionState[regionKey] !== false;
+        const header = document.createElement('div');
+        header.className = 'list-section-header';
+        header.innerHTML = `<span>${regionLabel}</span><span>${open ? '▾' : '▸'}</span>`;
+        const regionContent = document.createElement('div');
+        regionContent.className = 'list-section-content' + (open ? '' : ' hidden');
+        header.onclick = () => {
+          const hidden = regionContent.classList.toggle('hidden');
+          header.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+          sectionState[regionKey] = !hidden;
+        };
+        container.appendChild(header);
+        container.appendChild(regionContent);
+        wardOrder.forEach(ward => makeSectionHeader(ward, regionKey + '-' + ward, byWard[ward], regionContent));
+      }
+    };
+
+    if (sigil.length) renderRegion('Sigil', sigil, 'loc-sigil');
+    if (other.length) renderRegion('Other', other, 'loc-other');
     return;
   }
 
+  // Change 3: Quests — ordered arc groups (Arc 1, Arc 2… then SIGIS/New Haven)
   if (currentTab === 'quests') {
-    // Group by arc tag
+    const arcOrder = ['Arc 1', 'Arc 2', 'Arc 3', 'Arc 4', 'Arc 5', 'Arc 6'];
     const byArc = {};
-    const arcOrder = [];
+    arcOrder.forEach(a => { byArc[a] = []; });
+    const sigis = [];
+    const newHaven = [];
+    const other = [];
+
     items.forEach(item => {
-      const arcTag = (item.tags || []).find(t => t.startsWith('Arc')) || item.arc || 'Arc 1';
-      if (!byArc[arcTag]) { byArc[arcTag] = []; arcOrder.push(arcTag); }
-      byArc[arcTag].push(item);
+      const tags = item.tags || [];
+      if (tags.some(t => t === 'SIGIS' || t.toLowerCase().includes('sigis'))) {
+        sigis.push(item);
+      } else if (tags.some(t => t.toLowerCase().includes('new haven') || t === 'New Haven')) {
+        newHaven.push(item);
+      } else {
+        const arcTag = tags.find(t => arcOrder.includes(t)) || item.arc || 'Arc 1';
+        if (!byArc[arcTag]) byArc[arcTag] = [];
+        byArc[arcTag].push(item);
+      }
     });
-    // Also separate campaign-wide
-    const campaign = items.filter(i => (i.tags || []).includes('Campaign-Wide'));
-    const nonCampaign = items.filter(i => !(i.tags || []).includes('Campaign-Wide'));
-    const byArc2 = {};
-    const arcOrder2 = [];
-    nonCampaign.forEach(item => {
-      const arcTag = (item.tags || []).find(t => t.startsWith('Arc')) || item.arc || 'Arc 1';
-      if (!byArc2[arcTag]) { byArc2[arcTag] = []; arcOrder2.push(arcTag); }
-      byArc2[arcTag].push(item);
+
+    arcOrder.forEach(arc => {
+      if (byArc[arc] && byArc[arc].length) makeSectionHeader(arc, 'q-' + arc, byArc[arc], container);
     });
-    if (campaign.length) makeSectionHeader('Campaign', 'q-campaign', campaign, container);
-    arcOrder2.forEach(arc => makeSectionHeader(arc, 'q-' + arc, byArc2[arc], container));
+    if (sigis.length) makeSectionHeader('SIGIS', 'q-sigis', sigis, container);
+    if (newHaven.length) makeSectionHeader('New Haven', 'q-newhaven', newHaven, container);
+    if (other.length) makeSectionHeader('Other', 'q-other', other, container);
     return;
   }
 
+  // Change 6: NPCs — two-level grouping: Campaign Wide > Quasigods; Sigil > subgroups; etc.
   if (currentTab === 'npcs') {
-    // Separate quasigods (campaign) from regular npcs
-    const gods = items.filter(i => (i.tags || []).includes('Quasigod') || i.campaign);
-    const regular = items.filter(i => !(i.tags || []).includes('Quasigod') && !i.campaign);
-    if (gods.length) makeSectionHeader('Quasigods', 'npc-gods', gods, container);
-    if (regular.length) makeSectionHeader('NPCs', 'npc-regular', regular, container);
+    // Top-level: Campaign Wide (Quasigods), then Sigil sub-groups by ward/faction
+    const quasigods = items.filter(i => (i.tags || []).includes('Quasigod') || i.campaign);
+    const sigilNpcs = items.filter(i => !(i.tags || []).includes('Quasigod') && !i.campaign);
+
+    if (quasigods.length) {
+      // Campaign Wide > Quasigods
+      const cwOpen = sectionState['npc-campaign'] !== false;
+      const cwHeader = document.createElement('div');
+      cwHeader.className = 'list-section-header';
+      cwHeader.innerHTML = `<span>Campaign Wide</span><span>${cwOpen ? '▾' : '▸'}</span>`;
+      const cwContent = document.createElement('div');
+      cwContent.className = 'list-section-content' + (cwOpen ? '' : ' hidden');
+      cwHeader.onclick = () => {
+        const hidden = cwContent.classList.toggle('hidden');
+        cwHeader.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+        sectionState['npc-campaign'] = !hidden;
+      };
+      container.appendChild(cwHeader);
+      container.appendChild(cwContent);
+      makeSectionHeader('Quasigods', 'npc-gods', quasigods, cwContent);
+    }
+
+    if (sigilNpcs.length) {
+      // Sigil > sub-groups by ward/affiliation tag
+      const sigilOpen = sectionState['npc-sigil'] !== false;
+      const sigilHeader = document.createElement('div');
+      sigilHeader.className = 'list-section-header';
+      sigilHeader.innerHTML = `<span>Sigil</span><span>${sigilOpen ? '▾' : '▸'}</span>`;
+      const sigilContent = document.createElement('div');
+      sigilContent.className = 'list-section-content' + (sigilOpen ? '' : ' hidden');
+      sigilHeader.onclick = () => {
+        const hidden = sigilContent.classList.toggle('hidden');
+        sigilHeader.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+        sectionState['npc-sigil'] = !hidden;
+      };
+      container.appendChild(sigilHeader);
+      container.appendChild(sigilContent);
+
+      // Sub-group Sigil NPCs by ward tag
+      const byGroup = {};
+      const groupOrder = [];
+      sigilNpcs.forEach(item => {
+        const wardTag = (item.tags || []).find(t => t.includes('Ward')) ||
+                        (item.tags || []).find(t => t === 'Campaign Antagonist') && 'Antagonists' ||
+                        'Other';
+        if (!byGroup[wardTag]) { byGroup[wardTag] = []; groupOrder.push(wardTag); }
+        byGroup[wardTag].push(item);
+      });
+      groupOrder.forEach(g => makeSectionHeader(g, 'npc-sigil-' + g, byGroup[g], sigilContent));
+    }
     return;
   }
 
+  // Change 5: Factions — two-level: Sigil region > category
   if (currentTab === 'factions') {
-    // Separate by type tag
+    const sigilOpen = sectionState['fac-sigil'] !== false;
+    const sigilHeader = document.createElement('div');
+    sigilHeader.className = 'list-section-header';
+    sigilHeader.innerHTML = `<span>Sigil</span><span>${sigilOpen ? '▾' : '▸'}</span>`;
+    const sigilContent = document.createElement('div');
+    sigilContent.className = 'list-section-content' + (sigilOpen ? '' : ' hidden');
+    sigilHeader.onclick = () => {
+      const hidden = sigilContent.classList.toggle('hidden');
+      sigilHeader.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+      sectionState['fac-sigil'] = !hidden;
+    };
+    container.appendChild(sigilHeader);
+    container.appendChild(sigilContent);
+
     const great = items.filter(i => (i.tags || []).includes('Great Faction'));
-    const criminal = items.filter(i => (i.tags || []).includes('Criminal'));
-    const other = items.filter(i => !(i.tags || []).includes('Great Faction') && !(i.tags || []).includes('Criminal'));
-    if (great.length) makeSectionHeader('Great Factions', 'fac-great', great, container);
-    if (criminal.length) makeSectionHeader('Criminal', 'fac-criminal', criminal, container);
-    if (other.length) makeSectionHeader('Other', 'fac-other', other, container);
+    // Change 5: Rusted Bell is Criminal
+    const criminal = items.filter(i => (i.tags || []).includes('Criminal') || (i.tags || []).includes('Gang'));
+    const other = items.filter(i =>
+      !(i.tags || []).includes('Great Faction') &&
+      !(i.tags || []).includes('Criminal') &&
+      !(i.tags || []).includes('Gang')
+    );
+    if (great.length) makeSectionHeader('Great Factions', 'fac-great', great, sigilContent);
+    if (criminal.length) makeSectionHeader('Criminal', 'fac-criminal', criminal, sigilContent);
+    if (other.length) makeSectionHeader('Other', 'fac-other', other, sigilContent);
     return;
   }
 
+  // Change 2: Loot — two-level grouping: Region > Location
   if (currentTab === 'loot') {
-    // Group by first tag (rough category)
-    const byTag = {};
-    const tagOrder = [];
+    // Derive region and location from tags
+    const byRegion = {};
+    const regionOrder = [];
+
     items.forEach(item => {
-      const firstTag = (item.tags || ['Other'])[0];
-      if (!byTag[firstTag]) { byTag[firstTag] = []; tagOrder.push(firstTag); }
-      byTag[firstTag].push(item);
+      const tags = item.tags || [];
+      // Location tag is any tag that contains "House", "Basement", "Shop", or a place name
+      const locationTag = tags.find(t =>
+        t.includes('House') || t.includes('Basement') || t.includes('Shop') ||
+        t.includes('Ward') || t.includes('Crossing')
+      ) || tags.find(t => !['Book','Weapon','Shield','Magical','Non-Magical','Wondrous Item',
+        'Rare','Ammunition','Ioun Stone','Campaign MacGuffin','+1'].includes(t)) || 'Unknown';
+
+      // Region: currently everything is Sigil/Hive Arc; derive from arc tags or default
+      const arcTag = tags.find(t => t.includes('Arc') || t.includes('Hive'));
+      const region = arcTag ? arcTag.replace(' Arc', '').replace('Horus House ', '') : 'Hive Arc';
+
+      if (!byRegion[region]) { byRegion[region] = { locations: {}, locationOrder: [] }; regionOrder.push(region); }
+      const reg = byRegion[region];
+      if (!reg.locations[locationTag]) { reg.locations[locationTag] = []; reg.locationOrder.push(locationTag); }
+      reg.locations[locationTag].push(item);
     });
-    tagOrder.forEach(tag => makeSectionHeader(tag, 'loot-' + tag, byTag[tag], container));
+
+    regionOrder.forEach(region => {
+      const reg = byRegion[region];
+      const allItems = reg.locationOrder.flatMap(l => reg.locations[l]);
+
+      if (reg.locationOrder.length <= 1) {
+        makeSectionHeader(region, 'loot-' + region, allItems, container);
+      } else {
+        const regionOpen = sectionState['loot-r-' + region] !== false;
+        const regionHeader = document.createElement('div');
+        regionHeader.className = 'list-section-header';
+        regionHeader.innerHTML = `<span>${region}</span><span>${regionOpen ? '▾' : '▸'}</span>`;
+        const regionContent = document.createElement('div');
+        regionContent.className = 'list-section-content' + (regionOpen ? '' : ' hidden');
+        regionHeader.onclick = () => {
+          const hidden = regionContent.classList.toggle('hidden');
+          regionHeader.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+          sectionState['loot-r-' + region] = !hidden;
+        };
+        container.appendChild(regionHeader);
+        container.appendChild(regionContent);
+        reg.locationOrder.forEach(loc =>
+          makeSectionHeader(loc, 'loot-' + region + '-' + loc, reg.locations[loc], regionContent)
+        );
+      }
+    });
     return;
   }
 
@@ -801,9 +1062,7 @@ function renderList(q) {
 
 function selectItem(id) {
   currentId = id;
-  // Update active state in list
   document.querySelectorAll('.list-item').forEach(el => el.classList.remove('active'));
-  // Find and mark the clicked item
   document.querySelectorAll('.list-item').forEach(el => {
     if (el.onclick && el.onclick.toString().includes(`'${id}'`)) {
       el.classList.add('active');
@@ -812,7 +1071,13 @@ function selectItem(id) {
 
   let item;
   if (currentTab === 'codex') {
-    const allCodex = [...(CODEX.overviews || []), ...(CODEX.worldLore || []), ...(CODEX.gmToolbox || [])];
+    // Change 7: search all four groups
+    const allCodex = [
+      ...(CODEX.overviews || []),
+      ...(CODEX.worldLore || []),
+      ...(CODEX.planes || []),
+      ...(CODEX.gmToolbox || [])
+    ];
     item = allCodex.find(i => (i.id || i.title) === id);
     if (item) item = Object.assign({ _isCodex: true }, item);
   } else {
@@ -844,10 +1109,9 @@ function goBack() {
 function renderDetail(item) {
   const pane = document.getElementById('detail-pane');
 
-  // Codex items have a different schema: title, body, group, eyebrow, links, transition, stub
+  // Codex items
   if (item._isCodex) {
     const eyebrow = item.eyebrow || item.group || '';
-    const isTransition = item.transition === true;
     const isStub = item.stub === true;
     const links = renderCodexLinks(item.links);
     let html = `
@@ -857,8 +1121,8 @@ function renderDetail(item) {
       <hr class="detail-divider">
       <div class="detail-body${isStub ? '" style="font-style:italic;opacity:0.7' : ''}">${item.body || ''}</div>
     `;
-    if (isTransition) {
-      html += `<div class="callout yellow"><div class="callout-label">Arc Transition</div>This entry marks a shift between campaign arcs.</div>`;
+    if (item.body2) {
+      html += `<div class="detail-body" style="margin-top:1.2rem">${item.body2}</div>`;
     }
     if (links) {
       html += `<div class="codex-links">${links}</div>`;
@@ -867,9 +1131,197 @@ function renderDetail(item) {
     return;
   }
 
-  // Build eyebrow from tags if not set
+  // Build eyebrow from tags
   const eyebrow = item.eyebrow || (item.tags || []).join('  ·  ');
 
+  // Change 8: NPC card — Claude artifact layout
+  if (currentTab === 'npcs') {
+    // Eyebrow label (NPC type from tags)
+    const eyebrowLabel = item.campaign
+      ? (item.tags || []).find(t => t === 'Quasigod') ? 'Quasigod' : 'NPC'
+      : 'NPC';
+
+    let html = `<button class="back-btn" onclick="goBack()">Back</button>`;
+    html += `<div class="detail-eyebrow">${eyebrowLabel}</div>`;
+    html += `<div class="detail-title">${item.name}</div>`;
+    if (item.role && item.role !== item.name) {
+      html += `<div class="detail-role">${item.role}</div>`;
+    }
+    html += `<hr class="detail-divider">`;
+
+    // Metadata stat grid
+    const metaCells = [];
+    // Derive race from tags (first tag that looks like a race)
+    const raceTag = (item.tags || []).find(t =>
+      ['Tiefling','Human','Elf','Dwarf','Gnome','Halfling','Half-Elf','Half-Orc'].includes(t)
+    );
+    if (raceTag) metaCells.push({ label: 'Race', value: raceTag });
+    if (item.faction) {
+      // Look up faction name from DATA
+      const fac = DATA.factions.find(f => f.id === item.faction);
+      metaCells.push({ label: 'Faction', value: fac ? fac.name : item.faction });
+    }
+    if (item.location) {
+      const loc = DATA.locations.find(l => l.id === item.location);
+      metaCells.push({ label: 'Location', value: loc ? loc.name : item.location });
+    }
+    // Add ward from tags
+    const wardTag = (item.tags || []).find(t => t.includes('Ward'));
+    if (wardTag && !item.location) metaCells.push({ label: 'Ward', value: wardTag });
+
+    if (metaCells.length) {
+      html += `<div class="npc-meta-grid">`;
+      metaCells.forEach(c => {
+        html += `<div class="npc-meta-cell"><div class="npc-meta-label">${c.label}</div><div class="npc-meta-value">${c.value}</div></div>`;
+      });
+      html += `</div>`;
+    }
+
+    html += `<hr class="detail-divider">`;
+
+    // Body
+    if (item.body) {
+      html += `<div class="detail-body">${item.body}</div>`;
+    }
+
+    // Change 10: Quasigod boon — one-time use with chip mechanic
+    if (item.boon) {
+      html += `<hr class="detail-divider">`;
+      html += `<div class="detail-section-label" style="color:var(--gold)">Boon</div>`;
+      html += `<div class="detail-body" style="margin-top:0.35rem">${item.boon}</div>`;
+      html += `<div class="dm-note" style="margin-top:0.6rem">`;
+      html += `<div class="dm-note-label">One-Time Use</div>`;
+      html += `Each player receives a 3D-printed chip when they earn this boon. The chip is turned in to activate the boon. Once used, it is gone.`;
+      html += `</div>`;
+    }
+
+    // DM Note callout (if callout exists, render as DM NOTE)
+    if (item.callout) {
+      const c = item.callout;
+      if (c.type === 'red') {
+        // Use DM NOTE style for red callouts on NPCs
+        html += `<div class="dm-note" style="border-left-color:#c0392b;background:${
+          window.matchMedia('(prefers-color-scheme: dark)').matches ? '#2a0808' : '#fdf0f0'
+        }">`;
+        html += `<div class="dm-note-label" style="color:#c0392b">${c.label || 'DM NOTE'}</div>`;
+        html += c.text || '';
+        html += `</div>`;
+      } else {
+        html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
+      }
+    }
+
+    // Related tags
+    const relatedTags = (item.tags || []).filter(t =>
+      !['Tiefling','Human','Elf','Dwarf','Gnome','Halfling','Half-Elf','Half-Orc',
+        'Campaign-Wide','TBD','Quasigod','Informant','Campaign Antagonist'].includes(t)
+    );
+    if (relatedTags.length) {
+      html += `<hr class="detail-divider">`;
+      html += `<div class="detail-section-label">Related</div>`;
+      html += `<div class="tags" style="margin-top:0.35rem">`;
+      relatedTags.forEach(t => {
+        html += `<span class="tag tag-plain">${t}</span>`;
+      });
+      html += `</div>`;
+    }
+
+    pane.innerHTML = html;
+    return;
+  }
+
+  // Change 9: Loot card — Claude artifact layout
+  if (currentTab === 'loot') {
+    const tags = item.tags || [];
+    // Eyebrow: "LOOT — ARC NAME" from arc tag
+    const arcTag = tags.find(t => t.includes('Arc') || t.includes('Hive')) || '';
+    const eyebrowText = arcTag ? `LOOT — ${arcTag.toUpperCase()}` : 'LOOT';
+
+    let html = `<button class="back-btn" onclick="goBack()">Back</button>`;
+    html += `<div class="detail-eyebrow">${eyebrowText}</div>`;
+    html += `<div class="detail-title">${item.name}</div>`;
+    if (item.role && item.role !== item.name) {
+      html += `<div class="detail-role">${item.role}</div>`;
+    }
+    html += `<hr class="detail-divider">`;
+
+    // Metadata grid: Type | Plot Integral | Glow
+    const typeTag = tags.find(t => ['Book','Weapon','Wondrous Item','Ammunition','Ioun Stone'].includes(t)) || 'Item';
+    const rarityTag = tags.find(t => ['Common','Uncommon','Rare','Very Rare','Legendary','Non-Magical','Magical'].includes(t)) || '';
+    const plotIntegral = tags.includes('Campaign MacGuffin') ? 'Yes' : 'No';
+    // Glow: magical items glow, ioun stones glow
+    const glows = tags.includes('Magical') || tags.includes('Ioun Stone') || tags.includes('+1') ? 'Yes' : 'No';
+
+    html += `<div class="loot-meta-grid">`;
+    html += `<div class="loot-meta-cell"><div class="loot-meta-label">Type</div><div class="loot-meta-value">${typeTag}${rarityTag ? ' (' + rarityTag + ')' : ''}</div></div>`;
+    html += `<div class="loot-meta-cell"><div class="loot-meta-label">Plot Integral</div><div class="loot-meta-value">${plotIntegral}</div></div>`;
+    html += `<div class="loot-meta-cell"><div class="loot-meta-label">Glow</div><div class="loot-meta-value">${glows}</div></div>`;
+    html += `</div>`;
+
+    // Location: from tags
+    const locationTag = tags.find(t =>
+      t.includes('House') || t.includes('Basement') || t.includes('Shop') ||
+      t.includes('Ward') || t.includes('Crossing')
+    );
+    if (locationTag) {
+      html += `<div class="loot-location-block">`;
+      html += `<div class="loot-location-label">Location</div>`;
+      html += `<div class="loot-location-value">${locationTag}</div>`;
+      html += `</div>`;
+    }
+
+    html += `<hr class="detail-divider">`;
+
+    // Body
+    if (item.body) {
+      html += `<div class="detail-body">${item.body}</div>`;
+    }
+
+    // Mechanics — render as named sections with gold headings
+    if (item.mechanics) {
+      html += `<hr class="detail-divider">`;
+      // Parse mechanic sections from the HTML string
+      // Mechanics are bold-labeled paragraphs: <strong>Label:</strong> text
+      // Render each <p> with a <strong> opener as its own named mechanic section
+      const mecDiv = document.createElement('div');
+      mecDiv.innerHTML = item.mechanics;
+      const children = Array.from(mecDiv.children);
+
+      let hasSections = false;
+      children.forEach(child => {
+        const strong = child.querySelector('strong');
+        if (strong && child.tagName === 'P') {
+          const label = strong.textContent.replace(/:$/, '').trim();
+          const rest = child.innerHTML.replace(strong.outerHTML, '').replace(/^:\s*/, '').trim();
+          if (label) {
+            hasSections = true;
+            html += `<div class="mechanic-section">`;
+            html += `<div class="mechanic-section-label">${label}</div>`;
+            html += `<div class="detail-body">${rest}</div>`;
+            html += `</div>`;
+          }
+        } else {
+          html += `<div class="detail-body">${child.outerHTML}</div>`;
+        }
+      });
+
+      // If no structured sections found, render as-is
+      if (!hasSections) {
+        html += `<div class="detail-body">${item.mechanics}</div>`;
+      }
+    }
+
+    // Callout
+    if (item.callout) {
+      const c = item.callout;
+      html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
+    }
+
+    pane.innerHTML = html;
+    return;
+  }
+
+  // All other tabs (factions, locations, quests)
   let html = `
     <button class="back-btn" onclick="goBack()">Back</button>
     ${eyebrow ? `<div class="detail-eyebrow">${eyebrow}</div>` : ''}
@@ -878,7 +1330,7 @@ function renderDetail(item) {
     <hr class="detail-divider">
   `;
 
-  // Tags row (plain display tags, not the eyebrow ones)
+  // Tags row
   if (item.tags && item.tags.length) {
     html += `<div class="tags" style="margin-bottom:0.75rem">`;
     item.tags.forEach(t => {
@@ -923,22 +1375,30 @@ function renderDetail(item) {
     html += `<div class="detail-body">${item.body}</div>`;
   }
 
-  // Boon (quasigods)
-  if (item.boon) {
-    html += `<hr class="detail-divider"><div class="detail-section-label">Boon</div><div class="detail-body" style="margin-top:0.35rem">${item.boon}</div>`;
+  if (item.body2) {
+    html += `<div class="detail-body" style="margin-top:1.2rem">${item.body2}</div>`;
   }
 
-  // Mechanics (loot)
-  if (item.mechanics) {
-    html += `<hr class="detail-divider"><div class="detail-section-label">Mechanics</div><div class="detail-body" style="margin-top:0.35rem">${item.mechanics}</div>`;
-  }
-
-  // Steps (quests)
+  // Change 11: Quest steps — fix [object Object] bug by rendering step.label + step.text
   if (item.steps && item.steps.length) {
     html += `<hr class="detail-divider"><div class="detail-section-label">Steps</div>
     <ul class="quest-steps">`;
     item.steps.forEach((s, i) => {
-      html += `<li><span class="step-num">${i+1}.</span><span>${s}</span></li>`;
+      if (typeof s === 'string') {
+        // Plain string steps
+        html += `<li><span class="step-num">${i+1}.</span><span>${s}</span></li>`;
+      } else {
+        // Object steps with label + text
+        const label = s.label || s.name || '';
+        const text = s.text || s.description || s.body || '';
+        html += `<li>
+          <span class="step-num">${i+1}.</span>
+          <span class="step-content">
+            ${label ? `<span class="step-label">${label}</span>` : ''}
+            <span>${text}</span>
+          </span>
+        </li>`;
+      }
     });
     html += `</ul>`;
   }
