@@ -1,0 +1,73 @@
+[
+  {
+    "id": "cask",
+    "name": "The Cask Family",
+    "tags": ["Criminal", "Hive Ward", "Debt Holder"],
+    "leader": "<strong>Mother Veshka Cask</strong> — Tiefling matriarch. Inherited leadership after her husband's death. Formal, patient, and practical.",
+    "ideology": "Debt is a relationship. The Cask Family loans money, labor, and protection to the Hive Ward's residents and collects repayment on a schedule. They do not forgive debts. They do renegotiate them, for a price. They view themselves as a stabilizing force: without them, the ward would have no credit structure at all.",
+    "history": "Three generations old. Started as a family lending operation, grew into a ward-wide protection racket, and has since formalized into something closer to a bank with enforcers. The Cask name comes from the sealed casks Veshka's grandmother used to store collateral. The grandmother is still alive. She does not take meetings.",
+    "relevance": "The party inherits Horus's debt to the Cask Family: 2,500 gp, split with the Ninefold. Veshka will offer jobs to work it off. The jobs will generate Tension. The arc ends when the debt is paid and the Gray Ledger is exposed."
+  },
+  {
+    "id": "ninefold",
+    "name": "The Ninefold",
+    "tags": ["Criminal", "Hive Ward", "Debt Holder"],
+    "leader": "<strong>Salt Orrin Tamb</strong> — Human. Took over after the previous leadership collapsed. Methodical, unsentimental, self-made.",
+    "ideology": "The Ninefold operates on the principle that power in the Hive is territorial. They control nine specific corridors and the commerce that moves through them: protection, transit fees, labor placement. They do not loan money. They sell access.",
+    "history": "The name comes from a founding compact between nine ward bosses who agreed to split a corridor network rather than fight over it. Seven of the nine original bosses are dead. Salt inherited the name and the network but had no part in the founding. He views the name as useful branding.",
+    "relevance": "The party inherits Horus's debt here as well. Salt's jobs are more tactically complex than Veshka's and tend to involve the party in disputes Salt does not fully explain. He is using them to test what they can handle."
+  },
+  {
+    "id": "gray-ledger",
+    "name": "The Gray Ledger",
+    "tags": ["Criminal", "Hidden", "Arc 1 Reveal"],
+    "leader": "<strong>Grey Reed</strong> (concealed) — The Gray Ledger has no visible leadership. It presents as a money-lending shop run by a consortium. The consortium does not exist.",
+    "ideology": "The Gray Ledger profits from instability. It has been quietly funding both the Cask Family and the Ninefold — not enough to ensure either wins, enough to ensure neither loses. A permanent low-level conflict keeps both factions dependent on outside capital. The Gray Ledger is that capital.",
+    "history": "The shop has been in the Hive Ward for eleven years. It has changed names twice. The counting room records would tell the whole story to anyone who knew what they were looking at. Nobody has known what they were looking at. Until now.",
+    "relevance": "The Gray Ledger is the arc's hidden third faction. Exposing it is the resolution of Arc 1. The three-clue chain (see Arc Resolution quest) leads here. Grey Reed clears out before the party arrives.",
+    "callout": { "type": "yellow", "label": "GM NOTE", "text": "The Gray Ledger should feel like a financial institution until the reveal. Wex is genuinely innocent. Drusine is complicit but not criminal. The villany is in the structure, not the staff." }
+  },
+  {
+    "id": "harmonium",
+    "name": "The Harmonium",
+    "tags": ["Great Faction", "Law Enforcement", "Sigil"],
+    "body": "<p>The Harmonium is Sigil's primary law enforcement faction. They believe in order, conformity, and the suppression of disruptive behavior — including, in their view, most things the party does. They are not villains. They are institutions.</p><p>In the Hive Ward, the Harmonium is understaffed and underfunded. They respond to major incidents and ignore minor ones. The party can avoid their attention by keeping the Tension Track below T4. At T5 and above, the Harmonium begins treating the ward as a problem that needs solving, which means the party becomes part of the problem.</p><p>At T6, the Harmonium arrives with numbers. This is part of the cascade that ends the arc.</p>"
+  },
+  {
+    "id": "dustmen",
+    "name": "The Dustmen",
+    "tags": ["Great Faction", "The Mortuary", "Sigil"],
+    "body": "<p>The Dustmen run the Mortuary: Sigil's only authorized body disposal facility. All corpses in Sigil go through the Mortuary, by law and by practical necessity. The Dustmen believe that life is a preparatory state — the true existence comes after, in the Negative Energy Plane, when all the noise of living has finally stopped.</p><p>They are grim but not malicious. They perform a service the city cannot function without. The party will meet them when they need to deal with the Rusted Bell corpses from Session One.</p><p>The Dustmen are also the party's first introduction to what factions actually do in Sigil: provide services, enforce beliefs, and accumulate influence. They are a model for how all the Great Factions work.</p>",
+    "callout": { "type": "green", "label": "SESSION NOTE", "text": "The Mortuary introduction should feel bureaucratic and slightly unsettling, not hostile. The Dustmen are not enemies. They are paperwork." }
+  },
+  {
+    "id": "rusted-bell",
+    "name": "The Rusted Bell",
+    "tags": ["Gang", "Hive Ward", "Recurring Threat"],
+    "leader": "<strong>Tannit Brask</strong> — Current first. Will be mazed at T6. A replacement takes over and sends a letter. The Bell continues.",
+    "ideology": "The Rusted Bell is a street gang that operates on the principle that outsiders in the Hive Ward are targets. They do not have a sophisticated ideology. They have territory, violence, and the conviction that newcomers need to learn their place.",
+    "history": "The Bell has been active in the Hive for at least a decade. Its membership turns over constantly — members move up, die, or get mazed. The name persists because the original bell (a rusted handbell used to call meetings) still exists and is still used. Nobody knows who first hung it.",
+    "relevance": "First encounter faction. The party meets them robbing Horus House in Session One. They return as a recurring friction source throughout Arc 1. At T6, Tannit Brask is mazed by the Lady of Pain and a new first takes over. The revenge thread carries into Arc 2.",
+    "callout": { "type": "red", "label": "ENCOUNTER", "text": "Session One combat: bruiser, skirmisher, instigator. They found nothing worth stealing. They are trashing the place. Pure combat, no negotiation hooks." }
+  },
+  {
+    "id": "wandering-flame",
+    "name": "The Wandering Flame",
+    "tags": ["Cult", "Hive Ward", "Minor Faction"],
+    "leader": "<strong>Speaker Orvain</strong> — Human preacher who believes the ioun stones are divine artifacts that will ignite a new age. He has been preaching this for eight years without evidence. He is very patient.",
+    "ideology": "The Wandering Flame believes that the ioun stones are fragments of a dead god's consciousness — that assembling them will reconstitute something divine. They are not dangerous in an organized way. They are dangerous in the way that true believers are: unpredictable, motivated, and indifferent to consequences.",
+    "history": "Small enough that the Cask Family and Ninefold ignore them. Old enough that they have a fixed meeting location in the Hive. Their theology predates anyone currently in the faction — they inherited it from a previous generation of believers who also never saw the stones assembled.",
+    "relevance": "Minor faction, Arc 1 color. They become relevant in Arc 2 when the party is researching the bag of withholding and the stones. Speaker Orvain has genuine (if incomplete) theological knowledge about ioun stone mythology.",
+    "callout": { "type": "yellow", "label": "GM NOTE", "text": "Do not make them obviously wrong about the stones. Their theology is partially accurate. This is more unsettling than having them be simply mistaken." }
+  },
+  {
+    "id": "cats-eyes",
+    "name": "The Cat's Eyes",
+    "tags": ["Information Broker", "Hive Ward", "Neutral"],
+    "leader": "<strong>Pellin</strong> — Tiefling. Runs the Cat's Eyes from a tea house. She does not take sides. She takes payment.",
+    "ideology": "The Cat's Eyes sell information: ward gossip, faction movements, the location of things people want to know the location of. They have a strict neutrality policy — they will sell to anyone and will not sell to the same buyer twice in a row without selling to someone else first. This keeps them alive.",
+    "history": "Founded by Pellin's mother, who was killed by a faction that decided they preferred a monopoly on the information Pellin's mother was selling. Pellin has maintained the neutrality policy more strictly than her mother did. She has also survived longer.",
+    "relevance": "Information resource throughout Arc 1. The Cat's Eyes can provide leads, background on faction members, and advance warning of tension escalation. They cannot be used to skip encounters — only to approach them better.",
+    "callout": { "type": "blue", "label": "RESOURCE", "text": "Pellin charges 10–50 gp per piece of information depending on sensitivity. She will not sell information that would get a buyer killed before they can pay her again." }
+  }
+]

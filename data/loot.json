@@ -1,0 +1,50 @@
+[
+  {
+    "id": "jaden-abora-book",
+    "name": "The Collected Poems of Jaden Abora",
+    "tags": ["Book", "Non-Magical", "Horus House Basement"],
+    "subtitle": "Non-magical book, found in Horus's basement crates",
+    "body": "<p>A slim, well-worn volume bound in gray cloth. No author note on the spine. The title page reads: <em>The Collected Poems of Jaden Abora — For Those Who Wander Between.</em></p><p>Five poems, handwritten in a clear script. The margins of two pages have small annotations in a different hand — Horus's, presumably.</p><hr style=\"border-color:var(--border);margin:1.2rem 0\"><p style=\"font-size:0.8rem;font-style:italic;color:var(--fg);opacity:0.7;margin-bottom:0.3rem\">I. THE HIVE AT THIRD BELL</p><p style=\"font-size:0.9rem;line-height:1.8\">The smoke here remembers<br>every fire it came from.<br>The stones have absorbed<br>so many arguments<br>they hum at certain frequencies.<br><br>I have learned to walk<br>through the parts of the city<br>that are mostly memory —<br>the places where something happened<br>and never finished happening.</p><hr style=\"border-color:var(--border);margin:1.2rem 0\"><p style=\"font-size:0.8rem;font-style:italic;color:var(--fg);opacity:0.7;margin-bottom:0.3rem\">II. PORTALS</p><p style=\"font-size:0.9rem;line-height:1.8\">Every door here<br>has a key that isn't a key.<br>A thought, a word, a way<br>of holding your hands.<br><br>I used to think<br>that was a metaphor<br>for how understanding works.<br><br>Now I think it is<br>exactly what it says.<br>The door opens<br>when you mean it.</p><hr style=\"border-color:var(--border);margin:1.2rem 0\"><p style=\"font-size:0.8rem;font-style:italic;color:var(--fg);opacity:0.7;margin-bottom:0.3rem\">III. THE DEAD</p><p style=\"font-size:0.9rem;line-height:1.8\">The Dustmen say<br>this is the waiting room.<br>I believe them<br>more than I used to.<br><br>The things I carry<br>feel lighter here.<br>I don't know if that's<br>the planes doing something to me<br>or me finally putting things down.</p><hr style=\"border-color:var(--border);margin:1.2rem 0\"><p style=\"font-size:0.8rem;font-style:italic;color:var(--fg);opacity:0.7;margin-bottom:0.3rem\">IV. DEBT</p><p style=\"font-size:0.9rem;line-height:1.8\">A man I trusted<br>kept meticulous records.<br>Every favor. Every coin.<br>He showed me the ledger once.<br>I was not in it<br>the way I thought I was.<br><br>I have been more careful<br>with my accounting<br>ever since.</p><hr style=\"border-color:var(--border);margin:1.2rem 0\"><p style=\"font-size:0.8rem;font-style:italic;color:var(--fg);opacity:0.7;margin-bottom:0.3rem\">V. ON LEAVING</p><p style=\"font-size:0.9rem;line-height:1.8\">Every portal goes somewhere.<br>That is the thing to hold onto<br>when the key is strange<br>and the door doesn't look like a door.<br><br>Somewhere is enough.<br>I have been to worse places<br>than somewhere.</p>"
+  },
+  {
+    "id": "otiks-frying-pan",
+    "name": "Otik's Frying Pan",
+    "tags": ["Weapon", "Shield", "Magical", "+1", "Horus House Basement"],
+    "subtitle": "Magical weapon, shield, and meal-prep tool",
+    "body": "<p>A cast-iron frying pan, well-seasoned, with a handle wrapped in worn leather. It looks like it has been used to cook many meals. It has also been used to hit many people. Both uses show.</p><p>The pan radiates faint conjuration magic. The enchantment was placed by a halfling cleric named Otik who could not afford a proper weapon. He made do.</p>",
+    "mechanics": "<p><strong>Weapon:</strong> Simple melee weapon, 1d6 bludgeoning (versatile 1d8). Counts as a +1 magical weapon. On a hit, the target must succeed on a DC 12 Constitution save or be dazed until the start of their next turn (can move or take an action, not both).</p><p><strong>Shield:</strong> Can be worn on the arm as a shield (+2 AC) while still being usable as a weapon. Using it as a shield does not require proficiency.</p><p><strong>Meal Prep:</strong> Once per short rest, the wielder can use the pan to conjure a simple hot meal: enough food for up to six people. The meal provides the nourishment of a full ration. It appears in the pan already cooked. It does not taste like anything in particular but it is filling.</p>"
+  },
+  {
+    "id": "pet-rock",
+    "name": "The Pet Rock",
+    "tags": ["Wondrous Item", "Rare", "Horus House Basement"],
+    "subtitle": "Wondrous item (rare), weekly diamond chance",
+    "body": "<p>A smooth gray river stone, palm-sized, with no distinguishing marks. It is warm. It has been warm since the party found it. It is always exactly body temperature, regardless of environment.</p><p>Horus's notes (marginal, on the inventory list in the basement) say only: <em>\"Don't lose the rock.\"</em></p>",
+    "mechanics": "<p><strong>Once per week:</strong> At dawn on Sunday (or equivalent), roll a d100. On a result of 98–00, the rock transforms into a flawless diamond worth 500 gp and a new, identical rock appears in the same location. The rock does not otherwise do anything. It does not speak. It does not move. It is warm.</p>"
+  },
+  {
+    "id": "elemental-bolt-pouch",
+    "name": "Elemental Bolt Pouch",
+    "tags": ["Ammunition", "Magical", "Horus House Basement"],
+    "subtitle": "6 elemental bolts, type determined on draw",
+    "body": "<p>A small leather pouch containing six crossbow bolts. Each bolt is tipped with a crystallized elemental fragment: some fire, some ice, some lightning, some force. They are not labeled. The pouch's enchantment randomizes which type you draw.</p>",
+    "mechanics": "<p><strong>On draw:</strong> Roll a d6 to determine the bolt's element:</p><table style=\"width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:0.5rem\"><thead><tr style=\"background:var(--surface2)\"><th style=\"padding:0.4rem 0.6rem;text-align:left;border:1px solid var(--border)\">Roll</th><th style=\"padding:0.4rem 0.6rem;text-align:left;border:1px solid var(--border)\">Element</th><th style=\"padding:0.4rem 0.6rem;text-align:left;border:1px solid var(--border)\">Effect</th></tr></thead><tbody><tr><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">1</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">Fire</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">+1d6 fire, target must save DC 13 or catch fire</td></tr><tr><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">2</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">Cold</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">+1d6 cold, target speed reduced by 10 ft until end of their next turn</td></tr><tr><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">3</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">Lightning</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">+1d6 lightning, arcs to nearest creature within 10 ft for 1d4</td></tr><tr><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">4</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">Acid</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">+1d6 acid, -1 to target's AC until cleaned (action)</td></tr><tr><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">5</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">Thunder</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">+1d6 thunder, target pushed 10 ft</td></tr><tr><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">6</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">Force</td><td style=\"padding:0.4rem 0.6rem;border:1px solid var(--border)\">+1d8 force, no save or secondary effect</td></tr></tbody></table><p style=\"margin-top:0.6rem;font-size:0.85rem\">The pouch has 6 bolts. They do not replenish.</p>"
+  },
+  {
+    "id": "ioun-1",
+    "name": "Ioun Stone (Stone 1)",
+    "tags": ["Ioun Stone", "Campaign MacGuffin", "Grey Reed — Currently Held"],
+    "subtitle": "Held by Grey Reed at campaign open",
+    "body": "<p>An ioun stone of unusual clarity — pale, nearly translucent, orbiting with a faint resonant hum. Grey Reed has possessed it for at least six years. He uses it for contact juggling. Whether this is habit, demonstration, or a method of studying it is unclear.</p><p>Its specific function has not been revealed to the party. Grey Reed knows what it does.</p>",
+    "mechanics": "<p><em>Mechanics redacted. Revealed during endgame.</em></p>",
+    "callout": { "type": "red", "label": "GM ONLY", "text": "Stone 1 is in Grey Reed's possession at campaign open. Do not confirm its location or function to the party until the endgame. The contact juggling is intentional misdirection — it makes the stone visible before the party understands what they're looking at." }
+  },
+  {
+    "id": "ioun-2",
+    "name": "Ioun Stone (Stone 2)",
+    "tags": ["Ioun Stone", "Campaign MacGuffin", "Inside Bag of Withholding"],
+    "subtitle": "Inside the bag of withholding; Wizard Shop at Cinderbark Crossing",
+    "body": "<p>The second stone is sealed inside the bag of withholding — a bag that will not open for anyone who did not create it. The bag is in Horus House's basement. The party has possession of the bag from Session One. They will not be able to open it until Arc 2.</p><p>The bag was originally commissioned by Horus from a Wizard Shop at Cinderbark Crossing. The shop has since closed. The wizard who made it is not findable through normal means. Arc 2's research component involves tracing the bag's provenance and finding a way to open it without destroying the contents.</p>",
+    "callout": { "type": "yellow", "label": "LOCATION", "text": "Bag of withholding is in Horus House basement, in a wooden crate under a canvas cover. The party has it from Session One. They cannot open it yet." }
+  }
+]

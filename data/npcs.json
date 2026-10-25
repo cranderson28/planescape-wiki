@@ -1,0 +1,93 @@
+[
+  {
+    "id": "choice",
+    "name": "Choice",
+    "tags": ["Quasigod", "Campaign-Wide"],
+    "subtitle": "Quasigod of Decisions",
+    "body": "<p>Choice manifests as a shimmer at crossroads — literal and figurative. The party earns her boon by making a consequential decision without foreknowledge of the outcome. She does not reward right choices. She rewards chosen ones.</p><p><strong>Boon:</strong> Portent die. Once per day, roll a d20 at the start of the session. Before any roll, the player may replace the result with the portent die's value (or force an enemy to use it). The portent die is then spent.</p>",
+    "boon": "Portent die (daily d20 swap)"
+  },
+  {
+    "id": "chance",
+    "name": "Chance",
+    "tags": ["Quasigod", "Campaign-Wide"],
+    "subtitle": "Quasigod of Fortune",
+    "body": "<p>Chance appears as a coin that is always mid-flip. Never heads, never tails. The party earns her boon by taking a meaningful risk with no safety net — no preparation, no guarantee, no fallback plan.</p><p><strong>Boon:</strong> Luck reroll. Once per day, after seeing a d20 roll result (any roll, anyone's), the player may reroll it and take the higher result.</p>",
+    "boon": "Luck reroll (daily)"
+  },
+  {
+    "id": "grace",
+    "name": "Grace",
+    "tags": ["Quasigod", "Campaign-Wide", "TBD"],
+    "subtitle": "Quasigod of Protection",
+    "body": "<p>Grace has not yet appeared. Her domain is the moment between attack and harm — the half-second where catastrophe becomes near-miss.</p><p><strong>Boon:</strong> Once per day, as a reaction when hit by an attack, gain +5 AC against that hit. If the bonus causes the attack to miss, the boon recharges at next dawn.</p>",
+    "boon": "+5 AC reaction (daily)"
+  },
+  {
+    "id": "grit",
+    "name": "Grit",
+    "tags": ["Quasigod", "Campaign-Wide", "TBD"],
+    "subtitle": "Quasigod of Endurance",
+    "body": "<p>Grit has not yet appeared. His domain is the moment a body refuses to fail — the saving throw made on nothing but stubbornness.</p><p><strong>Boon:</strong> Once per day, before rolling a saving throw, add +10 to the result.</p>",
+    "boon": "+10 saving throw (daily)"
+  },
+  {
+    "id": "fury",
+    "name": "Fury",
+    "tags": ["Quasigod", "Campaign-Wide", "TBD"],
+    "subtitle": "Quasigod of Violence",
+    "body": "<p>Fury has not yet appeared. His domain is the violence that exceeds intention — hits that land harder than the arm behind them.</p><p><strong>Boon:</strong> Once per day, after landing an attack, deal an additional 1d10 force damage as a secondary strike. No action required.</p>",
+    "boon": "1d10 force second strike (daily)"
+  },
+  {
+    "id": "veshka",
+    "name": "Mother Veshka Cask",
+    "tags": ["Tiefling", "Cask Family", "Hive Ward"],
+    "subtitle": "Head of the Cask Family",
+    "body": "<p>Veshka runs the Cask Family out of a counting house in the Hive Ward. She is old, formal, and ruthless in the way of someone who has survived long enough to stop needing to prove it. She does not threaten directly. She mentions consequences the way a carpenter mentions grain direction — as simple fact.</p><p>She inherited the family from her husband, who died of a dispute he handled poorly. She handled it better. Nobody disputes that anymore.</p><p>She views the party as an asset with a debt attached. She intends to collect. She also intends to use them as long as they are useful, because that is how she thinks about everyone.</p>",
+    "faction": "cask",
+    "location": "hive-ward"
+  },
+  {
+    "id": "salt",
+    "name": "Salt Orrin Tamb",
+    "tags": ["Human", "The Ninefold", "Hive Ward"],
+    "subtitle": "Leader of the Ninefold",
+    "body": "<p>Salt leads the Ninefold from a back room in the Hive. He is compact, self-possessed, and speaks slowly on purpose — the habit of someone who learned early that silence makes other people fill it with things they didn't mean to say.</p><p>He took over the Ninefold after the previous leadership ran aground on bad debt and worse decisions. He has been cleaning up ever since. He has no sentimental attachment to the old way of doing things. He has a very clear sense of what the new way is.</p><p>He views the party as temporary labor with potential. If they prove reliable, he will use them more. If they prove unreliable, he will stop using them. He is not interested in punishment for its own sake.</p>",
+    "faction": "ninefold",
+    "location": "hive-ward"
+  },
+  {
+    "id": "wex",
+    "name": "Wex",
+    "tags": ["Tiefling", "Gray Ledger"],
+    "subtitle": "Shop Front Clerk, Gray Ledger",
+    "body": "<p>Wex works the front counter at the Gray Ledger's money-lending shop. He takes payments, records transactions, and manages the queue of people waiting to see someone further in. He has worked there for three years and genuinely does not know who owns the place. He thinks it belongs to a consortium of merchants. He has never met anyone from the consortium.</p><p>He is not stupid. He has noticed that the books he keeps don't quite add up in the ways he'd expect. He has decided this is not his problem. He is correct that it is not his problem. He is incorrect about what makes it not his problem.</p>",
+    "faction": "gray-ledger"
+  },
+  {
+    "id": "drusine",
+    "name": "Drusine",
+    "tags": ["Gray Ledger"],
+    "subtitle": "Counting Room Keeper, Gray Ledger",
+    "body": "<p>Drusine runs the counting room one floor above Wex. She knows significantly more about the Gray Ledger than he does, because she has to. She handles the actual ledger entries — the ones that would be interesting to the right investigator.</p><p>When the party gets close enough that the Gray Ledger reveal becomes imminent, Drusine will not be there. She leaves before it happens, and she leaves cleanly. Where she goes is deliberately unresolved.</p>",
+    "faction": "gray-ledger"
+  },
+  {
+    "id": "rat",
+    "name": "Mott Venkel",
+    "tags": ["Cask Family", "Informant"],
+    "subtitle": "Cask Tally-Man, Indebted Informant",
+    "body": "<p>Mott works as a tally-man for the Cask Family: he tracks debt payments in the ward and reports discrepancies upward. He is indebted to someone above him and is looking for a way out that does not involve him being the one who gets found out.</p><p>He has been quietly passing information to whoever seems most likely to resolve his situation favorably. He does not know he has been identified as the information source. He will stay useful until he becomes a liability, at which point the party will need to decide what to do with him.</p><p><em>Leads to Clue 2 in the Gray Ledger reveal chain.</em></p>",
+    "faction": "cask",
+    "quest": "find-the-rat"
+  },
+  {
+    "id": "bbeg",
+    "name": "Grey Reed",
+    "tags": ["Human", "Campaign Antagonist"],
+    "subtitle": "Ioun Stone Collector",
+    "body": "<p>Grey Reed is a planewalker who has spent two decades tracking ioun stones. He is not a villain in his own self-conception — he is a collector, a researcher, and someone who makes very long-term plans. He also has an exact count of what each stone does and does not care how many people stand between him and completing his set.</p><p>He is introduced in Session One doing contact juggling with a glowing ioun stone outside Horus House. He does not threaten. He informs the party that he will be back after they've had time to look around. He is polite about it. He keeps his promises.</p><p>He is the architect behind the Gray Ledger and has been engineering the Hive War to keep the party too busy to investigate it properly. He is patient and he is right that he has more time than they do. For now.</p>",
+    "callout": { "type": "red", "label": "BBEG", "text": "Do not confirm his identity until the Arc 1 reveal. He is introduced as an unnamed man with an ioun stone." }
+  }
+]

@@ -1,0 +1,1061 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Under the Ring — Wiki</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #f5f2ec;
+  --surface: #ffffff;
+  --surface2: #edeae3;
+  --border: #d8d3c8;
+  --fg: #1c1914;
+  --fg-muted: #6b6460;
+  --fg-faint: #9e9890;
+  --accent: #8b3a0f;
+  --accent-dim: #f2e8e0;
+  --accent-mid: #b85c2a;
+  --gold: #8a6d20;
+  --gold-dim: #f5f0de;
+  --green: #3a6040;
+  --green-dim: #e4ede6;
+  --nav-bg: #1c1410;
+  --nav-fg: #c4b4a4;
+  --nav-active: #e8c87a;
+  --tag-quest: #7a3a8a;
+  --tag-quest-dim: #f0e6f5;
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17100d;
+    --surface: #221610;
+    --surface2: #2c1e16;
+    --border: #3d2d22;
+    --fg: #f0e8e0;
+    --fg-muted: #a09080;
+    --fg-faint: #6a5a50;
+    --accent: #d46030;
+    --accent-dim: #2e1808;
+    --accent-mid: #e88050;
+    --gold: #c8a040;
+    --gold-dim: #28200a;
+    --green: #508060;
+    --green-dim: #0e2016;
+    --nav-bg: #0e0a06;
+    --nav-fg: #a09080;
+    --nav-active: #e8c87a;
+    --tag-quest: #b080c0;
+    --tag-quest-dim: #200828;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17100d;
+  --surface: #221610;
+  --surface2: #2c1e16;
+  --border: #3d2d22;
+  --fg: #f0e8e0;
+  --fg-muted: #a09080;
+  --fg-faint: #6a5a50;
+  --accent: #d46030;
+  --accent-dim: #2e1808;
+  --accent-mid: #e88050;
+  --gold: #c8a040;
+  --gold-dim: #28200a;
+  --green: #508060;
+  --green-dim: #0e2016;
+  --nav-bg: #0e0a06;
+  --nav-fg: #a09080;
+  --nav-active: #e8c87a;
+  --tag-quest: #b080c0;
+  --tag-quest-dim: #200828;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* TOP BAR */
+.topbar {
+  background: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+  border-bottom: 1px solid #3d2d22;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.topbar-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nav-active);
+  padding: 0.75rem 1.5rem 0.75rem 0;
+  border-right: 1px solid #3d2d22;
+  white-space: nowrap;
+}
+.tabs {
+  display: flex;
+  gap: 0;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--nav-fg);
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.tab:hover { color: #e0d0c0; }
+.tab.active { color: var(--nav-active); border-bottom-color: var(--nav-active); }
+
+/* MAIN LAYOUT */
+.main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* LEFT LIST */
+.list-pane {
+  width: 220px;
+  min-width: 220px;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  background: var(--surface2);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+.list-search {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.list-search input {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  color: var(--fg);
+  outline: none;
+}
+.list-search input:focus { border-color: var(--accent-mid); }
+.list-search input::placeholder { color: var(--fg-faint); }
+.list-item {
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--fg);
+  transition: background 0.1s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.list-item:hover { background: var(--surface); }
+.list-item.active { background: var(--accent-dim); border-left: 3px solid var(--accent); padding-left: calc(0.9rem - 3px); }
+.list-item-name { font-weight: 500; }
+.list-item-sub { font-size: 0.72rem; color: var(--fg-muted); }
+
+/* LIST SECTION HEADERS */
+.list-section-header {
+  padding: 0.45rem 0.9rem 0.3rem;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+.list-section-header span { transition: transform 0.15s; }
+.list-section-content.hidden { display: none; }
+
+/* DETAIL PANE */
+.detail-pane {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.75rem 2rem;
+  padding-left: max(2rem, env(safe-area-inset-left, 0px));
+  padding-right: max(2rem, env(safe-area-inset-right, 0px));
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+.detail-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--fg-faint);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* DETAIL CONTENT */
+.detail-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 0.3rem;
+}
+.detail-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--fg);
+  text-wrap: balance;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+.detail-role {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.detail-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1rem 0;
+}
+.detail-section-label {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 0.4rem;
+}
+.detail-body {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--fg);
+  max-width: 60ch;
+}
+.detail-body p { margin-bottom: 0.75rem; }
+.detail-body p:last-child { margin-bottom: 0; }
+.detail-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.detail-body th, .detail-body td {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.detail-body th { background: var(--surface2); font-weight: 600; }
+.detail-body strong { color: var(--fg); }
+
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.tag {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.tag:hover { opacity: 0.75; }
+.tag-npc { background: var(--accent-dim); color: var(--accent); }
+.tag-faction { background: var(--gold-dim); color: var(--gold); }
+.tag-location { background: var(--green-dim); color: var(--green); }
+.tag-quest { background: var(--tag-quest-dim); color: var(--tag-quest); }
+.tag-plain {
+  background: var(--surface2);
+  color: var(--fg-muted);
+  cursor: default;
+}
+.tag-plain:hover { opacity: 1; }
+
+/* STAT ROWS */
+.stat-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.stat { display: flex; flex-direction: column; gap: 0.1rem; }
+.stat-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.stat-val {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+/* CALLOUT */
+.callout {
+  background: var(--surface2);
+  border-left: 3px solid var(--border);
+  border-radius: 0 4px 4px 0;
+  padding: 0.6rem 0.8rem;
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+.callout.red { border-left-color: #c0392b; background: #fdf0f0; }
+.callout.yellow { border-left-color: var(--gold); background: var(--gold-dim); }
+.callout.green { border-left-color: var(--green); background: var(--green-dim); }
+.callout.blue { border-left-color: #2980b9; background: #edf6fb; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .callout.red { background: #2a0808; }
+  :root:not([data-theme="light"]) .callout.blue { background: #0a1a28; }
+}
+:root[data-theme="dark"] .callout.red { background: #2a0808; }
+:root[data-theme="dark"] .callout.blue { background: #0a1a28; }
+.callout-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 0.25rem;
+}
+
+/* QUEST STEP LIST */
+.quest-steps { list-style: none; padding: 0; max-width: 60ch; }
+.quest-steps li {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  align-items: flex-start;
+}
+.quest-steps li:last-child { border-bottom: none; }
+.step-num {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--fg-faint);
+  min-width: 1.4rem;
+  padding-top: 0.15rem;
+}
+
+/* TENSION METER */
+.tension-bar {
+  display: flex;
+  gap: 3px;
+  margin: 0.5rem 0 0.75rem;
+  align-items: center;
+}
+.tension-pip {
+  width: 28px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--border);
+}
+.tension-pip.filled { background: var(--accent); }
+.tension-pip.filled.danger { background: #8b0000; }
+.tension-label {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--fg-muted);
+  margin-left: 0.5rem;
+}
+
+/* CODEX PANE */
+.codex-pane {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.75rem 2rem;
+  padding-left: max(2rem, env(safe-area-inset-left, 0px));
+  padding-right: max(2rem, env(safe-area-inset-right, 0px));
+  display: none;
+}
+.codex-pane.visible { display: block; }
+.codex-group { margin-bottom: 2.5rem; }
+.codex-group-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+.codex-group-label span { font-size: 0.65rem; transition: transform 0.15s; display: inline-block; }
+.codex-group-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.85rem; }
+.codex-group-items.hidden { display: none; }
+.codex-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+.codex-card.transition {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+}
+.codex-card-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin-bottom: 0.25rem;
+}
+.codex-card.transition .codex-card-eyebrow { color: var(--gold); }
+.codex-card-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.codex-card.transition .codex-card-title { color: var(--gold); }
+.codex-card-body {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--fg-muted);
+}
+.codex-card-body p { margin-bottom: 0.4rem; }
+.codex-card-body p:last-child { margin-bottom: 0; }
+.codex-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+.codex-card.stub { opacity: 0.55; }
+.codex-card.stub .codex-card-body { font-style: italic; }
+
+/* BACK BUTTON (mobile only) */
+.back-btn {
+  display: none;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-mid);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 0;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+}
+.back-btn::before { content: '← '; }
+
+/* LOADING */
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 0.6rem;
+  color: var(--fg-faint);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+}
+.loading-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fg-faint);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulse {
+  0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  html, body { height: 100%; overflow: hidden; }
+  .main { flex-direction: column; height: 100%; overflow: hidden; }
+  .list-pane {
+    width: 100%; min-width: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex: 1;
+    overflow-y: auto;
+  }
+  .list-pane.hidden { display: none; }
+  .detail-pane {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: none;
+  }
+  .detail-pane.visible { display: block; }
+  .detail-title { font-size: 1.2rem; }
+  .back-btn { display: inline-block; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-title">Under the Ring</div>
+  <div class="tabs">
+    <button class="tab" onclick="switchTab('codex')">Codex</button>
+    <button class="tab active" onclick="switchTab('npcs')">NPCs</button>
+    <button class="tab" onclick="switchTab('factions')">Factions</button>
+    <button class="tab" onclick="switchTab('locations')">Locations</button>
+    <button class="tab" onclick="switchTab('quests')">Quests</button>
+    <button class="tab" onclick="switchTab('loot')">Loot</button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="list-pane">
+    <div class="list-search">
+      <input type="text" id="search-input" placeholder="Search…" oninput="filterList(this.value)">
+    </div>
+    <div id="list-items">
+      <div class="loading-state">
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-pane" id="detail-pane">
+    <div class="detail-empty">Select an entry to view details</div>
+  </div>
+  <div class="codex-pane" id="codex-pane"></div>
+</div>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+let DATA = { npcs: [], factions: [], locations: [], quests: [], loot: [] };
+let CODEX = { overviews: [], worldLore: [], gmToolbox: [] };
+
+// Normalize JSON data to the shape the rendering functions expect.
+// JSON files use: subtitle, stats[].value, no traits object, callout typed strings.
+// Rendering functions expect: sub, stats[].val, traits object, same callout shape.
+function normalizeItem(item, tab) {
+  const n = Object.assign({}, item);
+
+  // sub (list subtitle) — use subtitle field
+  if (!n.sub) n.sub = n.subtitle || '';
+
+  // eyebrow — derive from tags if not present
+  if (!n.eyebrow) {
+    const tagStr = (n.tags || []).join(', ');
+    n.eyebrow = tagStr;
+  }
+
+  // stats: normalize value -> val
+  if (Array.isArray(n.stats)) {
+    n.stats = n.stats.map(s => ({ label: s.label, val: s.val !== undefined ? s.val : s.value }));
+  }
+
+  // role — use subtitle as role for npcs/factions detail header
+  if (!n.role) n.role = n.subtitle || '';
+
+  // campaign flag — npcs that have boon are quasigods, flag campaign
+  if (tab === 'npcs' && n.boon) {
+    n.campaign = true;
+  }
+
+  // arc — derive from tags for quests
+  if (tab === 'quests' && !n.arc) {
+    const arcTag = (n.tags || []).find(t => t.startsWith('Arc'));
+    n.arc = arcTag || 'Arc 1';
+  }
+
+  // tensionLevel default
+  if (n.id === 'the-war' && n.tensionLevel === undefined) {
+    n.tensionLevel = 0;
+  }
+
+  return n;
+}
+
+async function loadData() {
+  try {
+    const [npcs, factions, locations, quests, loot, codex] = await Promise.all([
+      fetch('data/npcs.json').then(r => r.json()),
+      fetch('data/factions.json').then(r => r.json()),
+      fetch('data/locations.json').then(r => r.json()),
+      fetch('data/quests.json').then(r => r.json()),
+      fetch('data/loot.json').then(r => r.json()),
+      fetch('data/codex.json').then(r => r.json()),
+    ]);
+    DATA.npcs = npcs.map(i => normalizeItem(i, 'npcs'));
+    DATA.factions = factions.map(i => normalizeItem(i, 'factions'));
+    DATA.locations = locations.map(i => normalizeItem(i, 'locations'));
+    DATA.quests = quests.map(i => normalizeItem(i, 'quests'));
+    DATA.loot = loot.map(i => normalizeItem(i, 'loot'));
+    CODEX = codex;
+    renderList('');
+    if (currentTab === 'codex') renderCodex();
+  } catch (err) {
+    document.getElementById('list-items').innerHTML =
+      '<div class="loading-state" style="color:var(--accent)">Failed to load data</div>';
+    console.error(err);
+  }
+}
+
+// ─── STATE ────────────────────────────────────────────────────────────────────
+
+let currentTab = 'npcs';
+let currentId = null;
+
+function switchTab(tab) {
+  currentTab = tab;
+  currentId = null;
+  document.querySelectorAll('.tab').forEach((el, i) => {
+    const tabs = ['codex','npcs','factions','locations','quests','loot'];
+    el.classList.toggle('active', tabs[i] === tab);
+  });
+  const listPane = document.querySelector('.list-pane');
+  const detailPane = document.getElementById('detail-pane');
+  const codexPane = document.getElementById('codex-pane');
+  if (tab === 'codex') {
+    listPane.classList.add('hidden');
+    detailPane.classList.remove('visible');
+    detailPane.innerHTML = '<div class="detail-empty">Select an entry to view details</div>';
+    codexPane.classList.add('visible');
+    renderCodex();
+  } else {
+    listPane.classList.remove('hidden');
+    detailPane.innerHTML = '<div class="detail-empty">Select an entry to view details</div>';
+    codexPane.classList.remove('visible');
+    document.getElementById('search-input').value = '';
+    renderList('');
+  }
+}
+
+// ─── CODEX ────────────────────────────────────────────────────────────────────
+
+const codexGroupState = {};
+
+function renderCodexLinks(links) {
+  if (!links || !links.length) return '';
+  return links.map(l => {
+    const tab = l.tab || 'npcs';
+    const tabMap = { npcs: 'npc', factions: 'faction', locations: 'location', quests: 'quest', loot: 'loot' };
+    const cls = tabMap[tab] || 'plain';
+    return `<span class="tag tag-${cls}" onclick="navigate('${tab}','${l.id}')">${l.name}</span>`;
+  }).join('');
+}
+
+function renderCodexGroup(groupId, label, items, isOverview) {
+  if (!items || !items.length) return '';
+  const open = codexGroupState[groupId] !== false;
+  const chevron = open ? '▾' : '▸';
+  const hiddenClass = open ? '' : ' hidden';
+  const cards = items.map(item => {
+    const isTransition = item.transition === true;
+    const isStub = item.stub === true;
+    const cls = ['codex-card', isTransition ? 'transition' : '', isStub ? 'stub' : ''].filter(Boolean).join(' ');
+    const eyebrow = item.group || item.eyebrow || '';
+    const links = renderCodexLinks(item.links);
+    return `<div class="${cls}">
+      ${eyebrow ? `<div class="codex-card-eyebrow">${eyebrow}</div>` : ''}
+      <div class="codex-card-title">${item.title}</div>
+      <div class="codex-card-body">${item.body || ''}</div>
+      ${links ? `<div class="codex-card-links">${links}</div>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="codex-group" id="codex-group-${groupId}">
+    <div class="codex-group-label" onclick="toggleCodexGroup('${groupId}')">
+      ${label}<span>${chevron}</span>
+    </div>
+    <div class="codex-group-items${hiddenClass}" id="codex-items-${groupId}">${cards}</div>
+  </div>`;
+}
+
+function toggleCodexGroup(id) {
+  const items = document.getElementById('codex-items-' + id);
+  const label = document.querySelector('#codex-group-' + id + ' .codex-group-label span');
+  if (!items) return;
+  const isHidden = items.classList.toggle('hidden');
+  if (label) label.textContent = isHidden ? '▸' : '▾';
+  codexGroupState[id] = !isHidden;
+}
+
+function renderCodex() {
+  const pane = document.getElementById('codex-pane');
+  let html = '';
+  if (CODEX.overviews && CODEX.overviews.length) {
+    html += renderCodexGroup('overviews', 'Campaign Overview', CODEX.overviews, true);
+  }
+  if (CODEX.worldLore && CODEX.worldLore.length) {
+    html += renderCodexGroup('worldLore', 'World Lore', CODEX.worldLore, false);
+  }
+  if (CODEX.gmToolbox && CODEX.gmToolbox.length) {
+    html += renderCodexGroup('gmToolbox', 'GM Toolbox', CODEX.gmToolbox, false);
+  }
+  pane.innerHTML = html || '<div class="detail-empty">No codex entries yet.</div>';
+}
+
+// ─── LIST ─────────────────────────────────────────────────────────────────────
+
+function filterList(q) {
+  renderList(q);
+}
+
+function makeListEl(item) {
+  const el = document.createElement('div');
+  el.className = 'list-item' + (item.id === currentId ? ' active' : '');
+  el.onclick = () => selectItem(item.id);
+  el.innerHTML = `<div class="list-item-name">${item.name}</div>${item.sub ? `<div class="list-item-sub">${item.sub}</div>` : ''}`;
+  return el;
+}
+
+const sectionState = {};
+
+function makeSectionHeader(label, sectionKey, items, container) {
+  const open = sectionState[sectionKey] !== false;
+  const header = document.createElement('div');
+  header.className = 'list-section-header';
+  header.innerHTML = `<span>${label}</span><span>${open ? '▾' : '▸'}</span>`;
+
+  const content = document.createElement('div');
+  content.className = 'list-section-content' + (open ? '' : ' hidden');
+
+  items.forEach(item => content.appendChild(makeListEl(item)));
+
+  header.onclick = () => {
+    const hidden = content.classList.toggle('hidden');
+    header.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+    sectionState[sectionKey] = !hidden;
+  };
+
+  container.appendChild(header);
+  container.appendChild(content);
+}
+
+function getCodexList() {
+  const result = [];
+  const groups = [
+    { key: 'overviews', label: 'Overview' },
+    { key: 'worldLore', label: 'World Lore' },
+    { key: 'gmToolbox', label: 'GM Toolbox' },
+  ];
+  groups.forEach(g => {
+    (CODEX[g.key] || []).forEach(item => {
+      result.push({ id: item.id || item.title, name: item.title, sub: g.label, _codex: true, _codexGroup: g.key });
+    });
+  });
+  return result;
+}
+
+function renderList(q) {
+  const container = document.getElementById('list-items');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const lower = (q || '').toLowerCase();
+
+  function matches(item) {
+    if (!lower) return true;
+    return (item.name || '').toLowerCase().includes(lower) ||
+           (item.sub || '').toLowerCase().includes(lower) ||
+           (item.subtitle || '').toLowerCase().includes(lower);
+  }
+
+  if (currentTab === 'codex') {
+    const all = getCodexList().filter(matches);
+    all.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'list-item';
+      el.onclick = () => {
+        // scroll codex to group and highlight is out of scope; just switch to codex tab
+        const pane = document.getElementById('codex-pane');
+        if (pane) pane.scrollTop = 0;
+      };
+      el.innerHTML = `<div class="list-item-name">${item.name}</div><div class="list-item-sub">${item.sub}</div>`;
+      container.appendChild(el);
+    });
+    return;
+  }
+
+  const items = (DATA[currentTab] || []).filter(matches);
+
+  if (currentTab === 'locations') {
+    // Group by Ward tag
+    const byWard = {};
+    const wardOrder = [];
+    items.forEach(item => {
+      const wardTag = (item.tags || []).find(t => t.includes('Ward') || t === 'Lady\'s Ward') || 'Other';
+      if (!byWard[wardTag]) { byWard[wardTag] = []; wardOrder.push(wardTag); }
+      byWard[wardTag].push(item);
+    });
+    wardOrder.forEach(ward => makeSectionHeader(ward, 'loc-' + ward, byWard[ward], container));
+    return;
+  }
+
+  if (currentTab === 'quests') {
+    // Group by arc tag
+    const byArc = {};
+    const arcOrder = [];
+    items.forEach(item => {
+      const arcTag = (item.tags || []).find(t => t.startsWith('Arc')) || item.arc || 'Arc 1';
+      if (!byArc[arcTag]) { byArc[arcTag] = []; arcOrder.push(arcTag); }
+      byArc[arcTag].push(item);
+    });
+    // Also separate campaign-wide
+    const campaign = items.filter(i => (i.tags || []).includes('Campaign-Wide'));
+    const nonCampaign = items.filter(i => !(i.tags || []).includes('Campaign-Wide'));
+    const byArc2 = {};
+    const arcOrder2 = [];
+    nonCampaign.forEach(item => {
+      const arcTag = (item.tags || []).find(t => t.startsWith('Arc')) || item.arc || 'Arc 1';
+      if (!byArc2[arcTag]) { byArc2[arcTag] = []; arcOrder2.push(arcTag); }
+      byArc2[arcTag].push(item);
+    });
+    if (campaign.length) makeSectionHeader('Campaign', 'q-campaign', campaign, container);
+    arcOrder2.forEach(arc => makeSectionHeader(arc, 'q-' + arc, byArc2[arc], container));
+    return;
+  }
+
+  if (currentTab === 'npcs') {
+    // Separate quasigods (campaign) from regular npcs
+    const gods = items.filter(i => (i.tags || []).includes('Quasigod') || i.campaign);
+    const regular = items.filter(i => !(i.tags || []).includes('Quasigod') && !i.campaign);
+    if (gods.length) makeSectionHeader('Quasigods', 'npc-gods', gods, container);
+    if (regular.length) makeSectionHeader('NPCs', 'npc-regular', regular, container);
+    return;
+  }
+
+  if (currentTab === 'factions') {
+    // Separate by type tag
+    const great = items.filter(i => (i.tags || []).includes('Great Faction'));
+    const criminal = items.filter(i => (i.tags || []).includes('Criminal'));
+    const other = items.filter(i => !(i.tags || []).includes('Great Faction') && !(i.tags || []).includes('Criminal'));
+    if (great.length) makeSectionHeader('Great Factions', 'fac-great', great, container);
+    if (criminal.length) makeSectionHeader('Criminal', 'fac-criminal', criminal, container);
+    if (other.length) makeSectionHeader('Other', 'fac-other', other, container);
+    return;
+  }
+
+  if (currentTab === 'loot') {
+    // Group by first tag (rough category)
+    const byTag = {};
+    const tagOrder = [];
+    items.forEach(item => {
+      const firstTag = (item.tags || ['Other'])[0];
+      if (!byTag[firstTag]) { byTag[firstTag] = []; tagOrder.push(firstTag); }
+      byTag[firstTag].push(item);
+    });
+    tagOrder.forEach(tag => makeSectionHeader(tag, 'loot-' + tag, byTag[tag], container));
+    return;
+  }
+
+  // Default: flat list
+  items.forEach(item => container.appendChild(makeListEl(item)));
+}
+
+// ─── DETAIL ───────────────────────────────────────────────────────────────────
+
+function selectItem(id) {
+  currentId = id;
+  // Update active state in list
+  document.querySelectorAll('.list-item').forEach(el => el.classList.remove('active'));
+  // Find and mark the clicked item
+  document.querySelectorAll('.list-item').forEach(el => {
+    if (el.onclick && el.onclick.toString().includes(`'${id}'`)) {
+      el.classList.add('active');
+    }
+  });
+
+  const item = (DATA[currentTab] || []).find(i => i.id === id);
+  if (!item) return;
+
+  const listPane = document.querySelector('.list-pane');
+  const detailPane = document.getElementById('detail-pane');
+  listPane.classList.add('hidden');
+  detailPane.classList.add('visible');
+
+  renderDetail(item);
+}
+
+function navigate(tab, id) {
+  switchTab(tab);
+  selectItem(id);
+}
+
+function goBack() {
+  const listPane = document.querySelector('.list-pane');
+  const detailPane = document.getElementById('detail-pane');
+  listPane.classList.remove('hidden');
+  detailPane.classList.remove('visible');
+  currentId = null;
+}
+
+function renderDetail(item) {
+  const pane = document.getElementById('detail-pane');
+
+  // Build eyebrow from tags if not set
+  const eyebrow = item.eyebrow || (item.tags || []).join('  ·  ');
+
+  let html = `
+    <button class="back-btn" onclick="goBack()">Back</button>
+    ${eyebrow ? `<div class="detail-eyebrow">${eyebrow}</div>` : ''}
+    <div class="detail-title">${item.name}</div>
+    ${item.role && item.role !== item.name ? `<div class="detail-role">${item.role}</div>` : ''}
+    <hr class="detail-divider">
+  `;
+
+  // Tags row (plain display tags, not the eyebrow ones)
+  if (item.tags && item.tags.length) {
+    html += `<div class="tags" style="margin-bottom:0.75rem">`;
+    item.tags.forEach(t => {
+      html += `<span class="tag tag-plain">${t}</span>`;
+    });
+    html += `</div>`;
+  }
+
+  // Stats block
+  if (item.stats && item.stats.length) {
+    html += `<div class="stat-row">`;
+    item.stats.forEach(s => {
+      html += `<div class="stat"><div class="stat-label">${s.label}</div><div class="stat-val">${s.val}</div></div>`;
+    });
+    html += `</div><hr class="detail-divider">`;
+  }
+
+  // Tension meter for the-war quest
+  if (item.id === 'the-war') {
+    const tl = item.tensionLevel || 0;
+    html += `<div class="detail-section-label">Tension Track</div>
+    <div class="tension-bar">
+      ${[0,1,2,3,4,5].map(i => `<div class="tension-pip${i < tl ? (i >= 4 ? ' filled danger' : ' filled') : ''}" title="Tension ${i+1}"></div>`).join('')}
+      <span class="tension-label">${tl} / 6</span>
+    </div>`;
+  }
+
+  // Faction structured sections
+  const factionSections = [
+    { key: 'leader', label: 'Leader' },
+    { key: 'ideology', label: 'Ideology' },
+    { key: 'history', label: 'History' },
+    { key: 'relevance', label: 'Relevance' },
+  ];
+  const hasFactionSections = factionSections.some(s => item[s.key]);
+  if (hasFactionSections) {
+    factionSections.forEach(({ key, label }) => {
+      if (!item[key]) return;
+      html += `<div class="detail-section-label" style="margin-top:1.2rem">${label}</div><div class="detail-body" style="margin-top:0.35rem">${item[key]}</div>`;
+    });
+  } else if (item.body) {
+    html += `<div class="detail-body">${item.body}</div>`;
+  }
+
+  // Boon (quasigods)
+  if (item.boon) {
+    html += `<hr class="detail-divider"><div class="detail-section-label">Boon</div><div class="detail-body" style="margin-top:0.35rem">${item.boon}</div>`;
+  }
+
+  // Mechanics (loot)
+  if (item.mechanics) {
+    html += `<hr class="detail-divider"><div class="detail-section-label">Mechanics</div><div class="detail-body" style="margin-top:0.35rem">${item.mechanics}</div>`;
+  }
+
+  // Steps (quests)
+  if (item.steps && item.steps.length) {
+    html += `<hr class="detail-divider"><div class="detail-section-label">Steps</div>
+    <ul class="quest-steps">`;
+    item.steps.forEach((s, i) => {
+      html += `<li><span class="step-num">${i+1}.</span><span>${s}</span></li>`;
+    });
+    html += `</ul>`;
+  }
+
+  // Callout
+  if (item.callout) {
+    const c = item.callout;
+    html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
+  }
+
+  pane.innerHTML = html;
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+
+loadData();
+</script>
+
+</body>
+</html>
