@@ -11,7 +11,8 @@
       { "label": "Status", "value": "Party-owned (inherited)" },
       { "label": "Notable", "value": "Trapdoor basement, bag of withholding" }
     ],
-    "callout": { "type": "green", "label": "NEW HAVEN PORTAL", "text": "The house connects to New Haven via a portal in the study. Four conditions required: roof, invited host, shared meal, spoken welcome. As Horus's household, the party satisfies conditions 1–3 automatically when one member cooks from house supplies. They must still speak the welcome." }
+    "callout": { "type": "green", "label": "NEW HAVEN PORTAL", "text": "The house connects to New Haven via a portal in the study. Four conditions required: roof, invited host, shared meal, spoken welcome. As Horus's household, the party satisfies conditions 1–3 automatically when one member cooks from house supplies. They must still speak the welcome." },
+    "links": { "loot": ["jaden-abora-book", "otiks-frying-pan", "pet-rock", "elemental-bolt-pouch", "ioun-2"] }
   },
   {
     "id": "mortuary",
@@ -24,7 +25,8 @@
       { "label": "Faction", "value": "The Dustmen" },
       { "label": "Services", "value": "Corpse disposal, preservation, records" },
       { "label": "Fee", "value": "5 gp per body (standard)" }
-    ]
+    ],
+    "links": { "factions": ["dustmen"] }
   },
   {
     "id": "gl-shop",
@@ -38,7 +40,8 @@
       { "label": "Staff (known)", "value": "Wex (counter), Drusine (counting room)" },
       { "label": "Owner (apparent)", "value": "Unnamed consortium" }
     ],
-    "callout": { "type": "yellow", "label": "INVESTIGATION", "text": "The counting room holds the evidence for Clue 3. DC 15 Perception or Investigation to notice the inconsistency in the posted ledger. DC 20 to access the back records. Drusine is gone before the party gets here." }
+    "callout": { "type": "yellow", "label": "INVESTIGATION", "text": "The counting room holds the evidence for Clue 3. DC 15 Perception or Investigation to notice the inconsistency in the posted ledger. DC 20 to access the back records. Drusine is gone before the party gets here." },
+    "links": { "npcs": ["wex", "drusine"], "factions": ["gray-ledger"], "quests": ["find-the-rat", "resolution"] }
   },
   {
     "id": "ninefold-home",
@@ -51,6 +54,7 @@
       { "label": "Faction", "value": "The Ninefold" },
       { "label": "Primary use", "value": "Operations, labor placement, goods transit" },
       { "label": "Portal", "value": "Loading dock, rope-knot key (Salt only)" }
-    ]
+    ],
+    "links": { "npcs": ["salt"], "factions": ["ninefold"], "quests": ["portal-watch"] }
   }
 ]

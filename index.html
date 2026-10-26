@@ -1316,19 +1316,12 @@ function renderDetail(item) {
       }
     }
 
-    // Related tags
-    const relatedTags = (item.tags || []).filter(t =>
-      !['Tiefling','Human','Elf','Dwarf','Gnome','Halfling','Half-Elf','Half-Orc',
-        'Campaign-Wide','TBD','Quasigod','Informant','Campaign Antagonist'].includes(t)
-    );
-    if (relatedTags.length) {
+    // Related (clickable cross-links)
+    const relatedLinks = renderCodexLinks(item.links);
+    if (relatedLinks) {
       html += `<hr class="detail-divider">`;
       html += `<div class="detail-section-label">Related</div>`;
-      html += `<div class="tags" style="margin-top:0.35rem">`;
-      relatedTags.forEach(t => {
-        html += `<span class="tag tag-plain">${t}</span>`;
-      });
-      html += `</div>`;
+      html += `<div class="tags" style="margin-top:0.35rem">${relatedLinks}</div>`;
     }
 
     pane.innerHTML = html;
@@ -1422,6 +1415,14 @@ function renderDetail(item) {
       html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
     }
 
+    // Related (clickable cross-links)
+    const lootRelatedLinks = renderCodexLinks(item.links);
+    if (lootRelatedLinks) {
+      html += `<hr class="detail-divider">`;
+      html += `<div class="detail-section-label">Related</div>`;
+      html += `<div class="tags" style="margin-top:0.35rem">${lootRelatedLinks}</div>`;
+    }
+
     pane.innerHTML = html;
     return;
   }
@@ -1512,6 +1513,14 @@ function renderDetail(item) {
   if (item.callout) {
     const c = item.callout;
     html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
+  }
+
+  // Related (clickable cross-links)
+  const otherRelatedLinks = renderCodexLinks(item.links);
+  if (otherRelatedLinks) {
+    html += `<hr class="detail-divider">`;
+    html += `<div class="detail-section-label">Related</div>`;
+    html += `<div class="tags" style="margin-top:0.35rem">${otherRelatedLinks}</div>`;
   }
 
   pane.innerHTML = html;

@@ -4,6 +4,7 @@
     "name": "The Hive War",
     "tags": ["Main Arc", "Tension Tracker", "Arc 1"],
     "subtitle": "Main Arc — Cask vs. Ninefold, Gray Ledger pulling strings",
+    "links": { "factions": ["cask", "ninefold", "gray-ledger"] },
     "body": "<p>The Cask Family and the Ninefold have been in a cold war for three years. It has not gone hot because neither side can afford the full cost of open conflict. The Gray Ledger has been ensuring this balance holds — providing credit to both sides, keeping both solvent enough to stay in the fight, never enough to win it.</p><p>The party enters this situation owing 2,500 gp split between both factions. They take jobs from both sides to pay down the debt. Every job advances the conflict. The Tension Track measures how close the ward is to open war.</p><p>The arc resolves when: the debt is paid AND the Gray Ledger is exposed. The exposure does not require completing every job. It requires following the three-clue chain to the reveal.</p>",
     "body2": "<h3>Cask Job Table</h3><table style=\"width:100%;border-collapse:collapse;font-size:0.85rem\"><thead><tr style=\"background:var(--surface2)\"><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Job</th><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Task</th><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Pay</th><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Tension</th></tr></thead><tbody><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Collection Run</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Collect overdue payments from three ward addresses</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">300 gp off debt</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+1</td></tr><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Escort</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Move a Cask courier through Ninefold territory safely</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">400 gp off debt</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+1</td></tr><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Message Delivery</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Deliver a sealed envelope to a contact in the Lower Ward</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">250 gp off debt</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+0</td></tr><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Find the Rat</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Identify who has been leaking Cask information; leads to Clue 2</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">500 gp off debt</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+2</td></tr></tbody></table><h3 style=\"margin-top:1.2rem\">Ninefold Job Table</h3><table style=\"width:100%;border-collapse:collapse;font-size:0.85rem\"><thead><tr style=\"background:var(--surface2)\"><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Job</th><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Task</th><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Pay</th><th style=\"padding:0.5rem 0.7rem;text-align:left;border:1px solid var(--border)\">Tension</th></tr></thead><tbody><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Portal Watch</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Guard a portal site for one night against Cask interference</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">200 gp</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+1</td></tr><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Key Retrieval</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Recover a stolen portal key from a third-party fence</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">300 gp</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+1</td></tr><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Discourage Witness</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Convince a ward resident that they didn't see what they saw</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">250 gp</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+1</td></tr><tr><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Xaositect Interference</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">Clear a Xaositect cell that has claimed a Ninefold corridor</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">400 gp</td><td style=\"padding:0.5rem 0.7rem;border:1px solid var(--border)\">+2</td></tr></tbody></table>"
   },
@@ -12,6 +13,7 @@
     "name": "Collection Run",
     "tags": ["Cask Job #1", "Arc 1"],
     "subtitle": "Cask Job #1 — 300 gp off debt",
+    "links": { "factions": ["cask"] },
     "steps": [
       { "label": "Briefing", "text": "Veshka gives the party three addresses and a payment ledger. Three residents are overdue. They owe 80 gp, 120 gp, and 60 gp respectively. The party is to collect. No violence unless necessary. Necessary is defined as the resident refusing to acknowledge the debt exists." },
       { "label": "Address 1", "text": "A cobbler who has the money but is stalling. He will pay if the party is firm. Roleplay, no combat. He gives them a small piece of information about the ward as a gesture of goodwill — his choice of what to share." },
@@ -25,6 +27,7 @@
     "name": "Escort Job",
     "tags": ["Cask Job #2", "Arc 1"],
     "subtitle": "Cask Job #2 — 400 gp off debt",
+    "links": { "factions": ["cask"] },
     "steps": [
       { "label": "Briefing", "text": "A Cask courier named Terri needs to move a locked satchel from the Hive Ward into Ninefold territory and out the other side. She does not know what is in the satchel. The party's job is to make sure she gets through." },
       { "label": "Transit", "text": "Two potential encounter points in Ninefold territory. Roll encounter: 1–2 nothing, 3–4 tail (Ninefold spotter following at a distance, no confrontation), 5–6 intercept (three Ninefold runners, demand to inspect the satchel). Combat or negotiation — the runners have standing orders not to start violence but will not back down from it either." },
@@ -38,6 +41,7 @@
     "name": "Message Delivery",
     "tags": ["Cask Job #3", "Arc 1"],
     "subtitle": "Cask Job #3 — 250 gp off debt",
+    "links": { "factions": ["cask"] },
     "steps": [
       { "label": "Briefing", "text": "Veshka has a sealed envelope for a contact in the Lower Ward. Simple delivery — no escort needed, no violence expected. The envelope is sealed with a wax stamp. Veshka does not explain the contents." },
       { "label": "Lower Ward", "text": "The Lower Ward is louder, smokier, and more chaotic than the Hive. The contact is at a smithing operation near the Foundry. He receives the envelope, reads it (not in front of the party), and sends a verbal reply back with the party: 'The answer is no, but I'll reconsider if the terms change.'" },
@@ -50,6 +54,7 @@
     "name": "Portal Watch",
     "tags": ["Ninefold Job #1", "Arc 1"],
     "subtitle": "Ninefold Job #1 — 200 gp",
+    "links": { "factions": ["ninefold"], "npcs": ["salt"], "locations": ["ninefold-home"] },
     "steps": [
       { "label": "Briefing", "text": "Salt needs the warehouse portal guarded overnight. The Cask Family has been testing Ninefold corridors for weaknesses. He wants to know if they send anyone to the portal. He wants the party to report back, not engage." },
       { "label": "The Watch", "text": "Four hours in: a single Cask scout approaches, checks the perimeter, and leaves. She does not try to enter. She is marking the site." },
@@ -62,6 +67,7 @@
     "name": "Key Retrieval",
     "tags": ["Ninefold Job #2", "Arc 1"],
     "subtitle": "Ninefold Job #2 — 300 gp",
+    "links": { "factions": ["ninefold"] },
     "steps": [
       { "label": "Briefing", "text": "A Ninefold portal key (a specific length of rope tied in a specific knot) was stolen from a courier three days ago. Salt has traced it to a fence named Brix who operates from a stall in the Great Bazaar. The party is to get it back." },
       { "label": "Brix", "text": "Brix is a gnome who will deal if the price is right. He bought the rope for 5 gp and will sell it for 50. He does not know it is a portal key. He thinks it is unusual cordage. He will negotiate. Intimidation is possible but will make him less useful as a future resource." },
@@ -74,6 +80,7 @@
     "name": "Discourage a Witness",
     "tags": ["Ninefold Job #3", "Arc 1"],
     "subtitle": "Ninefold Job #3 — 250 gp",
+    "links": { "factions": ["ninefold"] },
     "steps": [
       { "label": "Briefing", "text": "A ward resident named Calla saw a Ninefold runner break up a fight three nights ago. The fight went badly. She is planning to report what she saw to the Harmonium. Salt wants her convinced that she didn't see what she thinks she saw — not threatened, not harmed, just convinced." },
       { "label": "Calla", "text": "Calla is a seamstress and she is not stupid. She knows what she saw. She is willing to reconsider if the party gives her a good reason. A good reason could be: payment, a favor, protection from the Ninefold in future, or information that recontextualizes what she saw." },
@@ -86,6 +93,7 @@
     "name": "Xaositect Interference",
     "tags": ["Ninefold Job #4", "Arc 1"],
     "subtitle": "Ninefold Job #4 — 400 gp",
+    "links": { "factions": ["ninefold"] },
     "steps": [
       { "label": "Briefing", "text": "A cell of Xaositects (chaos faction) has claimed a Ninefold corridor as their new 'home territory.' They have been there for two weeks, disrupting commerce and confusing residents. Salt wants them gone. He does not care how." },
       { "label": "The Xaositects", "text": "Six members. They are not hostile — they are chaotic. Their logic is genuine and internally consistent to them. They claimed the corridor because a random number they generated 'chose' it. They will leave if given a sufficiently chaotic reason to do so." },
@@ -98,6 +106,7 @@
     "name": "Find the Rat",
     "tags": ["Cask Job #4", "Arc 1", "Leads to Clue 2"],
     "subtitle": "Cask Job #4 — 500 gp off debt, leads to Gray Ledger Clue 2",
+    "links": { "factions": ["cask", "gray-ledger"], "npcs": ["veshka", "rat"], "locations": ["gl-shop"] },
     "steps": [
       { "label": "Briefing", "text": "Veshka has confirmed that someone inside the Cask operation is leaking information to the Ninefold — or to someone passing it to the Ninefold. Three collection routes were compromised last week. She wants the source identified. She is patient about it. She would prefer the party not make it obvious they are looking." },
       { "label": "Investigation", "text": "The leaked routes were known to five Cask members. DC 12 Investigation over two days of careful inquiry narrows it to two. DC 15 narrows it to one: Mott Venkel, a tally-man." },
@@ -111,6 +120,7 @@
     "name": "Arc Resolution",
     "tags": ["Arc 1 Finale", "Three-Clue Reveal"],
     "subtitle": "Three-Clue Gray Ledger Reveal",
+    "links": { "factions": ["cask", "ninefold", "gray-ledger"], "npcs": ["bbeg", "wex", "drusine"], "locations": ["gl-shop"] },
     "steps": [
       { "label": "Clue 1 — The Pattern", "text": "Available from the Escort job or Portal Watch investigation thread: someone has been selling both Cask and Ninefold intelligence to a third party. The Cat's Eyes have a name for the buyer: a financial front in the Lady's Ward." },
       { "label": "Clue 2 — The Drop Point", "text": "From the Find the Rat job: a dead-letter box at a Lady's Ward tea house connects to a counting operation that is feeding intelligence to both factions, not just receiving it." },
