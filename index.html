@@ -778,13 +778,20 @@ function switchTab(tab) {
 // ─── CODEX ────────────────────────────────────────────────────────────────────
 
 function renderCodexLinks(links) {
-  if (!links || !links.length) return '';
-  return links.map(l => {
-    const tab = l.tab || 'npcs';
-    const tabMap = { npcs: 'npc', factions: 'faction', locations: 'location', quests: 'quest', loot: 'loot' };
+  if (!links || typeof links !== 'object') return '';
+  const tabMap = { npcs: 'npc', factions: 'faction', locations: 'location', quests: 'quest', loot: 'loot' };
+  const tags = [];
+  for (const [tab, ids] of Object.entries(links)) {
+    if (!Array.isArray(ids)) continue;
     const cls = tabMap[tab] || 'plain';
-    return `<span class="tag tag-${cls}" onclick="navigate('${tab}','${l.id}')">${l.name}</span>`;
-  }).join('');
+    const pool = DATA[tab] || [];
+    for (const id of ids) {
+      const entry = pool.find(e => e.id === id);
+      const label = entry ? (entry.name || entry.title || id) : id;
+      tags.push(`<span class="tag tag-${cls}" onclick="navigate('${tab}','${id}')">${label}</span>`);
+    }
+  }
+  return tags.join('');
 }
 
 
