@@ -59,7 +59,7 @@
     "plot_dependent": true,
     "faction": "cask",
     "location": "hive-ward",
-    "links": { "factions": ["cask"] }
+    "links": { "factions": ["cask"], "quests": ["the-war", "collection-run", "escort", "message-delivery", "find-the-rat"] }
   },
   {
     "id": "salt",
@@ -71,7 +71,7 @@
     "plot_dependent": true,
     "faction": "ninefold",
     "location": "hive-ward",
-    "links": { "factions": ["ninefold"], "locations": ["ninefold-home"] }
+    "links": { "factions": ["ninefold"], "locations": ["ninefold-home"], "quests": ["the-war", "portal-watch", "key-retrieval", "discourage-witness", "xaositect-interference"] }
   },
   {
     "id": "wex",
@@ -82,7 +82,7 @@
     "status": "Active",
     "plot_dependent": false,
     "faction": "gray-ledger",
-    "links": { "factions": ["gray-ledger"], "locations": ["gl-shop"] }
+    "links": { "factions": ["gray-ledger"], "locations": ["gl-shop"], "quests": ["resolution"] }
   },
   {
     "id": "drusine",
@@ -93,7 +93,7 @@
     "status": "Active",
     "plot_dependent": true,
     "faction": "gray-ledger",
-    "links": { "factions": ["gray-ledger"], "locations": ["gl-shop"] }
+    "links": { "factions": ["gray-ledger"], "locations": ["gl-shop"], "quests": ["resolution"] }
   },
   {
     "id": "rat",
@@ -116,6 +116,6 @@
     "status": "Active",
     "plot_dependent": true,
     "callout": { "type": "red", "label": "BBEG", "text": "Do not confirm his identity until the Arc 1 reveal. He is introduced as an unnamed man with an ioun stone." },
-    "links": { "loot": ["ioun-1", "ioun-2"] }
+    "links": { "loot": ["ioun-1", "ioun-2"], "quests": ["the-war", "resolution"] }
   }
 ]
