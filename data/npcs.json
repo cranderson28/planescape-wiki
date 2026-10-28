@@ -16,8 +16,8 @@
     "subtitle": "Quasigod of Fortune",
     "status": "Active",
     "plot_dependent": false,
-    "body": "<p>One of five quasigods who move through the planes without pattern. Chance appears in moments of volatility. He is hard to read but playful. First appears in a bar with Choice, playing a game that looks incredibly complicated.</p><p><strong>Boon:</strong> Luck reroll (single use, no daily restriction). Functions like the Lucky feat: reroll any attack roll, ability check, or saving throw and take either result. Turn in your chip to activate.</p><p><em>DM Note: Choice and Chance are two of five quasigods. The five: Choice (Portent die), Chance (Luck reroll), Grace (+5 AC reaction), Grit (+10 saving throw), Fury (1d10 force second strike). All five can appear in any session, any arc.</em></p>",
-    "boon": "Luck reroll (single use — functions like Lucky feat — turn in chip)"
+    "body": "<p>One of five quasigods who move through the planes without pattern. Chance appears in moments of volatility. He is hard to read but playful. First appears in a bar with Choice, playing a game that looks incredibly complicated.</p><p><strong>Boon:</strong> Luck reroll. Reroll any attack roll, ability check, or saving throw and take either result. Turn in your chip to activate.</p><p><em>DM Note: Choice and Chance are two of five quasigods. The five: Choice (Portent die), Chance (Luck reroll), Grace (+5 AC reaction), Grit (+10 saving throw), Fury (1d10 force second strike). All five can appear in any session, any arc.</em></p>",
+    "boon": "Luck reroll (single use — turn in chip)"
   },
   {
     "id": "grace",
