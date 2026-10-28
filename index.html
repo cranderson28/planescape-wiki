@@ -1256,10 +1256,6 @@ function renderDetail(item) {
       ['Tiefling','Human','Elf','Dwarf','Gnome','Halfling','Half-Elf','Half-Orc','Quasigod'].includes(t)
     );
     metaCells.push({ label: 'Species', value: raceTag || 'None' });
-    // Status — always shown
-    metaCells.push({ label: 'Status', value: item.status || 'Unknown' });
-    // Plot Dependent — always shown
-    metaCells.push({ label: 'Plot Dependent', value: item.plot_dependent ? 'Yes' : 'No' });
     // Faction — always shown, look up name or fall back to "None"
     if (item.faction) {
       const fac = DATA.factions.find(f => f.id === item.faction);
@@ -1274,6 +1270,10 @@ function renderDetail(item) {
     } else {
       metaCells.push({ label: 'Location', value: 'None' });
     }
+    // Status — always shown
+    metaCells.push({ label: 'Status', value: item.status || 'Unknown' });
+    // Plot Dependent — always shown
+    metaCells.push({ label: 'Plot Dependent', value: item.plot_dependent ? 'Yes' : 'No' });
     // Ward — from tags, only if present
     const wardTag = (item.tags || []).find(t => t.includes('Ward'));
     if (wardTag) metaCells.push({ label: 'Ward', value: wardTag });
