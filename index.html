@@ -1251,23 +1251,30 @@ function renderDetail(item) {
 
     // Metadata stat grid
     const metaCells = [];
-    // Derive race from tags (first tag that looks like a race)
+    // Species: first known race tag, or "Quasigod" for campaign NPCs, or "None"
     const raceTag = (item.tags || []).find(t =>
-      ['Tiefling','Human','Elf','Dwarf','Gnome','Halfling','Half-Elf','Half-Orc'].includes(t)
+      ['Tiefling','Human','Elf','Dwarf','Gnome','Halfling','Half-Elf','Half-Orc','Quasigod'].includes(t)
     );
-    if (raceTag) metaCells.push({ label: 'Race', value: raceTag });
-    if (item.status) metaCells.push({ label: 'Status', value: item.status });
-    if (item.plot_dependent !== undefined) metaCells.push({ label: 'Plot Dependent', value: item.plot_dependent ? 'Yes' : 'No' });
+    metaCells.push({ label: 'Species', value: raceTag || 'None' });
+    // Status — always shown
+    metaCells.push({ label: 'Status', value: item.status || 'Unknown' });
+    // Plot Dependent — always shown
+    metaCells.push({ label: 'Plot Dependent', value: item.plot_dependent ? 'Yes' : 'No' });
+    // Faction — always shown, look up name or fall back to "None"
     if (item.faction) {
-      // Look up faction name from DATA
       const fac = DATA.factions.find(f => f.id === item.faction);
       metaCells.push({ label: 'Faction', value: fac ? fac.name : item.faction });
+    } else {
+      metaCells.push({ label: 'Faction', value: 'None' });
     }
+    // Location — always shown, look up name or fall back to "None"
     if (item.location) {
       const loc = DATA.locations.find(l => l.id === item.location);
-      if (loc) metaCells.push({ label: 'Location', value: loc.name });
+      metaCells.push({ label: 'Location', value: loc ? loc.name : 'None' });
+    } else {
+      metaCells.push({ label: 'Location', value: 'None' });
     }
-    // Add ward from tags (always, independent of location)
+    // Ward — from tags, only if present
     const wardTag = (item.tags || []).find(t => t.includes('Ward'));
     if (wardTag) metaCells.push({ label: 'Ward', value: wardTag });
 
