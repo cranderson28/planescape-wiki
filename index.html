@@ -1263,11 +1263,11 @@ function renderDetail(item) {
     }
     if (item.location) {
       const loc = DATA.locations.find(l => l.id === item.location);
-      metaCells.push({ label: 'Location', value: loc ? loc.name : item.location });
+      if (loc) metaCells.push({ label: 'Location', value: loc.name });
     }
-    // Add ward from tags
+    // Add ward from tags (always, independent of location)
     const wardTag = (item.tags || []).find(t => t.includes('Ward'));
-    if (wardTag && !item.location) metaCells.push({ label: 'Ward', value: wardTag });
+    if (wardTag) metaCells.push({ label: 'Ward', value: wardTag });
 
     if (metaCells.length) {
       html += `<div class="npc-meta-grid">`;
