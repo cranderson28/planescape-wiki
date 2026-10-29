@@ -190,6 +190,27 @@
     "callout": { "type": "yellow", "label": "DM Note", "text": "Closing the box stops the Ethereal breach at the castle center. It does not stop Fathomless attacks from the valley edges — the demiplane floats on the Ethereal, so those still come in from outside. The box is also a portal key (thoughts of endless possibilities) and a two-way pass-through. Whether the party figures this out during this quest or later is up to them." }
   },
   {
+    "id": "the-iron-run",
+    "name": "The Iron Run",
+    "tags": ["New Haven"],
+    "subtitle": "New Haven needs iron. The party carries the first shipment to Korvash — without Horus.",
+    "stats": [
+      { "label": "Reward", "value": "Iron shipment secured" },
+      { "label": "Stakes", "value": "New Haven's supply" },
+      { "label": "Location", "value": "Korvash" }
+    ],
+    "body": "<p>Horus handled the iron trade between New Haven and Korvash for years. He is dead. The party is not him. New Haven's leader sends them through with a cart of food and a letter of introduction, confident that the relationship will hold. It may not.</p><p>The city official who managed the trade on Korvash's side knew Horus personally. The party are strangers with a letter. Whether they come home with iron depends on whether they can give that official a reason to trust people he has never met.</p>",
+    "links": { "locations": ["new-haven", "korvash"], "npcs": ["korvash-official"] },
+    "steps": [
+      { "label": "The Send-Off", "text": "[NEW HAVEN LEADER NAME] loads the party with the valley's best harvest surplus: turnips, peas, preserved stores. She writes a letter of introduction and assumes the trade will go smoothly. She does not know it won't. She has never been to Korvash." },
+      { "label": "Arrival", "text": "The party arrives in Korvash with the cart and the letter. [KORVASH OFFICIAL NAME] receives them formally but coldly. He reads the letter. He does not say much. He knew Horus. He is not ready to extend the same trust to people he has never seen before, on the basis of a letter." },
+      { "label": "The Wall", "text": "[KORVASH OFFICIAL NAME] does not refuse outright. He delays. The trade requires his authorization. He will consider it. He does not say when. The party is left with a cart of food and no deal. New Haven is waiting." },
+      { "label": "Earning the Deal", "text": "The party has to give him a reason. Options: produce something of Horus's that proves the connection (the portable hole, Horus's house keys, any personal effect), demonstrate knowledge of the arrangement that only Horus's people would have, or simply sit with the official long enough that he decides they are worth the risk. There is no combat resolution here. The official is grieving, not hostile." },
+      { "label": "The Trade", "text": "Once trust is established, the deal goes through: food for iron, same terms Horus arranged. The cart goes back full of iron stock. New Haven has what it needs for one season. The relationship is fragile but open." }
+    ],
+    "callout": { "type": "yellow", "label": "DM Note", "text": "[KORVASH OFFICIAL NAME] is not an obstacle to be solved. He is a man who lost someone and is being asked to act like nothing changed. The party can push too hard and lose the deal entirely — New Haven goes without iron this season and the next attempt starts from a worse position. Let the players read the room." }
+  },
+  {
     "id": "resolution",
     "name": "Arc Resolution",
     "tags": ["Arc 1 Finale", "Three-Clue Reveal"],
