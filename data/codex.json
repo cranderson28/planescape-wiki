@@ -17,6 +17,14 @@
       "links": { "npcs": ["veshka", "salt", "wex", "drusine", "rat"], "locations": ["horus-house", "gl-shop", "ninefold-home"], "factions": ["cask", "ninefold", "gray-ledger", "harmonium", "rusted-bell", "wandering-flame", "cats-eyes"], "quests": ["the-war", "resolution"] }
     },
     {
+      "id": "new-haven",
+      "type": "arc",
+      "eyebrow": "Bastion — Campaign Wide",
+      "title": "New Haven",
+      "body": "<p>Content to come.</p>",
+      "links": {}
+    },
+    {
       "id": "t1",
       "type": "transition",
       "eyebrow": "Transition 1 — Week of Indulgence",
