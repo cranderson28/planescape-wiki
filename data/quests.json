@@ -12,7 +12,13 @@
     "id": "collection-run",
     "name": "Collection Run",
     "tags": ["Cask Job #1", "Arc 1"],
-    "subtitle": "Cask Job #1 — 300 gp off debt",
+    "subtitle": "Pick up overdue protection payments from three stalls",
+    "stats": [
+      { "label": "Reward", "value": "300 gp off debt" },
+      { "label": "Tension", "value": "+1" },
+      { "label": "Map", "value": "Road map" }
+    ],
+    "body": "<p>The Cask capo sends the party out to collect from three stall owners who are behind on protection money. Two pay without trouble. The third refuses and needs convincing.</p><p>The road map is in play here. This is the party's first look at how the Cask operation works from the inside, and how the ward watches anyone doing Cask work.</p>",
     "links": { "factions": ["cask"], "npcs": ["veshka"] },
     "steps": [
       { "label": "Briefing", "text": "Veshka gives the party three addresses and a payment ledger. Three residents are overdue. They owe 80 gp, 120 gp, and 60 gp respectively. The party is to collect. No violence unless necessary. Necessary is defined as the resident refusing to acknowledge the debt exists." },
@@ -20,13 +26,19 @@
       { "label": "Address 2", "text": "A family that genuinely cannot pay. They have 40 gp and no more. The party must decide: take the 40 and report a shortfall, negotiate a payment plan on Veshka's behalf (she will honor it, reluctantly), or cover the difference themselves." },
       { "label": "Address 3", "text": "The resident is not there. A neighbor says she left three days ago. The money is gone with her. This is a problem for Veshka, not the party — they report back and she handles it. But it is the first hint that someone is moving people out of the Cask Family's reach." },
       { "label": "Return", "text": "Report to Veshka. 300 gp off debt regardless of shortfall (she expected some). Tension +1." }
-    ]
+    ],
+    "callout": { "type": "yellow", "label": "DM Note", "text": "The resisting stall owner is not Bell or Ninefold — just a merchant who has had enough. Killing or seriously hurting them makes the ward remember. Veshka hears about it." }
   },
   {
     "id": "escort",
     "name": "Escort Job",
     "tags": ["Cask Job #2", "Arc 1"],
-    "subtitle": "Cask Job #2 — 400 gp off debt",
+    "subtitle": "Move a Cask courier safely through Ninefold territory",
+    "stats": [
+      { "label": "Reward", "value": "400 gp off debt" },
+      { "label": "Tension", "value": "+1" }
+    ],
+    "body": "<p>A Cask courier needs to move a sealed satchel through Ninefold territory and out the other side. The party provides the muscle. The complication is that the route may already be compromised.</p>",
     "links": { "factions": ["cask"], "npcs": ["veshka"] },
     "steps": [
       { "label": "Briefing", "text": "A Cask courier named Terri needs to move a locked satchel from the Hive Ward into Ninefold territory and out the other side. She does not know what is in the satchel. The party's job is to make sure she gets through." },
@@ -34,13 +46,19 @@
       { "label": "Delivery", "text": "The satchel goes to a contact at a tea house outside Ninefold territory. The contact takes it without comment and hands Terri an envelope in exchange. Terri thanks the party and leaves." },
       { "label": "Twist", "text": "If the party followed Terri rather than protecting her: the envelope she received is a message from the Cat's Eyes — someone paid to know when Cask was moving something through Ninefold territory. Terri is not a spy. She is a courier. She has no idea the route was sold." },
       { "label": "Return", "text": "400 gp off debt. Tension +1. The route compromise is a clue available for investigation." }
-    ]
+    ],
+    "callout": { "type": "yellow", "label": "DM Note", "text": "The Cat's Eyes connection is Clue 1 in the Gray Ledger reveal chain. Don't push it — let the party find it if they're curious about why the route was known." }
   },
   {
     "id": "message-delivery",
     "name": "Message Delivery",
     "tags": ["Cask Job #3", "Arc 1"],
-    "subtitle": "Cask Job #3 — 250 gp off debt",
+    "subtitle": "Carry a sealed envelope to a contact in the Lower Ward",
+    "stats": [
+      { "label": "Reward", "value": "250 gp off debt" },
+      { "label": "Tension", "value": "+0" }
+    ],
+    "body": "<p>A straightforward run into the Lower Ward with a sealed message. Veshka doesn't explain the contents. The contact's reply is the more interesting part.</p>",
     "links": { "factions": ["cask"], "npcs": ["veshka"] },
     "steps": [
       { "label": "Briefing", "text": "Veshka has a sealed envelope for a contact in the Lower Ward. Simple delivery — no escort needed, no violence expected. The envelope is sealed with a wax stamp. Veshka does not explain the contents." },
@@ -53,59 +71,89 @@
     "id": "portal-watch",
     "name": "Portal Watch",
     "tags": ["Ninefold Job #1", "Arc 1"],
-    "subtitle": "Ninefold Job #1 — 200 gp",
+    "subtitle": "Guard a Ninefold portal overnight against Cask interference",
+    "stats": [
+      { "label": "Reward", "value": "200 gp" },
+      { "label": "Tension", "value": "+1" }
+    ],
+    "body": "<p>Salt needs the warehouse portal watched overnight. He doesn't want confrontation — he wants intelligence. The party is to observe and report, not engage.</p>",
     "links": { "factions": ["ninefold"], "npcs": ["salt"], "locations": ["ninefold-home"] },
     "steps": [
       { "label": "Briefing", "text": "Salt needs the warehouse portal guarded overnight. The Cask Family has been testing Ninefold corridors for weaknesses. He wants to know if they send anyone to the portal. He wants the party to report back, not engage." },
       { "label": "The Watch", "text": "Four hours in: a single Cask scout approaches, checks the perimeter, and leaves. She does not try to enter. She is marking the site." },
       { "label": "Decision point", "text": "Follow the scout: leads back toward Cask territory, eventually to a meeting with a third party (Cat's Eyes — someone sold the portal's location). Report only: Salt is satisfied, the information is useful." },
       { "label": "Return", "text": "200 gp. Tension +1. The Cat's Eyes sale is a thread available for investigation — connects to the same leak as the Escort job if the party pieces it together." }
-    ]
+    ],
+    "callout": { "type": "yellow", "label": "DM Note", "text": "This is the second place Clue 1 can surface. Following the scout is optional but rewards the party with the Cat's Eyes connection if they pursue it." }
   },
   {
     "id": "key-retrieval",
     "name": "Key Retrieval",
     "tags": ["Ninefold Job #2", "Arc 1"],
-    "subtitle": "Ninefold Job #2 — 300 gp",
+    "subtitle": "Recover a stolen portal key from a fence in the Great Bazaar",
+    "stats": [
+      { "label": "Reward", "value": "300 gp" },
+      { "label": "Tension", "value": "+1" }
+    ],
+    "body": "<p>A Ninefold portal key was stolen and has ended up with a fence in the Great Bazaar. Recover it before someone who knows what it is gets there first.</p>",
     "links": { "factions": ["ninefold"], "npcs": ["salt"] },
     "steps": [
       { "label": "Briefing", "text": "A Ninefold portal key (a specific length of rope tied in a specific knot) was stolen from a courier three days ago. Salt has traced it to a fence named Brix who operates from a stall in the Great Bazaar. The party is to get it back." },
       { "label": "Brix", "text": "Brix is a gnome who will deal if the price is right. He bought the rope for 5 gp and will sell it for 50. He does not know it is a portal key. He thinks it is unusual cordage. He will negotiate. Intimidation is possible but will make him less useful as a future resource." },
       { "label": "Complication", "text": "While the party is negotiating with Brix, a Cask agent arrives looking to buy the rope. Same rope. He also does not know it is a portal key — he was told to acquire it for 'sentimental value.' Bidding war or confrontation." },
       { "label": "Return", "text": "Return the rope to Salt. 300 gp. Tension +1. Salt is pleased. He mentions that someone has been flagging Ninefold assets to Cask buyers — the same leak." }
-    ]
+    ],
+    "callout": { "type": "yellow", "label": "DM Note", "text": "Salt's comment about flagging Ninefold assets connects to the Gray Ledger leak. It's available for investigation but doesn't push the party toward it." }
   },
   {
     "id": "discourage-witness",
     "name": "Discourage a Witness",
     "tags": ["Ninefold Job #3", "Arc 1"],
-    "subtitle": "Ninefold Job #3 — 250 gp",
+    "subtitle": "Convince a ward resident to reconsider reporting what she saw",
+    "stats": [
+      { "label": "Reward", "value": "250 gp" },
+      { "label": "Tension", "value": "+1 or +2" }
+    ],
+    "body": "<p>A seamstress saw something she shouldn't have. Salt wants her convinced that her memory of events is mistaken. The party has to do this without threats, without violence, and without making it obvious they were sent.</p>",
     "links": { "factions": ["ninefold"], "npcs": ["salt"] },
     "steps": [
       { "label": "Briefing", "text": "A ward resident named Calla saw a Ninefold runner break up a fight three nights ago. The fight went badly. She is planning to report what she saw to the Harmonium. Salt wants her convinced that she didn't see what she thinks she saw — not threatened, not harmed, just convinced." },
       { "label": "Calla", "text": "Calla is a seamstress and she is not stupid. She knows what she saw. She is willing to reconsider if the party gives her a good reason. A good reason could be: payment, a favor, protection from the Ninefold in future, or information that recontextualizes what she saw." },
       { "label": "What she actually saw", "text": "The fight was a Ninefold runner breaking up a Rusted Bell mugging. The runner did not intend for anyone to get hurt. Someone got hurt anyway. Calla saw the aftermath and drew the reasonable conclusion. She is wrong about intent, not about what happened." },
       { "label": "Return", "text": "250 gp if Calla decides not to report. If she reports anyway: Tension +2 (Harmonium involvement). The party still gets paid for the attempt. Salt is not angry. He expected this might not work." }
-    ]
+    ],
+    "callout": { "type": "yellow", "label": "DM Note", "text": "Calla is sympathetic. The party may want to actually help her rather than just silence her. That's fine — if they give her something real, she has no reason to report." }
   },
   {
     "id": "xaositect-interference",
     "name": "Xaositect Interference",
     "tags": ["Ninefold Job #4", "Arc 1"],
-    "subtitle": "Ninefold Job #4 — 400 gp",
+    "subtitle": "Clear a Xaositect cell from a Ninefold corridor",
+    "stats": [
+      { "label": "Reward", "value": "400 gp" },
+      { "label": "Tension", "value": "+2 (or +3 if combat)" }
+    ],
+    "body": "<p>A cell of Xaositects has claimed a Ninefold corridor as their new home territory and won't leave. Salt wants them gone. He doesn't care how, but the Harmonium is already watching the block.</p>",
     "links": { "factions": ["ninefold"], "npcs": ["salt"] },
     "steps": [
       { "label": "Briefing", "text": "A cell of Xaositects (chaos faction) has claimed a Ninefold corridor as their new 'home territory.' They have been there for two weeks, disrupting commerce and confusing residents. Salt wants them gone. He does not care how." },
       { "label": "The Xaositects", "text": "Six members. They are not hostile — they are chaotic. Their logic is genuine and internally consistent to them. They claimed the corridor because a random number they generated 'chose' it. They will leave if given a sufficiently chaotic reason to do so." },
       { "label": "Chaos solutions", "text": "Examples that work: generating a bigger random number that 'chooses' a different location; introducing a contradiction into their territorial claim logic; finding their de facto leader and convincing them that leaving is actually the chaotic choice. Violence will work but increases Tension by an extra +1." },
       { "label": "Return", "text": "400 gp. Tension +2 (corridor disruption cleared, but the Harmonium noticed the original occupation). Tension +3 if combat was used." }
-    ]
+    ],
+    "callout": { "type": "yellow", "label": "DM Note", "text": "The chaos solutions are suggestions, not scripts. Players who engage with Xaositect logic genuinely are more fun to reward than players who just swing. The extra Tension for violence is a soft deterrent, not a hard consequence." }
   },
   {
     "id": "find-the-rat",
     "name": "Find the Rat",
     "tags": ["Cask Job #4", "Arc 1", "Leads to Clue 2"],
-    "subtitle": "Cask Job #4 — 500 gp off debt, leads to Gray Ledger Clue 2",
+    "subtitle": "Identify who has been leaking Cask information",
+    "stats": [
+      { "label": "Reward", "value": "500 gp off debt" },
+      { "label": "Tension", "value": "+2" },
+      { "label": "Leads to", "value": "Clue 2" }
+    ],
+    "body": "<p>Three Cask collection routes were compromised in a single week. Veshka is patient but clear: she wants the source identified quietly, without making it obvious there's a hunt underway.</p>",
     "links": { "factions": ["cask", "gray-ledger"], "npcs": ["veshka", "rat"], "locations": ["gl-shop"] },
     "steps": [
       { "label": "Briefing", "text": "Veshka has confirmed that someone inside the Cask operation is leaking information to the Ninefold — or to someone passing it to the Ninefold. Three collection routes were compromised last week. She wants the source identified. She is patient about it. She would prefer the party not make it obvious they are looking." },
@@ -113,13 +161,15 @@
       { "label": "Mott", "text": "Mott is not selling to the Ninefold. He is selling to a third party who is selling to both factions. He does not know the third party's name. He knows a drop point: a dead-letter box at a tea house in the Lady's Ward." },
       { "label": "The drop point", "text": "The dead-letter box connects to the Gray Ledger's operation. This is Clue 2: someone is buying Cask intelligence and using it to keep the war calibrated, not to win it." },
       { "label": "Return", "text": "Report to Veshka (can choose how much to disclose about the drop point). 500 gp off debt. Tension +2. Veshka handles Mott privately. The party has Clue 2." }
-    ]
+    ],
+    "callout": { "type": "red", "label": "DM Note", "text": "The drop point is Clue 2. If the party goes to the tea house, they find a name: the Gray Ledger. That's enough. Don't over-explain — let the name sit until they're ready to pull on it." }
   },
   {
     "id": "resolution",
     "name": "Arc Resolution",
     "tags": ["Arc 1 Finale", "Three-Clue Reveal"],
     "subtitle": "Three-Clue Gray Ledger Reveal",
+    "body": "<p>Three clues converge on the Gray Ledger — a financial front that has been funding both factions simultaneously and calibrating the conflict for profit. The party has all the pieces. The question is whether they put them together before the war goes hot.</p>",
     "links": { "factions": ["cask", "ninefold", "gray-ledger"], "npcs": ["bbeg", "wex", "drusine"], "locations": ["gl-shop"] },
     "steps": [
       { "label": "Clue 1 — The Pattern", "text": "Available from the Escort job or Portal Watch investigation thread: someone has been selling both Cask and Ninefold intelligence to a third party. The Cat's Eyes have a name for the buyer: a financial front in the Lady's Ward." },
@@ -128,6 +178,7 @@
       { "label": "Confrontation", "text": "The party can go to the shop. Wex is there. Drusine is already gone. The counting room is accessible but someone has been through the records. The key evidence is still there if the party looks carefully — Drusine cleared the obvious material and missed the structural account entries." },
       { "label": "Grey Reed", "text": "Not present. The party will find evidence of him (a name on a dormant account, a description from a ward resident who saw him enter the shop twice) but not the man himself. He was three steps ahead. This is intentional. He will resurface." },
       { "label": "Resolution", "text": "Presenting evidence of the Gray Ledger's operation to both Veshka and Salt simultaneously ends the conflict. Neither faction wants to be the one that kept funding a war their enemy was also funding. The debt is forgiven (both factions are embarrassed). The Tension Track resets. Arc 1 ends." }
-    ]
+    ],
+    "callout": { "type": "red", "label": "DM Note", "text": "Two of three clues is enough to trigger the reveal. Don't make the party find all three. They only need enough to confront Veshka and Salt with something credible." }
   }
 ]
