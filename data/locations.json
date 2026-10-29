@@ -2,6 +2,8 @@
   {
     "id": "horus-house",
     "name": "Horus House",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
     "tags": ["Party Base", "Hive Ward"],
     "subtitle": "Party Base of Operations",
     "body": "<p>A three-story narrow rowhouse in the Hive Ward, near the ward border. Horus Lanternholder owned it. Now the party does.</p><p>Ground floor: kitchen, common room, a workbench. Second floor: two bedrooms. Third floor: Horus's study and a roof access hatch. Basement: trapdoor under a kitchen rug, crates of supplies and magical items including the bag of withholding.</p><p>The house is in decent repair. Horus kept it functional rather than comfortable. There is food in the kitchen. There is a lock on the front door. The lock is better than the neighborhood suggests.</p>",
@@ -17,6 +19,8 @@
   {
     "id": "mortuary",
     "name": "The Mortuary",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
     "tags": ["Dustmen HQ", "Hive Ward"],
     "subtitle": "Dustmen Headquarters, Sigil Corpse Disposal",
     "body": "<p>The Mortuary is Sigil's official body-processing facility. Every corpse in Sigil comes here, by law. The Dustmen maintain it, staff it, and manage the paperwork that follows every death in the city.</p><p>It is large, gray, and smells of preservation chemicals. The staff are professional and slightly offputting. The queue for disposal during high-tension periods can be several days long. The Dustmen do not rush.</p><p>The party's first visit follows the Session One combat at Horus House. Three Rusted Bell bodies, no witnesses except the party. The Dustmen require: cause of death, names if known, and the disposal fee (5 gp per body for standard processing). They do not ask difficult questions. They have seen worse.</p>",
@@ -31,6 +35,8 @@
   {
     "id": "gl-shop",
     "name": "The Gray Ledger (Shop Front)",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
     "tags": ["Gray Ledger", "Hive Ward", "Arc 1 Reveal"],
     "subtitle": "Money-Lending Shop, Gray Ledger Front Operation",
     "body": "<p>A tidy shopfront on a Hive Ward commercial corridor. Sign reads \"The Gray Ledger — Loans, Accounts, Exchange.\" Clean windows, a bell on the door, a queue of ward residents waiting for service.</p><p>Wex works the counter. He is pleasant, efficient, and knows exactly what the posted rates are and nothing else. The counting room is one floor up, accessed by a door behind the counter that requires a key Wex does not have.</p><p>The shop is legitimate in the way that a front operation is legitimate: the loans are real, the payments are collected, the paperwork is filed. The accounting behind the accounting is where the interesting material is.</p>",
@@ -46,6 +52,8 @@
   {
     "id": "ninefold-home",
     "name": "The Ninefold Headquarters",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
     "tags": ["The Ninefold", "Hive Ward", "Portal Site"],
     "subtitle": "Ninefold HQ and Ward Portal Site",
     "body": "<p>A converted warehouse in the Hive Ward's interior, claimed by the Ninefold as their central operation. Salt runs meetings from a back office. The main floor is used for goods transit and labor placement — legitimate businesses that the protection operation runs alongside.</p><p>One of the nine corridors the Ninefold controls runs directly to a portal site in the warehouse's loading dock. The portal key is a specific knot pattern tied in rope. Salt knows the key. His lieutenants do not.</p><p>The warehouse is not comfortable and not designed to be. It is functional: a place where work gets done.</p>",

@@ -894,52 +894,40 @@ function renderList(q) {
 
   const items = (DATA[currentTab] || []).filter(matches);
 
-  // Change 4: Locations — two-level grouping: Region > Ward
+  // Locations — three-level grouping: Region > Sublocation > item
   if (currentTab === 'locations') {
-    // Region map: Sigil is the only region currently; all wards fall under it
-    const sigil = items.filter(i => {
-      const tags = i.tags || [];
-      return tags.some(t => t.includes('Ward') || t === 'Sigil');
-    });
-    const other = items.filter(i => {
-      const tags = i.tags || [];
-      return !tags.some(t => t.includes('Ward') || t === 'Sigil');
+    // Group by region field, then sublocation field; fall back to tags for old entries
+    const byRegion = {};
+    const regionOrder = [];
+    items.forEach(item => {
+      const region = item.region || (item.tags || []).find(t => t === 'Sigil') || 'Other';
+      const sub = item.sublocation || (item.tags || []).find(t => t.includes('Ward')) || region;
+      if (!byRegion[region]) { byRegion[region] = {}; regionOrder.push(region); }
+      if (!byRegion[region][sub]) byRegion[region][sub] = [];
+      byRegion[region][sub].push(item);
     });
 
-    const renderRegion = (regionLabel, regionItems, regionKey) => {
-      if (!regionItems.length) return;
-      // Sub-group by ward
-      const byWard = {};
-      const wardOrder = [];
-      regionItems.forEach(item => {
-        const wardTag = (item.tags || []).find(t => t.includes('Ward') || t === 'Lady\'s Ward') || 'Sigil';
-        if (!byWard[wardTag]) { byWard[wardTag] = []; wardOrder.push(wardTag); }
-        byWard[wardTag].push(item);
+    regionOrder.forEach(region => {
+      const subMap = byRegion[region];
+      const subKeys = Object.keys(subMap);
+      const regionKey = 'loc-' + region.toLowerCase().replace(/\s+/g, '-');
+      const regionOpen = sectionState[regionKey] === true;
+      const regionHeader = document.createElement('div');
+      regionHeader.className = 'list-section-header';
+      regionHeader.innerHTML = `<span>${region}</span><span>${regionOpen ? '▾' : '▸'}</span>`;
+      const regionContent = document.createElement('div');
+      regionContent.className = 'list-section-content' + (regionOpen ? '' : ' hidden');
+      regionHeader.onclick = () => {
+        const hidden = regionContent.classList.toggle('hidden');
+        regionHeader.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
+        sectionState[regionKey] = !hidden;
+      };
+      container.appendChild(regionHeader);
+      container.appendChild(regionContent);
+      subKeys.forEach(sub => {
+        makeSectionHeader(sub, regionKey + '-' + sub.toLowerCase().replace(/\s+/g, '-'), subMap[sub], regionContent);
       });
-      // If only one ward (or no sub-grouping needed), flat under region
-      if (wardOrder.length === 1) {
-        makeSectionHeader(regionLabel, regionKey, regionItems, container);
-      } else {
-        // Create a top-level section header that contains nested ward headers
-        const open = sectionState[regionKey] === true;
-        const header = document.createElement('div');
-        header.className = 'list-section-header';
-        header.innerHTML = `<span>${regionLabel}</span><span>${open ? '▾' : '▸'}</span>`;
-        const regionContent = document.createElement('div');
-        regionContent.className = 'list-section-content' + (open ? '' : ' hidden');
-        header.onclick = () => {
-          const hidden = regionContent.classList.toggle('hidden');
-          header.querySelector('span:last-child').textContent = hidden ? '▸' : '▾';
-          sectionState[regionKey] = !hidden;
-        };
-        container.appendChild(header);
-        container.appendChild(regionContent);
-        wardOrder.forEach(ward => makeSectionHeader(ward, regionKey + '-' + ward, byWard[ward], regionContent));
-      }
-    };
-
-    if (sigil.length) renderRegion('Sigil', sigil, 'loc-sigil');
-    if (other.length) renderRegion('Other', other, 'loc-other');
+    });
     return;
   }
 
