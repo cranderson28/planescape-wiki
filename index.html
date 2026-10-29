@@ -809,12 +809,11 @@ function makeListEl(item) {
   return el;
 }
 
-// Change 1: sectionState defaults to open (true) for all sections
 const sectionState = {};
 
 function makeSectionHeader(label, sectionKey, items, container) {
-  // Change 1: default open — sectionState[key] is true unless explicitly set false
-  const open = sectionState[sectionKey] !== false;
+  // Default collapsed — sectionState[key] is false unless explicitly set true
+  const open = sectionState[sectionKey] === true;
   const header = document.createElement('div');
   header.className = 'list-section-header';
   header.innerHTML = `<span>${label}</span><span>${open ? '▾' : '▸'}</span>`;
@@ -866,7 +865,7 @@ function renderList(q) {
       .filter(matches);
 
     if (wlItems.length || planesItems.length) {
-      const wlOpen = sectionState['codex-worldLore'] !== false;
+      const wlOpen = sectionState['codex-worldLore'] === true;
       const wlHeader = document.createElement('div');
       wlHeader.className = 'list-section-header';
       wlHeader.innerHTML = `<span>World Lore</span><span>${wlOpen ? '▾' : '▸'}</span>`;
@@ -922,7 +921,7 @@ function renderList(q) {
         makeSectionHeader(regionLabel, regionKey, regionItems, container);
       } else {
         // Create a top-level section header that contains nested ward headers
-        const open = sectionState[regionKey] !== false;
+        const open = sectionState[regionKey] === true;
         const header = document.createElement('div');
         header.className = 'list-section-header';
         header.innerHTML = `<span>${regionLabel}</span><span>${open ? '▾' : '▸'}</span>`;
@@ -983,7 +982,7 @@ function renderList(q) {
 
     if (quasigods.length) {
       // Campaign Wide > Quasigods
-      const cwOpen = sectionState['npc-campaign'] !== false;
+      const cwOpen = sectionState['npc-campaign'] === true;
       const cwHeader = document.createElement('div');
       cwHeader.className = 'list-section-header';
       cwHeader.innerHTML = `<span>Campaign Wide</span><span>${cwOpen ? '▾' : '▸'}</span>`;
@@ -1001,7 +1000,7 @@ function renderList(q) {
 
     if (sigilNpcs.length) {
       // Sigil > sub-groups by ward/affiliation tag
-      const sigilOpen = sectionState['npc-sigil'] !== false;
+      const sigilOpen = sectionState['npc-sigil'] === true;
       const sigilHeader = document.createElement('div');
       sigilHeader.className = 'list-section-header';
       sigilHeader.innerHTML = `<span>Sigil</span><span>${sigilOpen ? '▾' : '▸'}</span>`;
@@ -1032,7 +1031,7 @@ function renderList(q) {
 
   // Change 5: Factions — two-level: Sigil region > category
   if (currentTab === 'factions') {
-    const sigilOpen = sectionState['fac-sigil'] !== false;
+    const sigilOpen = sectionState['fac-sigil'] === true;
     const sigilHeader = document.createElement('div');
     sigilHeader.className = 'list-section-header';
     sigilHeader.innerHTML = `<span>Sigil</span><span>${sigilOpen ? '▾' : '▸'}</span>`;
@@ -1137,12 +1136,12 @@ function renderList(q) {
 
     planeOrder.forEach(plane => {
       const planeObj = byPlane[plane];
-      const planeOpen = sectionState['loot-p-' + plane] !== false;
+      const planeOpen = sectionState['loot-p-' + plane] === true;
       const planeContent = makeNestedHeader(plane, 'loot-p-' + plane, planeOpen, container);
 
       planeObj.wardOrder.forEach(ward => {
         const wardObj = planeObj.wards[ward];
-        const wardOpen = sectionState['loot-w-' + plane + ward] !== false;
+        const wardOpen = sectionState['loot-w-' + plane + ward] === true;
         const wardContent = makeNestedHeader(ward, 'loot-w-' + plane + ward, wardOpen, planeContent);
 
         wardObj.buildingOrder.forEach(building => {
