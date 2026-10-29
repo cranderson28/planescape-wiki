@@ -6,8 +6,8 @@
     "subtitle": "Quasigod of Decisions",
     "status": "Active",
     "plot_dependent": false,
-    "body": "<p>Choice manifests as a shimmer at crossroads — literal and figurative. The party earns her boon by making a consequential decision without foreknowledge of the outcome. She does not reward right choices. She rewards chosen ones.</p><p><strong>Boon:</strong> Portent die. Roll a d20 at the start of the session. Before any roll, the player may replace the result with the portent die's value (or force an enemy to use it). The portent die is then spent. Turn in your chip to activate.</p>",
-    "boon": "Portent die (one-time d20 swap — turn in chip)"
+    "body": "<p>One of five quasigods who move through the planes without pattern. Choice appears randomly — it doesn't have to be when a choice needs to be made. He does not announce himself. First appearance is in a bar with Chance, playing a very complicated game.</p><p><strong>Boon:</strong> Portent die. The recipient must declare its use at the start of the day, before any roll, following standard Divination Wizard Portent rules. The die is gone at the end of the day whether spent or not. Turn in your chip to activate.</p><p><em>DM Note: Choice is one of five quasigods. The five: Choice (Portent die), Chance (Luck reroll), Grace (+5 AC reaction), Grit (+10 saving throw), Fury (1d10 force damage scaling). All five can appear in any session, any arc.</em></p>",
+    "boon": "Portent die (single use — turn in chip)"
   },
   {
     "id": "chance",
@@ -26,7 +26,7 @@
     "subtitle": "Quasigod of Protection",
     "status": "Active",
     "plot_dependent": false,
-    "body": "<p>Grace has not yet appeared. Her domain is the moment between attack and harm — the half-second where catastrophe becomes near-miss.</p><p><strong>Boon:</strong> As a reaction when hit by an attack, gain +5 AC against that hit. Turn in your chip to activate. One use, gone when spent.</p>",
+    "body": "<p>One of five quasigods who move through the planes without pattern. She walks and never sits, travels but never camps, visits but never stays. In her visit she tells of her travels and emboldens those around her with courage in their journey.</p><p><strong>Boon:</strong> Use as a reaction to add +5 to AC against one attack. Turn in your chip to activate.</p><p><em>DM Note: Grace is one of the five quasigods. The five: Choice (Portent die), Chance (Luck reroll), Grace (+5 AC reaction), Grit (+10 saving throw), Fury (1d10 force damage scaling). All five can appear in any session, any arc.</em></p>",
     "boon": "+5 AC reaction (one-time — turn in chip)"
   },
   {
@@ -36,8 +36,8 @@
     "subtitle": "Quasigod of Endurance",
     "status": "Active",
     "plot_dependent": false,
-    "body": "<p>Grit has not yet appeared. His domain is the moment a body refuses to fail — the saving throw made on nothing but stubbornness.</p><p><strong>Boon:</strong> Before rolling a saving throw, add +10 to the result. Turn in your chip to activate. One use, gone when spent.</p>",
-    "boon": "+10 saving throw (one-time — turn in chip)"
+    "body": "<p>One of five quasigods who move through the planes without pattern. A Mountain Dwarf, eternally angry — at least he looks that way, but he isn't really. He'll grant you his boon if you stand your ground. If you're a pushover he'll walk right by you, or ignore you at his tavern table.</p><p><strong>Boon:</strong> Add +10 to any one saving throw. Must be declared before the roll. Turn in your chip to activate.</p><p><em>DM Note: Grit is one of the five quasigods. The five: Choice (Portent die), Chance (Luck reroll), Grace (+5 AC reaction), Grit (+10 saving throw), Fury (1d10 force damage scaling). All five can appear in any session, any arc.</em></p>",
+    "boon": "+10 to one saving throw (declare before roll — turn in chip)"
   },
   {
     "id": "fury",
@@ -46,8 +46,8 @@
     "subtitle": "Quasigod of Violence",
     "status": "Active",
     "plot_dependent": false,
-    "body": "<p>Fury has not yet appeared. His domain is the violence that exceeds intention — hits that land harder than the arm behind them.</p><p><strong>Boon:</strong> After landing an attack, deal an additional 1d10 force damage as a secondary strike. No action required. Turn in your chip to activate. One use, gone when spent.</p>",
-    "boon": "1d10 force second strike (one-time — turn in chip)"
+    "body": "<p>One of five quasigods who move through the planes without pattern. A heavy Minotaur, 7.5 feet tall in armor, who will challenge you to an arm wrestling match. Upon losing will grant you his boon. Upon winning will congratulate you as a worthy foe and look forward to seeing you again.</p><p><strong>Boon:</strong> Add 1d10 force damage to your damage roll. Scales with level: level 5 — 2d10, level 11 — 3d10, level 17 — 4d10. Turn in your chip to activate.</p><p><em>DM Note: Fury is one of the five quasigods. The five: Choice (Portent die), Chance (Luck reroll), Grace (+5 AC reaction), Grit (+10 saving throw), Fury (1d10 force damage scaling). All five can appear in any session, any arc.</em></p>",
+    "boon": "1d10 force damage (scales by level — turn in chip)"
   },
   {
     "id": "veshka",
