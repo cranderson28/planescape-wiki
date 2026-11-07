@@ -1,12 +1,198 @@
 [
   {
+    "id": "boneyard-pond",
+    "name": "Boneyard Pond",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Landmark"],
+    "subtitle": "Still Pond, Hive Ward",
+    "body": "<p>A still pond tucked into the Hive's interior, far enough from main streets that only regulars know the approach. The surface is covered in floating refuse. The smell is what you notice first.</p><p>There is no known source and no drain. It simply exists, as many things in the Hive do, without explanation or upkeep.</p><p>Someone is usually on the shore. They are not there for the view.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward (interior)" },
+      { "label": "Type", "value": "Pond (source and depth unknown)" },
+      { "label": "Access", "value": "Known to locals; not on main streets" },
+      { "label": "Condition", "value": "Refuse, occasional corpse, unmanaged" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "A good location for a clandestine meeting or a body disposal that someone will notice too late. The regulars here are the bottom tier of the Hive's social structure. They are not dangerous but they are observant: if you do something here, someone saw it." },
+    "links": {}
+  },
+  {
+    "id": "bottle-and-jug",
+    "name": "Bottle and Jug",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Tavern", "Rusted Bell"],
+    "subtitle": "Tavern, Hive Ward",
+    "body": "<p>A round tower of black granite with a tall arched door, one of the larger taverns in the Hive. The exterior is solid. The interior smells like every other bar in the ward, only louder.</p><p>The Bottle and Jug is known for nightly entertainment combat: staged fights on a raised platform, with the crowd betting on outcomes. The fighters are professionals, mostly. The outcomes are not always staged.</p><p>Staff work the bar and the floor. The alley entrance to the Rusted Bell's basement hangout is around the side of the building, unmarked. Bar staff know about it and do not advertise it.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward" },
+      { "label": "Type", "value": "Tavern" },
+      { "label": "Entertainment", "value": "Nightly combat (platform, crowd betting)" },
+      { "label": "Notable", "value": "Rusted Bell basement entrance (alley, unmarked)" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Bottle and Jug is where you send the party when they need to find someone in the Hive. Parakk can be found by asking here. The nightly fights are real and the betting is real: a source of income and a time sink if the party gets interested." },
+    "links": {}
+  },
+  {
+    "id": "cask-family-hq",
+    "name": "Cask Family HQ",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Cask Family", "Criminal"],
+    "subtitle": "Cask Family Back Room, Smoldering Corpse Bar, Hive Ward",
+    "body": "<p>Through twisting hallways at the back of the Smoldering Corpse Bar. There is a door. It is locked. There is a guard on the other side of it.</p><p>The room is used for collections, planning, and meetings the Cask Family prefers not to hold in public. It is not large and not comfortable.</p><p>The Cask Family staff this room with whoever they trust that week. No named fixture yet.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward" },
+      { "label": "Access", "value": "Through Smoldering Corpse Bar, locked door, guarded" },
+      { "label": "Faction", "value": "The Cask Family" },
+      { "label": "Function", "value": "Collections, planning, private meetings" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Cask Family runs protection and debt collection in the Hive. The back room is their territory; walking in uninvited is a serious provocation. This location becomes accessible if the party reaches terms with the Family or is running a job for them." },
+    "links": { "factions": ["cask-family"] }
+  },
+  {
+    "id": "certified-fishing-circle-of-the-ditch",
+    "name": "Certified Fishing Circle of the Ditch",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Fishing", "Local Color"],
+    "subtitle": "The Only Credentialed Fishing Spot in Sigil, Hive Ward",
+    "body": "<p>A stretch of east bank on the Ditch, marked by a small posted sign and a rack of rental rods. The certification is from an authority whose name has been lost. The fish are real, though their nature is disputed.</p><p>Rods for rent. Bait for sale. The water is what it is.</p><p>The regulars are there most mornings and some evenings. They do not catch much. They are not primarily here to catch fish.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward (Ditch east bank)" },
+      { "label": "Certification", "value": "Yes (authority unknown)" },
+      { "label": "Equipment", "value": "Rods for rent; bait for sale" },
+      { "label": "Catch", "value": "Variable; identification of catch not guaranteed" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "Live and visible on the map. A contact point and a low-key location for conversations the party does not want overheard. The regulars are neighborhood fixtures who know more about Ditch-side Hive activity than they let on: buy bait, start talking." },
+    "links": {}
+  },
+  {
+    "id": "fell-s-tattoos",
+    "name": "Fell's Tattoo Shop",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Dabus", "Tattoos", "Magic"],
+    "subtitle": "Tattoo Parlor, Redwind Road, Hive Ward",
+    "body": "<p>A rounded building on Redwind Road, marked by a sign of a black lightning bolt in a white oval. The sign moves. The building is unremarkable except for the sign and the faint smell of something burning that is not unpleasant.</p><p>The shop offers tattoo work. The price is negotiable. The results are permanent and occasionally more than decorative.</p><p>Fell is the sole proprietor and practitioner. He is a dabus, one of the Lady of Pain's silent servants, working on his own time. He communicates in the dabus manner: rebuses of images and symbols that drift and fade above his head. He does not speak. He does not need to. At his discretion, a tattoo he applies can be rendered in a way that allows it to temporarily become a real object. This ability is not advertised, not explained, and not guaranteed. At night he is sometimes seen bricking up ooze portals in the Hive's alleys.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward" },
+      { "label": "Proprietor", "value": "Fell (dabus)" },
+      { "label": "Sign", "value": "Black lightning bolt in white oval (animated)" },
+      { "label": "Notable", "value": "Tattoos that become real objects (discretionary)" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "Source: Uncaged: Faces of Sigil (TSR 2624), pp. 36-37. The book places Fell in the Market/Guildhall Ward; the 5e map places him in the Hive Ward. Hive Ward is canon for this campaign. Fell is a neutral contact: not an enemy, not a reliable ally. He will tattoo the party if they ask and can pay. Whether and when a tattoo becomes real is entirely at his discretion and yours." },
+    "links": {}
+  },
+  {
+    "id": "five-portals-inn",
+    "name": "Five Portals Inn",
+    "region": "Sigil",
+    "sublocation": "Lower Ward",
+    "tags": ["Lower Ward", "Campaign Start", "Lodging"],
+    "subtitle": "Inn and Stables, Lower Ward",
+    "body": "<p>A crowded inn just inside the Lower Ward border, close enough to the Hive that the clientele skews toward travelers who cannot afford the Lady's Ward and do not want to sleep in the Hive. The exterior is well-worn but sound. A stable sits tucked in behind. The five elemental connections it advertises are real: water flows through the common room, fire burns in an open central hearth, the lamps run bright without oil, a cool breeze moves through the upper corridors at all hours, and the fifth amenity is unmentionable.</p><p>Rooms, meals, and stabling are all available. The rates are fair for the ward. The common room is loud most evenings.</p><p>Gurand Jor owns it. Katrina Higildra runs the bar. Neither has time for nonsense. Both are the Sigil kind of kind: they will not let a clueless stranger freeze in the street, but do not read warmth into it. They knew Horus. This was not the first time he brought in newcomers who had no idea where they were.<ul><li>Toloin — Horus's donkey, stabled out back</li></ul></p>",
+    "stats": [
+      { "label": "Ward", "value": "Lower Ward" },
+      { "label": "Owner", "value": "Gurand Jor" },
+      { "label": "Bartender", "value": "Katrina Higildra" },
+      { "label": "Services", "value": "Rooms, meals, stabling" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "This is where the campaign starts. The party arrived here, met Horus, and followed him to his house. Gurand and Katrina will not volunteer information but will not lie either. The fifth amenity routes waste to the Plane of Mud. It is never explained." },
+    "links": { "npcs": ["horus"] }
+  },
+  {
+    "id": "gatehouse",
+    "name": "The Gatehouse",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Bleak Cabal", "Hive Ward", "Faction HQ"],
+    "subtitle": "Bleak Cabal Headquarters and Asylum, Hive Ward",
+    "body": "<p>A tiered tower of terraces and spires rising over the Hive's rooftops. The building is large and old and well-maintained in the way of institutions that cannot afford to let things fall apart. Faces peer from the tiny windows at all hours.</p><p>The Gatehouse is Sigil's only asylum and the headquarters of the Bleak Cabal. The Cabal believe the multiverse has no meaning and that the only sane response is to tend to the suffering around you anyway. The asylum is their proof of principle: a place where the mad, the broken, and the abandoned are housed and cared for without judgment. Conditions are better than the ward would suggest. The main gate is open during daylight hours. The inner wards require an escort.</p><p>The staff are Bleak Cabal volunteers: steady, practical, and low-drama. The Cabal does not turn away visitors who come to pay respects to a patient, but it will not let anyone wander unsupervised.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward" },
+      { "label": "Faction", "value": "The Bleak Cabal" },
+      { "label": "Function", "value": "Asylum, faction headquarters" },
+      { "label": "Access", "value": "Main gate open by day; inner wards by escort only" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "Useful as a safe harbor and as an information source: the Cabal see more of the Hive than any other faction. A party asking for genuine help will not be turned away. Add named Cabal NPCs the party will interact with here." },
+    "links": { "factions": ["bleak-cabal"] }
+  },
+  {
+    "id": "gatehouse-night-market",
+    "name": "Gatehouse Night Market",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Market", "Night"],
+    "subtitle": "After-Dark Market, Hive Ward",
+    "body": "<p>The alley and yard space in the shadow of the Gatehouse sits empty during the day. After dark it fills with vendors who appear from nowhere, lay out their goods on blankets or crates, and are gone before first light. There is no fixed structure, no permanent stalls, and no sign.</p><p>The selection covers anything that cannot be sold in daylight: stolen goods, restricted materials, information by the whisper, services that do not benefit from witnesses. Prices are low. Quality is uncertain. No one asks names. No one makes change. No one asks where anything came from.</p><p>No permanent staff. Vendors rotate nightly and are not known by name.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward" },
+      { "label": "Hours", "value": "After dark, gone by dawn" },
+      { "label": "Oversight", "value": "None" },
+      { "label": "Prices", "value": "Low; quality variable" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "A source for things the party cannot buy through legitimate channels: black-market components, fenced items, rumors for sale, contacts who do not want to be found. The vendors do not carry standing inventory: what is here tonight is gone tomorrow. The Harmonium does not come here at night." },
+    "links": {}
+  },
+  {
+    "id": "gl-shop",
+    "name": "The Gray Ledger (Shop Front)",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Gray Ledger", "Hive Ward", "Arc 1 Reveal"],
+    "subtitle": "Money-Lending Shop, Gray Ledger Front Operation",
+    "body": "<p>A tidy shopfront on a Hive Ward commercial corridor, odd for the ward in that the windows are clean and the sign is legible. It reads: The Gray Ledger — Loans, Accounts, Exchange. A bell on the door. A queue of ward residents waiting for service most mornings.</p><p>The shop offers money lending, currency exchange, and account services. The posted rates are real. The loans are collected. The paperwork is filed. It operates as a legitimate business in every visible respect.</p><p>Wex works the counter. He is pleasant, efficient, and knows exactly what the posted rates are and nothing else. The counting room is one floor up, behind a door that requires a key Wex does not have.<ul><li>Wex — counter clerk, no access to the upper floor</li><li>Drusine — counting room, gone before the party arrives</li></ul></p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward" },
+      { "label": "Apparent purpose", "value": "Money lending, currency exchange" },
+      { "label": "Owner (apparent)", "value": "Unnamed consortium" }
+    ],
+    "callout": { "type": "yellow", "label": "INVESTIGATION", "text": "The counting room holds the evidence for Clue 3. DC 15 Perception or Investigation to notice the inconsistency in the posted ledger. DC 20 to access the back records. Drusine is gone before the party gets here." },
+    "links": { "npcs": ["wex", "drusine"], "factions": ["gray-ledger"], "quests": ["find-the-rat", "resolution"] }
+  },
+  {
+    "id": "granny-nettle",
+    "name": "Granny Nettle's",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Shop"],
+    "subtitle": "Corner Shop, Hive Ward",
+    "body": "<p>A cottage on a Hive Ward corner that looks like it could fall apart at any moment. A closer look shows the wood is well made, the nails well placed, and the roof well thatched. Someone has put careful work into making it look worse than it is.</p><p>The sign, where visible, reads: Wools, Silks, and Custom Imports, Inc. The goods in the window suggest a wider inventory than the sign implies.</p><p>The proprietor is not always visible from outside.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward" },
+      { "label": "Apparent type", "value": "Textile and imports shop" },
+      { "label": "Condition", "value": "Deceptively sturdy; worse-looking than it is" },
+      { "label": "Notable", "value": "Stock varies; ask inside" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "Granny Nettle is the Hive arc's hag shop. The player-facing card stays plain. The shop's real inventory and Nettle's role in the arc are in your DM notes only: the Arc 1 doc and the hive arc tension track. The building's solid construction is not a coincidence." },
+    "links": {}
+  },
+  {
+    "id": "grease-pit",
+    "name": "Grease Pit",
+    "region": "Sigil",
+    "sublocation": "Hive Ward",
+    "tags": ["Hive Ward", "Food", "Market"],
+    "subtitle": "Food Market, Hive Ward",
+    "body": "<p>A wide ring-shaped pit at the edge of the district, packed with food stalls on all sides and a central table area at the floor. The structure is permanent; the vendors have been here long enough to treat it as their territory.</p><p>The selection is broad by Hive standards: a wide range of foods and beverages, most of them cheap, some of them identifiable. It is the closest thing the Hive has to a public dining hall.</p><p>No fixed staff beyond the individual stall vendors, who rotate but are consistent enough to become familiar faces.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Hive Ward (edge, near ward border)" },
+      { "label": "Type", "value": "Open food market, ring-shaped pit" },
+      { "label": "Hours", "value": "Most hours" },
+      { "label": "Price range", "value": "Low; 1–3 cp per meal" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "A good location for eavesdropping, low-stakes contact meetings, and picking up Hive-level street information. The vendors are locals and know the ward. A party eating here will not be notable; a party asking questions will be." },
+    "links": {}
+  },
+  {
     "id": "horus-house",
     "name": "Horus House",
     "region": "Sigil",
     "sublocation": "Hive Ward",
     "tags": ["Party Base", "Hive Ward"],
     "subtitle": "Party Base of Operations",
-    "body": "<p>A three-story narrow rowhouse in the Hive Ward, near the ward border. Horus Lanternholder owned it. Now the party does.</p><p>Ground floor: kitchen, common room, a workbench. Second floor: two bedrooms. Third floor: Horus's study and a roof access hatch. Basement: trapdoor under a kitchen rug, crates of supplies and magical items including the bag of withholding.</p><p>The house is in decent repair. Horus kept it functional rather than comfortable. There is food in the kitchen. There is a lock on the front door. The lock is better than the neighborhood suggests.</p>",
+    "body": "<p>A three-story narrow rowhouse in the Hive Ward, near the ward border. It sits on a straight row east of the Mortuary. The exterior is unremarkable: modest, functional, and no worse than its neighbors.</p><p>Ground floor: kitchen, common room, a workbench. Second floor: two bedrooms. Third floor: Horus's study and a roof access hatch. Basement: trapdoor under a kitchen rug, with crates of supplies and magical items including the bag of withholding.</p><p>Horus Lanternholder owned it. The party does now. Horus kept it functional rather than comfortable. The lock on the front door is better than the neighborhood suggests.<ul><li>Toloin — Horus's donkey, stabled at the Five Portals Inn</li></ul></p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
       { "label": "Floors", "value": "3 + basement" },
@@ -35,122 +221,88 @@
     "links": { "factions": ["dustmen"] }
   },
   {
-    "id": "gl-shop",
-    "name": "The Gray Ledger (Shop Front)",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Gray Ledger", "Hive Ward", "Arc 1 Reveal"],
-    "subtitle": "Money-Lending Shop, Gray Ledger Front Operation",
-    "body": "<p>A tidy shopfront on a Hive Ward commercial corridor. Sign reads \"The Gray Ledger — Loans, Accounts, Exchange.\" Clean windows, a bell on the door, a queue of ward residents waiting for service.</p><p>Wex works the counter. He is pleasant, efficient, and knows exactly what the posted rates are and nothing else. The counting room is one floor up, accessed by a door behind the counter that requires a key Wex does not have.</p><p>The shop is legitimate in the way that a front operation is legitimate: the loans are real, the payments are collected, the paperwork is filed. The accounting behind the accounting is where the interesting material is.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Apparent purpose", "value": "Money lending, currency exchange" },
-      { "label": "Staff (known)", "value": "Wex (counter), Drusine (counting room)" },
-      { "label": "Owner (apparent)", "value": "Unnamed consortium" }
-    ],
-    "callout": { "type": "yellow", "label": "INVESTIGATION", "text": "The counting room holds the evidence for Clue 3. DC 15 Perception or Investigation to notice the inconsistency in the posted ledger. DC 20 to access the back records. Drusine is gone before the party gets here." },
-    "links": { "npcs": ["wex", "drusine"], "factions": ["gray-ledger"], "quests": ["find-the-rat", "resolution"] }
-  },
-  {
-    "id": "five-portals-inn",
-    "name": "Five Portals Inn",
-    "region": "Sigil",
-    "sublocation": "Lower Ward",
-    "tags": ["Lower Ward", "Campaign Start", "Lodging"],
-    "subtitle": "Inn and Stables, Lower Ward",
-    "body": "<p>The Five Portals Inn sits just inside the Lower Ward border, close enough to the Hive that the clientele skews toward travelers who cannot afford the Lady's Ward and do not want to sleep in the Hive. It is crowded, loud, and functional. The five elemental connections it advertises are real: water flows through the common room, fire burns in an open central hearth, the lamps run bright without oil, a cool breeze moves through the upper corridors at all hours, and the fifth amenity is unmentionable.</p><p>Gurand Jor owns it and Katrina Higildra runs the bar. Neither has time for nonsense. Both are the Sigil kind of kind: they will not let a clueless stranger freeze in the street, but do not read warmth into it. They knew Horus. This was not the first time he brought in newcomers who had no idea where they were.</p><p>Toloin, Horus's donkey, is stabled out back.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Lower Ward" },
-      { "label": "Owner", "value": "Gurand Jor" },
-      { "label": "Bartender", "value": "Katrina Higildra" },
-      { "label": "Services", "value": "Rooms, meals, stabling" },
-      { "label": "Notable", "value": "Toloin (Horus's donkey, stabled here)" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "This is where the campaign starts. The party arrived here, met Horus, and followed him to his house. Gurand and Katrina both know Horus brought clueless before. They will not volunteer information but they will not lie either. The fifth amenity routes waste to the Plane of Mud. It is never explained." },
-    "links": { "npcs": ["horus"] }
-  },
-  {
     "id": "ninefold-home",
     "name": "The Ninefold Headquarters",
     "region": "Sigil",
     "sublocation": "Hive Ward",
     "tags": ["The Ninefold", "Hive Ward", "Portal Site"],
     "subtitle": "Ninefold HQ and Ward Portal Site",
-    "body": "<p>A converted warehouse in the Hive Ward's interior, claimed by the Ninefold as their central operation. Salt runs meetings from a back office. The main floor is used for goods transit and labor placement — legitimate businesses that the protection operation runs alongside.</p><p>One of the nine corridors the Ninefold controls runs directly to a portal site in the warehouse's loading dock. The portal key is a specific knot pattern tied in rope. Salt knows the key. His lieutenants do not.</p><p>The warehouse is not comfortable and not designed to be. It is functional: a place where work gets done.</p>",
+    "body": "<p>A converted warehouse in the Hive Ward's interior. The exterior gives nothing away: no sign, no marking, no decoration. It looks like every other former warehouse in this part of the ward.</p><p>The main floor is used for goods transit and labor placement. These are legitimate businesses. The protection operation runs alongside them. One of the nine corridors the Ninefold controls runs directly to a portal site in the loading dock. The portal key is a specific knot pattern tied in rope.</p><p>Salt runs meetings from a back office. His lieutenants work the floor. The portal key belongs to Salt alone.</p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward (interior)" },
       { "label": "Faction", "value": "The Ninefold" },
       { "label": "Primary use", "value": "Operations, labor placement, goods transit" },
       { "label": "Portal", "value": "Loading dock, rope-knot key (Salt only)" }
     ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "Salt knows the portal key. His lieutenants do not. Add named Ninefold NPCs the party will interact with here." },
     "links": { "npcs": ["salt"], "factions": ["ninefold"], "quests": ["portal-watch"] }
   },
   {
-    "id": "gatehouse",
-    "name": "The Gatehouse",
+    "id": "ninefold-tenement",
+    "name": "Ninefold Tenement",
     "region": "Sigil",
     "sublocation": "Hive Ward",
-    "tags": ["Bleak Cabal", "Hive Ward", "Faction HQ"],
-    "subtitle": "Bleak Cabal Headquarters and Asylum, Hive Ward",
-    "body": "<p>The Gatehouse is the headquarters of the Bleak Cabal and Sigil's only asylum. It is a tiered tower of terraces and spires, rising over the Hive's rooftops. Faces peer from the tiny windows at all hours.</p><p>The Bleak Cabal believe that the multiverse has no meaning, and that the only sane response is to tend to the suffering around you anyway. The asylum is their proof of principle: a place where the mad, the broken, and the abandoned are housed and cared for without judgment. The staff are volunteers. The conditions are better than you would expect from the ward.</p><p>The main gate is open during daylight hours. The inner wards are not accessible without an escort. The Cabal does not turn away visitors who come to pay respects to a patient, but they will not let you wander.</p>",
+    "tags": ["Hive Ward", "The Ninefold", "Night Market"],
+    "subtitle": "Ninefold Territorial Marker, Ditch East Bank, Hive Ward",
+    "body": "<p>A collapsed tenement in a courtyard on the Ditch's east bank, at the edge of the Night Market. The building has not been repaired. The rubble has been arranged to create defensible positions. Someone always seems to be here, even when the place looks empty.</p><p>The Ninefold use the site as a territorial marker and a checkpoint: a base for ward-level operations and a watch point on who moves through this corner of the Hive at night.</p><p>Ninefold members rotate through. No named fixture yet.</p>",
     "stats": [
-      { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Faction", "value": "The Bleak Cabal" },
-      { "label": "Function", "value": "Asylum, faction headquarters" },
-      { "label": "Access", "value": "Main gate open by day; inner wards by escort only" }
+      { "label": "Ward", "value": "Hive Ward (Ditch east bank)" },
+      { "label": "Faction", "value": "The Ninefold" },
+      { "label": "Adjacent", "value": "Gatehouse Night Market (edge)" },
+      { "label": "Status", "value": "Collapsed, occupied, defended" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Cabal's nihilism is sincere but not grim in performance. Staff tend to be steady, practical, and low-drama. A party asking for help will not be turned away if they present a genuine need. Useful as a safe harbor and as an information source: the Cabal see more of the Hive than any other faction." },
-    "links": { "factions": ["bleak-cabal"] }
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Ninefold's street presence, separate from their warehouse HQ. They watch the Night Market from here and enforce their tax on vendors. It is not a good place for a confrontation: the defensive positions are real and the Ninefold outnumber most parties in this ward." },
+    "links": { "factions": ["ninefold"] }
   },
   {
-    "id": "the-ditch",
-    "name": "The Ditch",
+    "id": "parakk-pest",
+    "name": "Parakk Pest",
     "region": "Sigil",
     "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Landmark"],
-    "subtitle": "The Hive Ward's Central Channel",
-    "body": "<p>The Ditch is a wide, slow channel of foul water that cuts through the Hive Ward. It is not a river: nothing feeds it and nothing drains it at any visible rate. It is simply there, full of refuse, the occasional corpse, and a population of things that prefer not to be identified.</p><p>A few low bridges cross it. The banks are occupied by the people who have nowhere else to go. The smell carries several streets in any direction.</p><p>Despite its condition, the Ditch is a landmark. Residents navigate by it. The Certified Fishing Circle operates on its eastern bank. The Gatehouse Night Market sets up nearby after dark. It is, in its way, the center of the Hive.</p>",
+    "tags": ["Hive Ward", "Tavern", "Pest Control"],
+    "subtitle": "Tavern and Pest Control Service, Hive Ward",
+    "body": "<p>A tall, terraced metal building topped with a giant rat skull. The skull is real. The building is not welcoming and is not designed to be.</p><p>Food is available. The menu is questionable and questions are offensive. Pest removal is the other service on offer: Parakk sends unwanted pests through a shifting portal to a pocket demiplane, leaving them adrift in the Deep Ethereal. He calls this kinder than what they deserve.</p><p>Parakk the Ratcatcher lives here, or nearby, depending on when you ask. He is a githzerai who has named himself after his trade. He works alone, he works at odd hours, and he does not explain himself. He can be found by asking at the Bottle and Jug, one block from the east bank of the Ditch.<ul><li>Parakk — githzerai ratcatcher, proprietor</li></ul></p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Type", "value": "Channel (source unknown)" },
-      { "label": "Crossings", "value": "Several low bridges" },
-      { "label": "Notable", "value": "Fishing Circle (east bank), Night Market (nearby after dark)" }
+      { "label": "Proprietor", "value": "Parakk (githzerai)" },
+      { "label": "Services", "value": "Pest removal (via portal to pocket demiplane); food" },
+      { "label": "Food", "value": "Available; quality not vouched for" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Ditch is a useful encounter spine. At any hour there are people here who have no better place to be. By night it is darker and more dangerous. Parakk the Ratcatcher is said to work the streets across from the Bottle and Jug, one block from the east bank." },
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "Source: Uncaged: Faces of Sigil (TSR 2624), pp. 76-77. Parakk is introverted and quietly desperate. He works for the Us (a cranium rat collective) and is trying to free them from Ilsensine's control. He will not discuss this. He avoids combat. If cornered he uses cranium rats and his plane shift ability to escape. The portal to the pocket demiplane is a possible plot hook: things sent there do not come back." },
     "links": {}
   },
   {
-    "id": "gatehouse-night-market",
-    "name": "Gatehouse Night Market",
+    "id": "rusted-bell-hangout",
+    "name": "Rusted Bell Hangout",
     "region": "Sigil",
     "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Market", "Night"],
-    "subtitle": "After-Dark Market, Hive Ward",
-    "body": "<p>The Night Market sets up in the shadow of the Gatehouse after dark, filling the alley and yard space that sits empty during the day. Vendors appear from nowhere, lay out their goods on blankets or crates, and are gone before first light. No one asks names. No one makes change. No one asks where anything came from.</p><p>Prices are low. Quality is uncertain. The selection covers anything that cannot be sold in daylight: stolen goods, restricted materials, information by the whisper, services that do not benefit from witnesses. The Bleak Cabal ignores it. The Harmonium does not come here at night.</p>",
+    "tags": ["Hive Ward", "Rusted Bell", "Criminal"],
+    "subtitle": "Rusted Bell Gang Basement, Bottle and Jug, Hive Ward",
+    "body": "<p>A basement beneath the Bottle and Jug, accessible only through an unmarked alley entrance on the side of the building. The entrance is not advertised. The bar staff do not ask about it.</p><p>Low ceilings, bad light, and a permanent smell of spilled drinks. It serves its purpose: cheap, private, and attached to a bar.</p><p>This is where the Rusted Bell plans, drinks, and argues. It is not a welcoming space for outsiders.</p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Hours", "value": "After dark, gone by dawn" },
-      { "label": "Oversight", "value": "None" },
-      { "label": "Prices", "value": "Low; quality variable" }
+      { "label": "Access", "value": "Alley entrance, side of Bottle and Jug" },
+      { "label": "Gang", "value": "The Rusted Bell" },
+      { "label": "Function", "value": "Planning, gathering, drinking" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Night Market is a good source for things the party cannot buy through legitimate channels: black-market components, fenced items, rumors for sale, contacts who do not want to be found. Roll a d6 for what is available on any given night. The vendors do not carry standing inventory: what is here tonight is gone tomorrow." },
-    "links": {}
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Rusted Bell attacked Horus in Session 1. The party disposed of three of their members. The gang does not know who was responsible yet. This basement is where they would be found if the party pursues that thread. It is not fortified but it is on the gang's home ground: they will be confident here. Add named Rusted Bell NPCs the party will interact with here." },
+    "links": { "factions": ["rusted-bell"] }
   },
   {
-    "id": "fell-s-tattoos",
-    "name": "Fell's Tattoo Shop",
+    "id": "scratch-wall",
+    "name": "Scratch Wall",
     "region": "Sigil",
     "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Dabus", "Tattoos", "Magic"],
-    "subtitle": "Tattoo Parlor, Redwind Road, Hive Ward",
-    "body": "<p>A rounded building on Redwind Road, marked by a sign of a black lightning bolt in a white oval. The sign moves. So do the tattoos on anyone who has sat in Fell's chair.</p><p>Fell is a dabus, one of the Lady of Pain's silent servants, working independently. He communicates in the dabus manner: rebuses of images and symbols that drift and fade above his head. He does not speak. He does not need to. His needlework is done without words and the results are unambiguous.</p><p>The tattoos Fell applies are not merely decorative. At his discretion, he can render an image in a way that allows it to temporarily become a real object. This ability is not advertised. He does not use it for everyone and will not explain the criteria. At night he is sometimes seen bricking up ooze portals in the Hive's alleys, a habit no one has successfully explained.</p>",
+    "tags": ["Hive Ward", "Communication", "Local Color"],
+    "subtitle": "Public Message Wall, Hive Ward",
+    "body": "<p>A stretch of wall covered in scratched messages from floor to ceiling, in a dozen languages and twice as many hands. It is old enough that no one remembers who put the first mark there.</p><p>Press a copper coin to it and it will take your words, scratching them into the stone. The message remains until it is covered by a newer one. Press a coin to a specific mark and it will read the message back.</p><p>The Scratch Wall is the Hive's public forum. Job offers, threats, meeting requests, declarations, and information for sale are all here, compressed into stone. Finding a specific message requires time, a coin, and patience.</p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Proprietor", "value": "Fell (dabus)" },
-      { "label": "Sign", "value": "Black lightning bolt in white oval" },
-      { "label": "Notable", "value": "Tattoos that become real objects (discretionary)" }
+      { "label": "Cost", "value": "1 cp to post; 1 cp to read a specific mark" },
+      { "label": "Languages", "value": "Multiple; Common, Infernal, Githzerai, others" },
+      { "label": "Notable", "value": "Messages persist until overwritten" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "Source: Uncaged: Faces of Sigil (TSR 2624), pp. 36-37. The book places Fell in the Market/Guildhall Ward; the 5e map places him in the Hive Ward. Hive Ward is canon for this campaign. Fell is a neutral contact: not an enemy, not a reliable ally. He will tattoo the party if they ask and can pay. Whether and when a tattoo becomes real is entirely at his discretion and yours." },
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "An in-world mechanism for delivering information to the party or seeding rumors. A party checking the wall can find anything you have planted there. Reading requires a copper and a DC 12 Investigation check to find a specific message; DC 8 to find anything relevant to a given topic." },
     "links": {}
   },
   {
@@ -160,184 +312,31 @@
     "sublocation": "Hive Ward",
     "tags": ["Hive Ward", "Tavern", "Cask Family"],
     "subtitle": "Bar, Hive Ward",
-    "body": "<p>A low, domed building whose chimneys never stop smoking and whose blood-stained metal tables are never empty. The name is literal: the centerpiece of the main room is an immolated figure suspended mid-air, perpetually burning without being consumed. This is considered normal decor.</p><p>The Smoldering Corpse is a gathering place for the Hive's more dangerous residents. Fiends, undead, and beings who would not be welcome elsewhere are welcome here. The bartender has seen worse than you. So has everyone at the bar.</p><p>The back room belongs to the Cask Family.</p>",
+    "body": "<p>A low, domed building whose chimneys never stop smoking. The exterior is dented metal and old stone. The blood-stained tables visible through the door are not a deterrent to the clientele.</p><p>The bar is open all hours. The name is literal: the centerpiece of the main room is an immolated figure suspended mid-air, perpetually burning without being consumed. Fiends, undead, and beings who would not be welcome elsewhere are welcome here. The back room belongs to the Cask Family.</p><p>Staff work the bar without comment. The bartender has seen worse than you. So has everyone else in the room.</p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
       { "label": "Type", "value": "Bar, open all hours" },
       { "label": "Clientele", "value": "Fiends, undead, Hive regulars" },
       { "label": "Notable", "value": "Cask Family HQ in back room" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Cask Family uses the back room for collections and planning, not for public meetings. A party entering uninvited finds it locked and guarded. The front bar is accessible to anyone who can pay and behave (by Hive standards). The floating burning figure is real. No one knows who it was." },
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "The front bar is accessible to anyone who can pay and behave (by Hive standards). The floating burning figure is real. No one knows who it was. The back room is locked and guarded; entering uninvited is a serious provocation. Add named staff NPCs the party will interact with here." },
     "links": { "factions": ["cask-family"] }
   },
   {
-    "id": "parakk-pest",
-    "name": "Parakk Pest",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Tavern", "Pest Control"],
-    "subtitle": "Tavern and Pest Control Service, Hive Ward",
-    "body": "<p>A tall, terraced metal building topped with a giant rat skull. The skull is real. The menu is questionable and questions are offensive.</p><p>Parakk the Ratcatcher lives here, or nearby, depending on when you ask. He is a githzerai who has named himself after his trade: the word means both servant and master in his tongue. He works alone, he works at odd hours, and he does not explain himself. His method involves sending unwanted pests through a shifting portal to a pocket demiplane, leaving them adrift in the Deep Ethereal. He calls this kinder than what they deserve.</p><p>He can be hired. He can be found by asking at the Bottle and Jug, one block from the east bank of the Ditch.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Notable resident", "value": "Parakk the Ratcatcher (githzerai)" },
-      { "label": "Services", "value": "Pest removal (via portal to pocket demiplane)" },
-      { "label": "Food", "value": "Available; quality not vouched for" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "Source: Uncaged: Faces of Sigil (TSR 2624), pp. 76-77. Parakk is introverted and quietly desperate. He works for the Us (a cranium rat collective) and is trying to free them from Ilsensine's control. He will not discuss this. He avoids combat. If cornered he uses cranium rats and his plane shift ability to escape. The portal to the pocket demiplane is a possible plot hook: things sent there do not come back." },
-    "links": {}
-  },
-  {
-    "id": "bottle-and-jug",
-    "name": "Bottle and Jug",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Tavern", "Rusted Bell"],
-    "subtitle": "Tavern, Hive Ward",
-    "body": "<p>A round tower of black granite with a tall arched door. The Bottle and Jug is one of the larger taverns in the Hive, known for nightly entertainment combat: staged fights on a raised platform, with the crowd betting on outcomes. The fighters are professionals, mostly. The outcomes are not always staged.</p><p>The alley entrance to the Rusted Bell's basement hangout is around the side of the building, unmarked.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Type", "value": "Tavern" },
-      { "label": "Notable", "value": "Nightly entertainment combat (platform, crowd betting)" },
-      { "label": "Notable", "value": "Rusted Bell basement entrance (alley, unmarked)" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Bottle and Jug is where you send the party when they need to find someone in the Hive. Parakk can be found by asking here. The Rusted Bell has their own entrance; Bottle and Jug staff know about it but do not advertise it. The nightly fights are real and the betting is real: a source of income and a time sink if the party gets interested." },
-    "links": {}
-  },
-  {
-    "id": "grease-pit",
-    "name": "Grease Pit",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Food", "Market"],
-    "subtitle": "Food Market, Hive Ward",
-    "body": "<p>A wide ring-shaped pit at the edge of the district, packed with food stalls on all sides. A central table area occupies the floor of the pit. The selection is broad by Hive standards: a wide range of foods and beverages, most of them cheap, some of them identifiable. The vendors are permanent fixtures and treat the pit as their territory.</p><p>The Grease Pit is the closest thing the Hive has to a public dining hall. It is crowded at most hours. It is not clean. It is affordable, and in this ward that counts for more than cleanliness.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward (edge, near ward border)" },
-      { "label": "Type", "value": "Open food market, ring-shaped pit" },
-      { "label": "Hours", "value": "Most hours" },
-      { "label": "Price range", "value": "Low; 1–3 cp per meal" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "A good location for eavesdropping, low-stakes contact meetings, and picking up Hive-level street information. The vendors are locals and know the ward. A party eating here will not be notable; a party asking questions will be." },
-    "links": {}
-  },
-  {
-    "id": "cask-family-hq",
-    "name": "Cask Family HQ",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Cask Family", "Criminal"],
-    "subtitle": "Cask Family Back Room, Smoldering Corpse Bar, Hive Ward",
-    "body": "<p>The Cask Family's operational center is the back room of the Smoldering Corpse Bar, reached through twisting hallways past the main bar. The door is locked. There is a guard.</p><p>The room is used for collections, planning, and meetings that the Cask Family prefers not to hold in public. It is not large. It is not comfortable. It is functional, which is more than most of the Hive offers.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Access", "value": "Through Smoldering Corpse Bar, locked door, guarded" },
-      { "label": "Faction", "value": "The Cask Family" },
-      { "label": "Function", "value": "Collections, planning, private meetings" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Cask Family runs protection and debt collection in the Hive. The back room is their territory; walking in uninvited is a serious provocation. The party will interact with the Cask Family through the Hive arc tension track. This location becomes accessible if they reach terms with the Family or if they are running a job for them." },
-    "links": { "factions": ["cask-family"] }
-  },
-  {
-    "id": "ninefold-tenement",
-    "name": "Ninefold Tenement",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "The Ninefold", "Night Market"],
-    "subtitle": "Ninefold Territorial Marker, Ditch East Bank, Hive Ward",
-    "body": "<p>A collapsed tenement in a courtyard on the Ditch's east bank, at the edge of the Night Market. The Ninefold have claimed the site and use it as a territorial marker: a base for their ward-level operations, a checkpoint on who moves through this corner of the Hive at night.</p><p>The building's collapse has not been repaired. The rubble has been arranged to create defensible positions. Someone always seems to be here, even when the place looks empty.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward (Ditch east bank)" },
-      { "label": "Faction", "value": "The Ninefold" },
-      { "label": "Adjacent", "value": "Gatehouse Night Market (edge)" },
-      { "label": "Status", "value": "Collapsed, occupied, defended" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "This is the Ninefold's street presence, separate from their warehouse HQ. They watch the Night Market from here and enforce their tax on vendors. A party dealing with the Ninefold arc will pass through this location. It is not a place for confrontation: the defensive positions are real and the Ninefold outnumber most parties in this ward." },
-    "links": { "factions": ["ninefold"] }
-  },
-  {
-    "id": "rusted-bell-hangout",
-    "name": "Rusted Bell Hangout",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Rusted Bell", "Criminal"],
-    "subtitle": "Rusted Bell Gang Basement, Bottle and Jug, Hive Ward",
-    "body": "<p>The Rusted Bell's main gathering space is in the basement of the Bottle and Jug, accessible only through an unmarked alley entrance on the side of the building. The basement entrance is not advertised. The Bottle and Jug staff do not ask about it.</p><p>This is where the Rusted Bell plans, drinks, and argues. It is not a welcoming space for outsiders. The gang uses it because it is cheap, private, and attached to a bar.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Access", "value": "Alley entrance, side of Bottle and Jug" },
-      { "label": "Gang", "value": "The Rusted Bell" },
-      { "label": "Function", "value": "Planning, gathering, drinking" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Rusted Bell are the gang that attacked Horus in Session 1. The party disposed of three of their members. The gang does not know who was responsible yet. This basement is where they would be found if the party pursues that thread. It is not a fortified position but it is on the gang's home ground, so they will be confident here." },
-    "links": { "factions": ["rusted-bell"] }
-  },
-  {
-    "id": "certified-fishing-circle-of-the-ditch",
-    "name": "Certified Fishing Circle of the Ditch",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Fishing", "Local Color"],
-    "subtitle": "The Only Credentialed Fishing Spot in Sigil, Hive Ward",
-    "body": "<p>The only credentialed fishing spot in all of Sigil. The certification is from an authority whose name has been lost. The fish are real, though their nature is disputed. Rods for rent. Bait for sale. Regulars welcome.</p><p>It sits on the east bank of the Ditch, next to the water and the smell. The regulars are there most mornings and some evenings. They do not catch much. They are not primarily here to catch fish.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward (Ditch east bank)" },
-      { "label": "Certification", "value": "Yes (authority unknown)" },
-      { "label": "Equipment", "value": "Rods for rent; bait for sale" },
-      { "label": "Catch", "value": "Variable; identification of catch not guaranteed" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Fishing Circle is live and visible on the map. It is a contact point and a low-key location for conversations the party does not want overheard. The regulars are neighborhood fixtures who know more about Ditch-side Hive activity than they let on. Treat them as a passive information resource: buy bait, start talking." },
-    "links": {}
-  },
-  {
-    "id": "boneyard-pond",
-    "name": "Boneyard Pond",
+    "id": "the-ditch",
+    "name": "The Ditch",
     "region": "Sigil",
     "sublocation": "Hive Ward",
     "tags": ["Hive Ward", "Landmark"],
-    "subtitle": "Still Pond, Hive Ward",
-    "body": "<p>A still pond of uncertain origin somewhere in the Hive's interior, far enough from main streets that only regulars know the approach. The surface is covered in floating refuse and the occasional corpse. Someone is usually on the shore, trying to find a drink or a place to sit without being moved along.</p><p>It is not clean, not safe, and not managed by anyone. It persists anyway, as things in the Hive tend to.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward (interior)" },
-      { "label": "Type", "value": "Pond (source and depth unknown)" },
-      { "label": "Access", "value": "Known to locals; not on main streets" },
-      { "label": "Condition", "value": "Refuse, occasional corpse, unmanaged" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "A good location for a clandestine meeting or a body disposal that someone will notice too late. The regulars here are the bottom tier of the Hive's social structure. They are not dangerous but they are observant: if you do something here, someone saw it." },
-    "links": {}
-  },
-  {
-    "id": "scratch-wall",
-    "name": "Scratch Wall",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Communication", "Local Color"],
-    "subtitle": "Public Message Wall, Hive Ward",
-    "body": "<p>A wall covered in scratched messages from floor to ceiling, in a dozen languages and twice as many hands. Press a copper coin to it and it will take your words, scratching them into the stone. The message remains until it is covered by a newer one or until the reader presses their own coin to read a specific mark.</p><p>The Scratch Wall is the Hive's public forum. Job offers, threats, meeting requests, declarations of love, and information for sale are all here, compressed into stone. Knowing how to read it is a skill. Finding a specific message requires time, a coin, and patience.</p>",
+    "subtitle": "The Hive Ward's Central Channel",
+    "body": "<p>A wide, slow channel of foul water that cuts through the Hive Ward. It is not a river: nothing feeds it and nothing drains it at any visible rate. It is simply there. A few low bridges cross it. The smell carries several streets in any direction.</p><p>The Ditch is not a facility. It has no function beyond existing. It does, however, serve as the ward's primary landmark: residents navigate by it, and the neighborhoods along its banks have their own character distinct from the rest of the Hive.</p><p>The banks are occupied by people who have nowhere else to go. The Certified Fishing Circle operates on the east bank. The Gatehouse Night Market sets up nearby after dark.</p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Cost", "value": "1 cp to post; 1 cp to read a specific mark" },
-      { "label": "Languages", "value": "Multiple; common, Infernal, Githzerai, others" },
-      { "label": "Notable", "value": "Messages persist until overwritten" }
+      { "label": "Type", "value": "Channel (source unknown)" },
+      { "label": "Crossings", "value": "Several low bridges" },
+      { "label": "Notable", "value": "Fishing Circle (east bank), Night Market (nearby after dark)" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Scratch Wall is an in-world mechanism for delivering information to the party or seeding rumors. A party checking the wall can find anything you have planted there. Use it for job offers, faction messages, or clues. Reading requires a copper and a DC 12 Investigation check to find a specific message in the mass of text; DC 8 to find anything at all relevant to a given topic." },
-    "links": {}
-  },
-  {
-    "id": "granny-nettle",
-    "name": "Granny Nettle's",
-    "region": "Sigil",
-    "sublocation": "Hive Ward",
-    "tags": ["Hive Ward", "Shop"],
-    "subtitle": "Corner Shop, Hive Ward",
-    "body": "<p>A cottage on a Hive Ward corner that looks like it could fall apart at any moment. A closer look shows the wood is well made, the nails well placed, and the roof well thatched. Someone has put careful work into making it look worse than it is.</p><p>The sign, where visible, reads: Wools, Silks, and Custom Imports, Inc. The goods in the window suggest a wider inventory than the sign implies.</p>",
-    "stats": [
-      { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Apparent type", "value": "Textile and imports shop" },
-      { "label": "Condition", "value": "Deceptively sturdy; worse-looking than it is" },
-      { "label": "Notable", "value": "Stock varies; ask inside" }
-    ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "Granny Nettle is the Hive arc's hag shop. The player-facing card stays plain. The shop's real inventory and Nettle's role in the arc are in your DM notes only: the Arc 1 doc and the hive arc tension track. The building's solid construction is not a coincidence." },
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "A useful encounter spine. At any hour there are people here who have no better place to be. By night it is darker and more dangerous. Parakk the Ratcatcher works the streets across from the Bottle and Jug, one block from the east bank." },
     "links": {}
   }
 ]
