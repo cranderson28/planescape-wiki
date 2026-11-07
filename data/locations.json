@@ -50,6 +50,24 @@
     "links": { "npcs": ["wex", "drusine"], "factions": ["gray-ledger"], "quests": ["find-the-rat", "resolution"] }
   },
   {
+    "id": "five-portals-inn",
+    "name": "Five Portals Inn",
+    "region": "Sigil",
+    "sublocation": "Lower Ward",
+    "tags": ["Lower Ward", "Campaign Start", "Lodging"],
+    "subtitle": "Inn and Stables, Lower Ward",
+    "body": "<p>The Five Portals Inn sits just inside the Lower Ward border, close enough to the Hive that the clientele skews toward travelers who cannot afford the Lady's Ward and do not want to sleep in the Hive. It is crowded, loud, and functional. The five elemental connections it advertises are real: water flows through the common room, fire burns in an open central hearth, the lamps run bright without oil, a cool breeze moves through the upper corridors at all hours, and the fifth amenity is unmentionable.</p><p>Gurand Jor owns it and Katrina Higildra runs the bar. Neither has time for nonsense. Both are the Sigil kind of kind: they will not let a clueless stranger freeze in the street, but do not read warmth into it. They knew Horus. This was not the first time he brought in newcomers who had no idea where they were.</p><p>Toloin, Horus's donkey, is stabled out back.</p>",
+    "stats": [
+      { "label": "Ward", "value": "Lower Ward" },
+      { "label": "Owner", "value": "Gurand Jor" },
+      { "label": "Bartender", "value": "Katrina Higildra" },
+      { "label": "Services", "value": "Rooms, meals, stabling" },
+      { "label": "Notable", "value": "Toloin (Horus's donkey, stabled here)" }
+    ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "This is where the campaign starts. The party arrived here, met Horus, and followed him to his house. Gurand and Katrina both know Horus brought clueless before. They will not volunteer information but they will not lie either. The fifth amenity routes waste to the Plane of Mud. It is never explained." },
+    "links": { "npcs": ["horus"] }
+  },
+  {
     "id": "ninefold-home",
     "name": "The Ninefold Headquarters",
     "region": "Sigil",
