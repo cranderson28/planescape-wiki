@@ -23,13 +23,15 @@
     "sublocation": "Hive Ward",
     "tags": ["Dustmen HQ", "Hive Ward"],
     "subtitle": "Dustmen Headquarters, Sigil Corpse Disposal",
-    "body": "<p>The Mortuary is Sigil's official body-processing facility. Every corpse in Sigil comes here, by law. The Dustmen maintain it, staff it, and manage the paperwork that follows every death in the city.</p><p>It is large, gray, and smells of preservation chemicals. The staff are professional and slightly offputting. The queue for disposal during high-tension periods can be several days long. The Dustmen do not rush.</p><p>The party's first visit follows the Session One combat at Horus House. Three Rusted Bell bodies, no witnesses except the party. The Dustmen require: cause of death, names if known, and the disposal fee (5 gp per body for standard processing). They do not ask difficult questions. They have seen worse.</p>",
+    "body": "<p>A sprawling hall of gray-green domes and spires rising over the Hive Ward's rooftops. The building is large by any standard: wide enough to process every death in a city with no natural limit on population. The exterior is clean and maintained. The smell of preservation chemicals begins half a block away and does not leave until you are well past it.</p><p>By law, every corpse in Sigil comes here. The Mortuary receives them, processes them, and manages the paperwork that follows. Services include standard disposal, long-term preservation, records search, and notification of next of kin where applicable. The queue for disposal during high-tension periods runs several days. The Dustmen do not rush and do not apologize for the wait.</p><p>The Dustmen staff the building entirely. They are professional, unhurried, and slightly offputting in the way of people who have made peace with something most others have not. They believe the living are simply the dead who have not finished yet. This does not make them unkind; it makes them patient.</p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
       { "label": "Faction", "value": "The Dustmen" },
-      { "label": "Services", "value": "Corpse disposal, preservation, records" },
-      { "label": "Fee", "value": "5 gp per body (standard)" }
+      { "label": "Services", "value": "Corpse disposal, preservation, records, next-of-kin notification" },
+      { "label": "Fee", "value": "5 gp per body (standard disposal)" },
+      { "label": "Wait time", "value": "Same day to several days depending on volume" }
     ],
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "The party's first visit: three Rusted Bell bodies from the Session 1 combat at Horus House. No witnesses. The intake clerk requires cause of death, names if known, and the disposal fee. They do not ask difficult questions. They have seen worse. Add any named Dustmen NPCs the party will interact with here." },
     "links": { "factions": ["dustmen"] }
   },
   {
