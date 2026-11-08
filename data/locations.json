@@ -6,7 +6,7 @@
     "sublocation": "Hive Ward",
     "tags": ["Hive Ward", "Landmark"],
     "subtitle": "Still Pond, Hive Ward",
-    "body": "<p>A still pond tucked into the Hive's interior, far enough from main streets that only regulars know the approach. The surface is covered in floating refuse. The smell is what you notice first.</p><p>There is no known source and no drain. It simply exists, as many things in the Hive do, without explanation or upkeep.</p><p>Someone is usually on the shore. They are not there for the view.</p>",
+    "body": "<p>A still pond tucked into the Hive's interior, far enough from main streets that only regulars know the approach. The surface is covered in floating refuse and the occasional corpse the Dustmen haven't collected yet. The smell is what you notice first.</p><p>There is no known source and no drain. It simply exists, as many things in the Hive do, without explanation or upkeep.</p><p>Someone is usually on the shore. They are not there for the view.</p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward (interior)" },
       { "label": "Type", "value": "Pond (source and depth unknown)" },
@@ -23,7 +23,7 @@
     "sublocation": "Hive Ward",
     "tags": ["Hive Ward", "Tavern", "Rusted Bell"],
     "subtitle": "Tavern, Hive Ward",
-    "body": "<p>A round tower of black granite with a tall arched door, one of the larger taverns in the Hive. The exterior is solid. The interior smells like every other bar in the ward, only louder.</p><p>The Bottle and Jug is known for nightly entertainment combat: staged fights on a raised platform, with the crowd betting on outcomes. The fighters are professionals, mostly. The outcomes are not always staged.</p><p>Staff work the bar and the floor. The alley entrance to the Rusted Bell's basement hangout is around the side of the building, unmarked. Bar staff know about it and do not advertise it.</p>",
+    "body": "<p>A round tower of black granite with a tall arched door, one of the larger taverns in the Hive. The exterior is solid. The interior smells like every other bar in the ward, only louder.</p><p>The Bottle and Jug is known for nightly entertainment combat: staged fights on a raised platform, with the crowd betting on outcomes. The fighters are professionals, mostly. The outcomes are not always staged.</p><p>Nultash runs the bar. He is half-human, half-spirit: bulky, purple-tinged skin, faint wisps rising off him that most patrons stop noticing after the first drink. Brown shirt, sleeves rolled, towel over one shoulder. He speaks in short sentences and means them. The fights are called by Hidden River, a slight Tabaxi in a patchwork suit, the best assembled from what the Hive offers. He is small and he owns the room anyway. <ul><li>Nultash — half-human/half-spirit bartender</li><li>Hidden River — Tabaxi fight caller</li></ul></p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
       { "label": "Type", "value": "Tavern" },
@@ -40,15 +40,15 @@
     "sublocation": "Hive Ward",
     "tags": ["Hive Ward", "Cask Family", "Criminal"],
     "subtitle": "Cask Family Back Room, Smoldering Corpse Bar, Hive Ward",
-    "body": "<p>Through twisting hallways at the back of the Smoldering Corpse Bar. There is a door. It is locked. There is a guard on the other side of it.</p><p>The room is used for collections, planning, and meetings the Cask Family prefers not to hold in public. It is not large and not comfortable.</p><p>The Cask Family staff this room with whoever they trust that week. No named fixture yet.</p>",
+    "body": "<p>Through the Smoldering Corpse Bar and down a series of twisting hallways, you need to be led. Offices and storerooms line either side. One door at the end bears no distinction from any other.</p><p>The door opens into two rooms. The staging room has couches along the walls: officers and associates of the Cask Family, relaxing, smoking, waiting. A tiny desk in the corner serves as the collection point, managed by a secretary. Through a second door is Mother Cask's office. A map of Sigil hangs on the wall.</p><p>Mother Veshka Cask runs the Family from this office. The staging room is never empty. <ul><li>Mother Veshka Cask — head of the Cask Family</li><li>Pell Strix — tiefling secretary, tiny nub horns, wire-rimmed glasses, never looks up from the ledger</li><li>Varkuun Dawncrusher — minotaur capo, Cask Family lieutenant; pulls his own oversized chair in from another room, pushing Mother Cask's desk to the corner. Open purple velvet vest, immaculate except for a broad bloodstain across the front — a betrayer's, he'll tell you if asked. May be found here when Mother Cask is absent; possible contact for Hive arc jobs.</li></ul></p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward" },
-      { "label": "Access", "value": "Through Smoldering Corpse Bar, locked door, guarded" },
+      { "label": "Access", "value": "Through Smoldering Corpse Bar, twisting hallways, unmarked door" },
       { "label": "Faction", "value": "The Cask Family" },
-      { "label": "Function", "value": "Collections, planning, private meetings" }
+      { "label": "Function", "value": "Collections, planning, Mother Cask's office" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "The Cask Family runs protection and debt collection in the Hive. The back room is their territory; walking in uninvited is a serious provocation. This location becomes accessible if the party reaches terms with the Family or is running a job for them." },
-    "links": { "factions": ["cask-family"] }
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "The back room is the Cask Family's territorial headquarters and is heavily protected. Walking in uninvited is a serious provocation. This location becomes accessible if the party reaches terms with the Family or is running a job for them." },
+    "links": { "npcs": ["mother-veshka-cask", "varkuun-dawncrusher"], "factions": ["cask-family"] }
   },
   {
     "id": "certified-fishing-circle-of-the-ditch",
@@ -57,14 +57,14 @@
     "sublocation": "Hive Ward",
     "tags": ["Hive Ward", "Fishing", "Local Color"],
     "subtitle": "The Only Credentialed Fishing Spot in Sigil, Hive Ward",
-    "body": "<p>A stretch of east bank on the Ditch, marked by a small posted sign and a rack of rental rods. The certification is from an authority whose name has been lost. The fish are real, though their nature is disputed.</p><p>Rods for rent. Bait for sale. The water is what it is.</p><p>The regulars are there most mornings and some evenings. They do not catch much. They are not primarily here to catch fish.</p>",
+    "body": "<p>A stretch of east bank on the Ditch, just south of the bridge below the Ditch label, marked by a posted sign and a rail along the water. The certification is from the Fraternity of Order, cosigned by the Bleak Cabal. This is taken very seriously by the attendant.</p><p>Rods for rent. Bait for sale — viscera left behind by the Dustmen, though the attendant does not volunteer that information. To land anything, make a Dexterity check DC 12. On a success, roll d100 on the catch table.</p><p>Fish Fish Boot Boot is the attendant, a dabus who manages rod rental and membership cards with bureaucratic devotion. New members have their likeness captured via minor illusion for the card. Otto and Otis are always at the rail: two retired angels from Mount Celestia, in near-rags, each wearing one left boot. They have had enough. They do not elaborate. <ul><li>Fish Fish Boot Boot — dabus attendant, membership cards, minor illusion portraits</li><li>Otto — retired angel, Mount Celestia, one left boot</li><li>Otis — retired angel, Mount Celestia, one left boot</li></ul></p>",
     "stats": [
       { "label": "Ward", "value": "Hive Ward (Ditch east bank)" },
-      { "label": "Certification", "value": "Yes (authority unknown)" },
-      { "label": "Equipment", "value": "Rods for rent; bait for sale" },
-      { "label": "Catch", "value": "Variable; identification of catch not guaranteed" }
+      { "label": "Certification", "value": "Fraternity of Order, cosigned by the Bleak Cabal" },
+      { "label": "Equipment", "value": "Rods for rent; bait for sale (Dustmen viscera)" },
+      { "label": "Catch check", "value": "Dexterity DC 12, then roll d100" }
     ],
-    "callout": { "type": "gold", "label": "DM NOTE", "text": "Live and visible on the map. A contact point and a low-key location for conversations the party does not want overheard. The regulars are neighborhood fixtures who know more about Ditch-side Hive activity than they let on: buy bait, start talking." },
+    "callout": { "type": "gold", "label": "DM NOTE", "text": "Certified by the Fraternity of Order, cosigned by the Bleak Cabal. The bait is Dustmen viscera — the attendant will not say so. Fish Fish Boot Boot communicates in rebuses and has developed specific fishing-related image sequences for common transactions. Otto and Otis know more about the Ditch than they let on. The 00 result is a stray portal key; you choose which portal it opens.<br><br><strong>Catch Table (d100) — Dexterity DC 12 to land anything</strong><table><tr><th>d100</th><th>Catch</th></tr><tr><td>01–05</td><td>Snagged on a dead man's belt. The hook is lost and a Dustman politely asks for the belt back.</td></tr><tr><td>06–30</td><td>Junk. Roll d100 on the Ditch Junk Table.</td></tr><tr><td>31–50</td><td>A pale Ditch eel. Edible only to the desperate.</td></tr><tr><td>51–65</td><td>A fat corpse-carp, worth a few coppers to the right buyer.</td></tr><tr><td>66–76</td><td>A shoal of glow-minnows, worth a silver from an alchemist.</td></tr><tr><td>77–84</td><td>A coin purse or trinket, 1d6 cp.</td></tr><tr><td>85–89</td><td>A waterlogged sealed letter. DM hook.</td></tr><tr><td>90–93</td><td>A tarnished ring worth 2d6 gp.</td></tr><tr><td>94–96</td><td>A whiskerfish that mutters one rumor before it goes still.</td></tr><tr><td>97–99</td><td>A record catch. The attendant chalks the name on the board and a Bleaker nods in approval.</td></tr><tr><td>00</td><td>A stray portal key. You choose which portal it opens.</td></tr></table>" },
     "links": {}
   },
   {
