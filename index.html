@@ -1306,6 +1306,10 @@ function renderDetail(item) {
         html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
       }
     }
+    if (item.callout2) {
+      const c = item.callout2;
+      html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
+    }
 
     // Related (clickable cross-links)
     const relatedLinks = renderCodexLinks(item.links);
@@ -1403,6 +1407,10 @@ function renderDetail(item) {
     // Callout
     if (item.callout) {
       const c = item.callout;
+      html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
+    }
+    if (item.callout2) {
+      const c = item.callout2;
       html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
     }
 
@@ -1503,6 +1511,10 @@ function renderDetail(item) {
   // Callout
   if (item.callout) {
     const c = item.callout;
+    html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
+  }
+  if (item.callout2) {
+    const c = item.callout2;
     html += `<div class="callout ${c.type || ''}"><div class="callout-label">${c.label || ''}</div>${c.text || ''}</div>`;
   }
 
