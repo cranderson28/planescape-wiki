@@ -438,23 +438,27 @@
       "Market"
     ],
     "subtitle": "Food Market, Hive Ward",
-    "body": "<p>A wide ring-shaped pit at the edge of the district, packed with food stalls on all sides and a central table area at the floor. The structure is permanent; the vendors have been here long enough to treat it as their territory.</p><p>The selection is broad by Hive standards: a wide range of foods and beverages, most of them cheap, some of them identifiable. It is the closest thing the Hive has to a public dining hall.</p><p>No fixed staff beyond the individual stall vendors, who rotate but are consistent enough to become familiar faces.</p>",
+    "body": "<p>A wide open square where a ring of cooking carts and covered stalls face inward around a cluster of communal tables. The carts are permanent fixtures: heavy-wheeled, weather-stained, some of them clearly built in place and never going anywhere. String lights run on lines criss-crossed overhead between iron poles, low enough to give the whole square a warm enclosed feel after dark even with open sky above.</p><p>The layout is simple. Walk up to any cart, order, pay, and take your food to the tables. There is no host, no assigned seating, and no service. The tables fill in and clear out on their own schedule. At peak hours every bench is taken and strangers share without comment.</p><p>The selection varies by cart: grilled meat on skewers, flatbreads, stewed things in bowls, fried things in paper, drinks in clay cups. Some of it is identifiable. All of it is cheap. It is the closest thing the Hive has to a public dining hall and it functions as one, drawing workers, criers, beggars, off-duty Harmonium, and anyone else who needs to eat without spending much.</p><p>The cart vendors rotate but the faces become familiar fast. They are locals. They have been here longer than most of the ward's current residents and they notice things.</p>",
     "stats": [
       {
         "label": "Ward",
-        "value": "Hive Ward (edge, near ward border)"
+        "value": "Hive Ward"
       },
       {
         "label": "Type",
-        "value": "Open food market, ring-shaped pit"
+        "value": "Ring of food carts around communal tables"
       },
       {
         "label": "Hours",
-        "value": "Most hours"
+        "value": "Most hours; busiest at midday and after dark"
       },
       {
         "label": "Price range",
-        "value": "Low; 1–3 cp per meal"
+        "value": "Low; 1-3 cp per meal"
+      },
+      {
+        "label": "Seating",
+        "value": "Open communal, no service"
       }
     ],
     "callout": {
