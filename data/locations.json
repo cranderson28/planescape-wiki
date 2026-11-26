@@ -348,7 +348,7 @@
       "Arc 1 Reveal"
     ],
     "subtitle": "Money-Lending Shop, Gray Ledger Front Operation",
-    "body": "<p>A tidy shopfront on a Hive Ward commercial corridor, odd for the ward in that the windows are clean and the sign is legible. It reads: The Gray Ledger — Loans, Accounts, Exchange. A bell on the door. A queue of ward residents waiting for service most mornings.</p><p>The shop offers money lending, currency exchange, and account services. The posted rates are real. The loans are collected. The paperwork is filed. It operates as a legitimate business in every visible respect.</p><p>Wex works the counter. He is pleasant, efficient, and knows exactly what the posted rates are and nothing else. The counting room is one floor up, behind a door that requires a key Wex does not have.<ul><li>Wex — counter clerk, no access to the upper floor</li><li>Drusine — counting room, gone before the party arrives</li></ul></p>",
+    "body": "<p>A tidy shopfront on a Hive Ward commercial corridor, odd for the ward in that the windows are clean and the sign is legible. It reads: <em>The Gray Ledger &mdash; Loans, Accounts, Exchange.</em> A bell on the door. A queue of ward residents waiting for service most mornings.</p><p>The shop offers money lending, currency exchange, and account services. The posted rates are real. The loans are collected. The paperwork is filed. It operates as a legitimate business in every visible respect.</p><p>Interest rates are set at the counter by Wex, who makes his assessment on sight. He does not consult a ledger or ask questions about income. He looks at the borrower, decides what their situation is, and quotes accordingly. The less fortunate you appear, the more you pay. This is not posted anywhere.</p><p>Wex works the counter. He is pleasant, efficient, and knows exactly what the posted rates are and nothing else. The counting room is one floor up, behind a door that requires a key Wex does not have.</p><ul><li>Wex &mdash; counter clerk, no access to the upper floor</li><li>Drusine &mdash; counting room, gone before the party arrives</li></ul>",
     "stats": [
       {
         "label": "Ward",
@@ -380,6 +380,11 @@
         "find-the-rat",
         "resolution"
       ]
+    },
+    "callout2": {
+      "type": "green",
+      "label": "INTEREST RATE TABLE",
+      "text": "<p style=\"margin-bottom:8px;font-size:0.9em\">Wex sets rates on appearance alone. No questions asked.</p><table style=\"width:100%;border-collapse:collapse;font-size:0.92em\"><thead><tr><th style=\"text-align:left;padding:4px 8px;border-bottom:1px solid currentColor\">Appearance</th><th style=\"text-align:left;padding:4px 8px;border-bottom:1px solid currentColor\">Examples</th><th style=\"text-align:right;padding:4px 8px;border-bottom:1px solid currentColor\">Rate / month</th></tr></thead><tbody><tr><td style=\"padding:4px 8px\">Prosperous</td><td style=\"padding:4px 8px\">Fine clothes, clean, well-fed</td><td style=\"text-align:right;padding:4px 8px\">5%</td></tr><tr><td style=\"padding:4px 8px\">Respectable</td><td style=\"padding:4px 8px\">Working clothes, presentable</td><td style=\"text-align:right;padding:4px 8px\">10%</td></tr><tr><td style=\"padding:4px 8px\">Struggling</td><td style=\"padding:4px 8px\">Worn gear, visibly tired</td><td style=\"text-align:right;padding:4px 8px\">18%</td></tr><tr><td style=\"padding:4px 8px\">Desperate</td><td style=\"padding:4px 8px\">Ragged, injured, obviously broke</td><td style=\"text-align:right;padding:4px 8px\">30%</td></tr><tr><td style=\"padding:4px 8px\">Non-human (Hive)</td><td style=\"padding:4px 8px\">Tiefling, planetouched, monstrous</td><td style=\"text-align:right;padding:4px 8px\">35%</td></tr></tbody></table><p style=\"margin-top:8px;font-size:0.88em\">A Charisma (Persuasion) check DC 15 can drop the rate one tier. Disguise or magic that changes apparent wealth applies normally. Wex cannot be intimidated &mdash; he will smile, excuse himself, and return with two men from the back.</p>"
     }
   },
   {
