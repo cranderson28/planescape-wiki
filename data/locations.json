@@ -303,15 +303,23 @@
       "Night"
     ],
     "subtitle": "After-Dark Market, Hive Ward",
-    "body": "<p>The alley and yard space in the shadow of the Gatehouse sits empty during the day. After dark it fills with vendors who appear from nowhere, lay out their goods on blankets or crates, and are gone before first light. There is no fixed structure, no permanent stalls, and no sign.</p><p>The selection covers anything that cannot be sold in daylight: stolen goods, restricted materials, information by the whisper, services that do not benefit from witnesses. Prices are low. Quality is uncertain. No one asks names. No one makes change. No one asks where anything came from.</p><p>No permanent staff. Vendors rotate nightly and are not known by name.</p>",
+    "body": "<p>By day the plaza in front of the Gatehouse is empty stone, unremarkable, ignored. At nightfall it transforms. Tents, stalls, and blanket-spread wares appear as if the dark itself carried them in, and within the hour the square is packed with vendors and buyers in the kind of crowd that keeps its hood up and its voice low. There is no sign, no announcement, and no fixed structure. What is here tonight will not be here tomorrow.</p><p>The Night Market sells what the Great Bazaar will not: stolen goods, restricted planar materials, spell components of uncertain provenance, information sold by the whisper, services that do not benefit from witnesses. Prices run low. Quality is what you can inspect by torchlight. No names are exchanged. No change is made. No one asks where anything came from and no one answers if they do.</p><p>At AntiPeak, exactly, an auction begins in the center of the market. It runs for two hours and does not start late. The lots vary nightly and are not announced in advance. This is where the rarer goods surface: items that cannot be priced on a blanket, information that needs a room, things with a history. A crier calls the lots in a flat voice that carries without seeming to try. By the time the two hours end the auction block is gone and the crowd has thinned.</p><p>The Harmonium does not come here at night.</p>",
     "stats": [
       {
         "label": "Ward",
         "value": "Hive Ward"
       },
       {
+        "label": "Location",
+        "value": "Plaza in front of the Gatehouse"
+      },
+      {
         "label": "Hours",
-        "value": "After dark, gone by dawn"
+        "value": "Nightfall to dawn; empty by day"
+      },
+      {
+        "label": "Auction",
+        "value": "Begins at AntiPeak, runs 2 hours"
       },
       {
         "label": "Oversight",
@@ -325,7 +333,7 @@
     "callout": {
       "type": "gold",
       "label": "DM NOTE",
-      "text": "A source for things the party cannot buy through legitimate channels: black-market components, fenced items, rumors for sale, contacts who do not want to be found. The vendors do not carry standing inventory: what is here tonight is gone tomorrow. The Harmonium does not come here at night."
+      "text": "Primary source for goods the party cannot buy through legitimate channels: black-market components, fenced items, restricted planar materials, rumors for sale, contacts who do not want to be found. Vendors rotate nightly and carry no standing inventory. The auction is where high-value or unusual items appear. It is also where the party might be outbid by someone they would rather not see holding a particular item. AntiPeak is the Sigil term for the midpoint of the dark half of the day, roughly equivalent to midnight. The auction starting exactly at AntiPeak is the one fixed rule of the market and it is enforced by no one anyone can identify. The Harmonium does not come here at night. This is an open secret and both sides prefer it that way."
     },
     "links": {}
   },
