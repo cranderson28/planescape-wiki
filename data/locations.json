@@ -397,7 +397,7 @@
       "Shop"
     ],
     "subtitle": "Corner Shop, Hive Ward",
-    "body": "<p>A cottage on a Hive Ward corner that looks like it could fall apart at any moment. A closer look shows the wood is well made, the nails well placed, and the roof well thatched. Someone has put careful work into making it look worse than it is.</p><p>The sign, where visible, reads: Wools, Silks, and Custom Imports, Inc. The goods in the window suggest a wider inventory than the sign implies.</p><p>The proprietor is not always visible from outside.</p>",
+    "body": "<p>A cottage on a Hive Ward corner that looks like it could fall apart at any moment. A closer look shows the wood is well made, the nails well placed, and the roof well thatched. Someone has put careful work into making it look worse than it is.</p><p>The sign, where visible, reads: <em>Wools, Silks, and Custom Imports, Inc.</em> The goods in the window suggest a wider inventory than the sign implies.</p><p>Granny Nettle runs the shop alone. She is small and very old and moves with the deliberate economy of someone who has never wasted a step in a long life. She is pleasant in the manner of someone who is pleasant because it costs her nothing, not because she means it. She answers questions about her stock readily and questions about anything else with a soft redirect that leaves the asker unsure whether they asked the wrong thing or just forgot what they were saying.</p><p>The back of the shop is not visible from the door. Customers are not invited past the counter.</p>",
     "stats": [
       {
         "label": "Ward",
@@ -406,6 +406,10 @@
       {
         "label": "Apparent type",
         "value": "Textile and imports shop"
+      },
+      {
+        "label": "Proprietor",
+        "value": "Granny Nettle"
       },
       {
         "label": "Condition",
@@ -419,7 +423,7 @@
     "callout": {
       "type": "gold",
       "label": "DM NOTE",
-      "text": "Granny Nettle is the Hive arc's hag shop. The player-facing card stays plain. The shop's real inventory and Nettle's role in the arc are in your DM notes only: the Arc 1 doc and the hive arc tension track. The building's solid construction is not a coincidence."
+      "text": "Granny Nettle is a hag. This is not obvious and should not be revealed until the arc demands it. She is a key node in the Hive arc: her shop is tied to Shemeshka's seal and to the Gray Ledger resolution thread. The building's sturdy construction under its rough exterior is intentional: the shop is warded, not neglected. She is not hostile to the party and is not an enemy in a simple sense. She has been in this ward a very long time and has interests the party will eventually intersect. Do not give her tells. The pleasantness is real cover. The redirect on personal questions is the only tell and it should read as eccentric, not suspicious. Full quest role is in the arc doc and the hive-arc-tension-track. Keep the player-facing card plain."
     },
     "links": {}
   },
