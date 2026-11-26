@@ -254,7 +254,7 @@
       "Faction HQ"
     ],
     "subtitle": "Bleak Cabal Headquarters and Asylum, Hive Ward",
-    "body": "<p>A tiered tower of terraces and spires rising over the Hive's rooftops. The building is large and old and well-maintained in the way of institutions that cannot afford to let things fall apart. Faces peer from the tiny windows at all hours.</p><p>The Gatehouse is Sigil's only asylum and the headquarters of the Bleak Cabal. The Cabal believe the multiverse has no meaning and that the only sane response is to tend to the suffering around you anyway. The asylum is their proof of principle: a place where the mad, the broken, and the abandoned are housed and cared for without judgment. Conditions are better than the ward would suggest. The main gate is open during daylight hours. The inner wards require an escort.</p><p>The staff are Bleak Cabal volunteers: steady, practical, and low-drama. The Cabal does not turn away visitors who come to pay respects to a patient, but it will not let anyone wander unsupervised.</p>",
+    "body": "<p>A vast structure of black stone rising over the Hive's rooftops in tiered terraces and jagged spires, sharp-edged and angular in a way that looks less built than erupted. Up close the stone has a blue-black sheen and the edges of the parapets are genuinely knife-sharp. Faces peer from the tiny windows at all hours.</p><p>The Gatehouse is Sigil's only asylum and the headquarters of the Bleak Cabal. The Cabal believe the multiverse has no meaning and that the only sane response is to tend to the suffering around you anyway. The asylum is their proof of principle: a place where the mad, the broken, and the abandoned are housed and cared for without judgment. Conditions are better than the ward would suggest. The main gate is open during daylight hours. The inner wards require an escort.</p><p>Staff wear grey robes of a neutral, undyed wool that neither absorbs color nor gives it back. They move through the building with the calm of people who have heard everything and been surprised by very little.</p><p><strong>Glinda Teahollow</strong> sits behind the entry desk, which is built for a much larger person. She occupies a tall-legged chair set down in the well of it, so that visitors see only her eyes and the top of her head until she reaches up and cranes forward to look at them properly. She is a halfling, frumpy in her grey robes, and operates with an enthusiasm that sits oddly in a faction built on the acceptance of meaninglessness. She is unfailingly warm, asks follow-up questions, and laughs at things that are not particularly funny. The other staff find her either exhausting or quietly necessary. She handles intake, visitor logs, and anything involving paper.</p><p><strong>Moloran</strong> administers the Gatehouse from an office two turns past the entry hall. He is a demonling, half-human and half something older, and built on a scale that makes the standard-issue chair behind his desk look like it belongs to someone else. His skin runs purple-red, darkening at the knuckles and jaw. A tail rests coiled against the chair leg when he is seated. The demon in him stops at the skin: the rest is reading glasses perched on a broad nose, a tidy desk, and the particular patience of someone who has been managing crises long enough that nothing qualifies as one anymore. He is not warm but he is fair, and in the Hive that is not a small thing.</p>",
     "stats": [
       {
         "label": "Ward",
@@ -271,12 +271,20 @@
       {
         "label": "Access",
         "value": "Main gate open by day; inner wards by escort only"
+      },
+      {
+        "label": "Reception",
+        "value": "Glinda Teahollow (halfling, secretary)"
+      },
+      {
+        "label": "Administrator",
+        "value": "Moloran (demonling)"
       }
     ],
     "callout": {
       "type": "gold",
       "label": "DM NOTE",
-      "text": "Useful as a safe harbor and as an information source: the Cabal see more of the Hive than any other faction. A party asking for genuine help will not be turned away. Add named Cabal NPCs the party will interact with here."
+      "text": "Useful as a safe harbor and as an information source: the Cabal see more of the Hive than any other faction. A party asking for genuine help will not be turned away. Glinda is the easier point of contact and will talk freely if the party is friendly; she is more perceptive than she appears. Moloran grants access to the inner wards and to Cabal resources. He is not obstructive but he wants a reason. The Bleaker ethos: cagey by nature, caring by choice. Neither NPC will volunteer information unprompted, but neither will lie."
     },
     "links": {
       "factions": [
