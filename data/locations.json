@@ -478,7 +478,7 @@
       "Hive Ward"
     ],
     "subtitle": "Party Base of Operations",
-    "body": "<p>A three-story narrow rowhouse in the Hive Ward, near the ward border. It sits on a straight row east of the Mortuary. The exterior is unremarkable: modest, functional, and no worse than its neighbors.</p><p>Ground floor: kitchen, common room, a workbench. Second floor: two bedrooms. Third floor: Horus's study and a roof access hatch. Basement: trapdoor under a kitchen rug, with crates of supplies and magical items including the bag of withholding.</p><p>Horus Lanternholder owned it. The party does now. Horus kept it functional rather than comfortable. The lock on the front door is better than the neighborhood suggests.<ul><li>Toloin — Horus's donkey, stabled at the Five Portals Inn</li></ul></p>",
+    "body": "<p>A two-story brick rowhouse in the Hive Ward, near the ward border. It sits on a straight row east of the Mortuary. A small yard runs behind it, with a stall where a donkey might have been kept.</p><p>Ground floor: kitchen, common room, a workbench. Second floor: two bedrooms and Horus’s study, with a roof access hatch. Basement: trapdoor under a kitchen rug, with crates of supplies and magical items including the bag of withholding.</p><p>Horus Lanternholder owned it. The party does now. Horus kept it functional rather than comfortable. The lock on the front door is better than the neighborhood suggests.<ul><li>Toloin — Horus’s donkey, stabled at the Five Portals Inn</li></ul></p>",
     "stats": [
       {
         "label": "Ward",
@@ -486,7 +486,7 @@
       },
       {
         "label": "Floors",
-        "value": "3 + basement"
+        "value": "2 + basement"
       },
       {
         "label": "Status",
